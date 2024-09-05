@@ -13,9 +13,9 @@ a:active{
 div {
     height: auto;
     width: auto;
-    background-color: black;
+    background-color: rgb(15, 15, 15);
     border-style: solid;
-    border-color: white;
+    border-color: #575b64;
     border-width: 3px;
     padding: 10px;
 }
