@@ -11,14 +11,13 @@ a:active{
     color:black;
 }
 div {
-    height: 120px;
-    width: 500px;
+    height: auto;
+    width: auto;
     background-color: black;
     border-style: solid;
     border-color: white;
     border-width: 3px;
     padding: 10px;
-    
 }
 p{
     font-weight: 800;
