@@ -1,0 +1,36 @@
+body{
+    font-family:verdana;
+    color:white;
+    background-color:#313338;
+}
+a{
+    color:aqua;
+}
+a:active{
+    background-color: white;
+    color:black;
+}
+div {
+    height: 120px;
+    width: 500px;
+    background-color: black;
+    border-style: solid;
+    border-color: white;
+    border-width: 3px;
+    padding: 10px;
+    
+}
+p{
+    font-weight: 800;
+    text-align: center;
+}
+.bit_taller{
+    height:140px;
+}
+div:hover {
+    background-color: #1a1b1d;
+}
+.ZIP{
+    color:aquamarine;
+    font-weight: 800;
+}
