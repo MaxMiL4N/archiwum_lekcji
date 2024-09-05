@@ -33,3 +33,6 @@ div:hover {
     color:aquamarine;
     font-weight: 800;
 }
+h1{
+    text-shadow: 2px 2px 5px rgb(0, 0, 0);
+}
