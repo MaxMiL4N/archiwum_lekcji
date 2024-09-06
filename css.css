@@ -1,7 +1,8 @@
 body{
     font-family:verdana;
     color:white;
-    background-color:#313338;
+    background: rgb(46,46,46);
+    background: linear-gradient(0deg, rgba(46,46,46,1) 0%, rgb(75, 75, 75) 100%);
 }
 a{
     color:aqua;
@@ -22,6 +23,7 @@ div {
 p{
     font-weight: 800;
     text-align: center;
+    text-shadow: 3px 3px 6px rgb(70, 70, 70);
 }
 .bit_taller{
     height:140px;
@@ -30,9 +32,21 @@ div:hover {
     background-color: #1a1b1d;
 }
 .ZIP{
-    color:aquamarine;
+    color:rgb(0, 255, 170);
     font-weight: 800;
 }
 h1{
     text-shadow: 2px 2px 5px rgb(0, 0, 0);
+    margin-left:10px;
+}
+.warning{
+    color: #dd2e44;
+    text-shadow: 1px 1px 4px rgb(0, 0, 0);
+    text-align:left;
+    margin-left:10px;
+}
+.style-gradient {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
