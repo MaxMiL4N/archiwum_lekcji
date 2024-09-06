@@ -1,4 +1,4 @@
-alert("UWAGA! YapStreak JK gotowy!");
-confirm("Zablokować YapStreak?");
-prompt("Podaj nazwę spella");
-console.log(window.alert("wth"));
+alert("[Alert]");
+confirm("[Potwierdzenie]");
+prompt("[Wpisz dane]");
+console.log(window.alert("[Alert2]"));
