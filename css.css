@@ -45,3 +45,9 @@ h1{
     text-align: left;
     margin-left: 10px;
 }
+.info{
+    color:rgb(201, 201, 201);
+    text-shadow: 1px 1px 4px rgb(70, 70, 70);
+    font-size:small;
+    font-weight: 100;
+}
