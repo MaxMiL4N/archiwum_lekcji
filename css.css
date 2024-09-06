@@ -40,7 +40,7 @@ h1{
     margin-left:10px;
 }
 .warning{
-    color: #dd2e44;
+    color: #d4394d;
     text-shadow: 1px 1px 4px rgb(0, 0, 0);
     text-align: left;
     margin-left: 10px;
@@ -50,4 +50,14 @@ h1{
     text-shadow: 1px 1px 4px rgb(70, 70, 70);
     font-size:small;
     font-weight: 100;
+}
+.div_warning{
+    border-radius: 15px;
+    background-color: rgba(255, 0, 0, 0.2);
+    border-style: solid;
+    border-color: #ff2323;
+    border-width: 2px;
+}
+.div_warning:hover{
+    background-color: rgba(255, 0, 0, 0.2);
 }
