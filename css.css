@@ -61,3 +61,11 @@ h1{
 .div_warning:hover{
     background-color: rgba(255, 0, 0, 0.2);
 }
+button.warning_ok{
+    background:#d4394d;
+    border:none;
+    margin-left:10px;
+}
+button.warning_ok:hover{
+    background:#e6576a;
+}
