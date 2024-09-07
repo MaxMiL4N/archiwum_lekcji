@@ -69,3 +69,12 @@ button.warning_ok{
 button.warning_ok:hover{
     background:#e6576a;
 }
+button.warning_dsa{
+    background:none;
+    border:none;
+    margin-left:10px;
+    color:#d4394d;
+}
+button.warning_dsa:hover{
+    color:#e6576a;
+}
