@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typy zmiennych i operatory</title>
+</head>
+<body>
+    <script>
+        // var suma = 0;
+        var liczba1 = parseFloat(prompt("Podaj pierwszą liczbę (Używana również jako bok prostokąta oraz jako temperatura):"));  // Można również użyć parseInt
+        var liczba2 = parseFloat(prompt("Podaj drugą liczbę (Używana również jako bok prostokąta):"));
+        // suma = liczba1 + liczba2;
+        document.write("Suma podanych liczb wynosi ",(liczba1+liczba2));   // Zamiast (liczba1+liczba2) można użyć zmiennej 'suma'
+        console.log(liczba1+"+"+liczba2+"="+(liczba1+liczba2));            //
+        
+        document.write("<hr>");
+        document.write("Różnica podanych liczb wynosi ",(liczba1-liczba2)); // Różnica
+        console.log(liczba1+"-"+liczba2+"="+(liczba1-liczba2)); 
+        
+        document.write("<hr>");
+        document.write("Iloczyn podanych liczb wynosi ",(liczba1*liczba2)); // Iloczyn
+        console.log(liczba1+"*"+liczba2+"="+(liczba1*liczba2)); 
+        
+        document.write("<hr>");
+        document.write("Iloraz podanych liczb wynosi ",(liczba1/liczba2));  // Iloraz
+        console.log(liczba1+"/"+liczba2+"="+(liczba1/liczba2)); 
+        
+        document.write("<hr>");
+        document.write("Reszta z dzielenia podanych liczb wynosi ",(liczba1%liczba2)); // Różnica z dzielenia
+        console.log(liczba1+"%"+liczba2+"="+(liczba1%liczba2));
+        document.write("<hr>");
+
+        // Zadanie 1.
+        // Pobierz od użytkownika dwie długości boków prostokąta, następnie wypisz na ekran "Podane długości boków to:" oraz "Obwód prostokąta wynosi" i "Pole prostokąta wynosi:"
+        document.write("Podane długości boków to: "+liczba1+"cm i "+liczba2+"cm"+"<br>");
+        document.write("Obwód prostokąta wynosi "+((2*liczba1)+(2*liczba2))+"cm"+"<br>");
+        document.write("Pole prostokąta wynosi "+(liczba1*liczba2)+"cm"+"<sup>2</sup>"+"<hr>");
+        // Zadanie 2.
+        // Zamiana stopni.
+        document.write(liczba1+"°C to "+(liczba1+273.15)+"K"+"<br>");
+        document.write(liczba1+"°C to "+(liczba1*(9/5)+32+"°F"+"<br>"));
+    </script>
+</body>
+</html>
