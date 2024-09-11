@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a =  parseFloat(prompt("Podaj liczbę:"));
+        var b =  parseFloat(prompt("Podaj drugą liczbę:"))
+        console.log(2*a);
+        document.write(a*a);
+//      a*a, a**2, Math.pow(a,2) = a do potęgi 2
+        document.write("<br>");
+        document.write(a**2);
+        document.write("<br>");
+        document.write(Math.pow(a,2));
+        document.write("<hr>");
+        document.write("Reszta z dzielenia przez 2: " + a % 2);
+        document.write("<hr>");
+        // Instrukcja warunkowa
+        // Operatory logiczne: == Równa się, === Równa się (+typ zmiennej),>,<,>=,<=,<> Różne, != Nie równa się
+        if (a === 3) {
+//          intrukcja true
+            console.log("True");
+        }
+        else {
+            console.log("False");
+        }
+        // Parzysta czy nie?
+        if (a % 2 == 0) {
+            document.write("Podana liczba jest parzysta. <hr>");
+        }
+        else {
+            document.write("Podana liczba jest nieparzysta. <hr>");
+        }
+        // Poproś użytkownika o podanie dwóch liczb. Jeżeli są równe wyświetl komunikat "Podane liczby są równe.", w przeciwnym razie "Podałeś różne liczby".
+        if (a == b) {
+            document.write("Podane liczby są równe. <hr>");
+        }
+        else {
+            document.write("Podałeś różne liczby. <hr>");
+        }
+        // Która liczba jest większa?
+        if (a > b) {
+            alert(a+" jest większe od "+b);
+        }
+        else {
+            alert(b+" jest większe od "+a);
+        }
+    </script>
+</body>
+</html>
