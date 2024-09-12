@@ -4,10 +4,17 @@ body{
     background: rgb(46,46,46);
     background: linear-gradient(0deg, rgb(31, 31, 31) 0%, rgb(70, 73, 83) 100%);
 }
-a{
+li:hover{
+    font-weight: 800;
+}
+a.file{
     color:aqua;
 }
-a:active{
+a.file:hover{
+    color:rgb(180, 255, 255);
+}
+a.file:active{
+    font-weight: 800;
     background-color: white;
     color:black;
 }
@@ -33,6 +40,9 @@ div:hover {
 }
 .ZIP{
     color:rgb(0, 255, 170);
+    font-weight: 700;
+}
+.ZIP:hover{
     font-weight: 800;
 }
 h1{
@@ -85,7 +95,9 @@ a.preview{
     margin-left:10px;
     color:gray;
     text-decoration: none;
+    font-weight: 100;
 }
 a.preview:hover {
     color:lightgray;
+    font-weight: 100;
 }
