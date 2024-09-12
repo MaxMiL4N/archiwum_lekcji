@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        Zadanie 1: Pod zmienną a przypisz wartość 5, pod zmienną b przypisz wartość 6. Wyświetl na ekranie sumę podanych wartości. Wyświetl do konsoli całe działanie.
+        
+        Zadanie 2: Poproś użytkownika o podanie długości boku kwadratu. Wyświetl na ekran "Pole kwadratu o boku __ wynosi __" i poniżej "Obwód kwadratu o boku __ wynosi __". Działania do konsoli. Proszę założyć, że użytkownik może podać liczbę rzeczywistą, np. 2.5.
+        */
+        var a = 5;
+        var b = 6;
+        document.write(a+b);
+        console.log(a+"+"+b+"="+(a+b));
+
+        document.write("<hr>")
+
+        var bok = parseFloat(prompt("Podaj długość boku kwadratu w centymetrach:"));
+        var pole = (bok**2);
+        var obwod = (bok*4);
+        document.write("Pole kwadratu o boku "+bok+"cm wynosi "+pole+"cm<sup>2</sup> <br>");
+        document.write("Obwód kwadratu o boku "+bok+"cm wynosi "+obwod+"cm");
+        console.log(bok + "*" + bok  + "=" + pole);
+        console.log(bok + "*" + "4" + "=" + obwod);
+        </script>
+</body>
+</html>

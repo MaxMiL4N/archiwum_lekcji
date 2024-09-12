@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* KONSTRUKCJA
+            if (warunek) {
+                instrukcje TRUE
+            }
+            else {
+                instrukcje FALSE
+            }
+        */
+       var a = parseFloat(prompt("Podaj pierwszą liczbę:"));
+       var b = parseFloat(prompt("Podaj drugą liczbę:"));
+       if (a == b) {
+            document.write("Liczby są równe. <br>");
+       } 
+       else {
+        document.write("Liczby są różne. <br>");
+       }
+//          Sprawdzenie parzystości
+       if (a%2==0) {
+        document.write("Pierwsza liczba jest parzysta. <br>");
+       } else {
+        document.write("Pierwsza liczba nie jest parzysta. <br>");
+       }
+//          
+       if (b%2==0) {
+        document.write("Druga liczba jest parzysta. <hr>");
+       } else {
+        document.write("Druga liczba nie jest parzysta. <hr>");
+       }
+//          Zadanie: Zadeklaruj stałą o nazwie "stawka" przyjmującą wartość 50. 
+//          Pobierz od użytkownika liczbę przepracowanych godzin w miesiącu. 
+//          Napisz skrypt, który obliczy pensję według wzoru:
+//          Każda godzina = stawka
+//          Jeśli liczba godzin była większa niż 180, to należy doliczyć premię 10% pensji.
+       var stawka = 50;
+       var godziny = parseFloat(prompt("Ilość godzin:"));
+       if (godziny >= 180) {
+        var z = (godziny*stawka);
+        document.write(z+(z*0.1));
+       }
+       else {
+        var z = (godziny*stawka);
+        document.write(z);
+       }
+    </script>
+</body>
+</html>

@@ -78,3 +78,14 @@ button.warning_dsa{
 button.warning_dsa:hover{
     color:#e6576a;
 }
+a.preview{
+    font-size:small;
+    background:none;
+    border:none;
+    margin-left:10px;
+    color:gray;
+    text-decoration: none;
+}
+a.preview:hover {
+    color:lightgray;
+}
