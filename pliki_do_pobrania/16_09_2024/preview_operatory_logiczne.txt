@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operatory logiczne</title>
+</head>
+<body>
+    <script>
+        // AND to &&
+        // OR  to ||
+        
+        // Przykład użycia; Jeżeli zachowanie jest wzorowe, i średnia wynosi 4.75 lub wyżej, użytkownik otrzymuje nagrodę;
+        var zachowanie = prompt("Zachowanie:")
+        var srednia = parseFloat(prompt("Średnia ocen:"))
+        if (zachowanie == "wzorowe" && srednia >= 4.75) {
+            document.write("Nagroda");
+        } else {
+            document.write("Brak nagrody");
+        }
+
+        document.write("<br>");
+
+         if (srednia >= 4.75 && (zachowanie == "bardzo dobry" || zachowanie == "wzorowe")) {
+            document.write("Nagroda");
+        } else {
+            document.write("Brak nagrody");
+        }
+    </script>
+    <hr>
+    <p>Kicia:</p>
+    <img src="https://media1.tenor.com/m/QqNt5mW0VRYAAAAC/cat.gif" height="200px">
+    <style>
+        img:hover{
+            height:auto;
+        }
+    </style>
+</body>
+</html>
