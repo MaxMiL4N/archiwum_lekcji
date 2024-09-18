@@ -18,7 +18,7 @@ a.file:active{
     background-color: white;
     color:black;
 }
-div {
+div.day {
     height: auto;
     width: auto;
     background-color: rgb(15, 15, 15);
@@ -35,7 +35,7 @@ p{
 .bit_taller{
     height:140px;
 }
-div:hover {
+div.day:hover {
     background-color: #1a1b1d;
 }
 .ZIP{
