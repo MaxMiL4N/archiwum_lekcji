@@ -1,5 +1,6 @@
 function myFunction2() {
     document.cookie = "dsa=true";
+    console.log(dsa);
     var x = document.getElementById("div_warning");
     if (x.style.display == "none") {
       x.style.display = "block";
