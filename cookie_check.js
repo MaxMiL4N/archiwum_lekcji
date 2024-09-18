@@ -9,14 +9,15 @@ function getCookie(cookieName) {
        let [name, value] = cookie.split("=");
       
        if (name === cookieName) {
-          return decodeURIComponent(value);
+ //         return decodeURIComponent(value);
+            return value;
        }
     }
     
     return null;
  }
-console.log(getCookie(dsa));
-if(getCookie(dsa)==true){
+console.log(getCookie("dsa"));
+if(getCookie("dsa")==true){
     x.style.display = "none";
 }
 else{
