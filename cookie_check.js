@@ -17,9 +17,9 @@ function getCookie(cookieName) {
     return null;
  }
 console.log(getCookie("dsa"));
-if(getCookie("dsa")==true){
+if(getCookie("dsa")=="true"){
     x.style.display = "none";
-    console.log("brr")
+    console.log("brr");
 }
 else{
     x.style.display = "block";
