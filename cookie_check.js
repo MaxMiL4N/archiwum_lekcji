@@ -1,5 +1,6 @@
 var x = document.getElementById("div_warning");
-if(document.cookie == "warning_turned_off=1"){
+let dsa = document.cookie;
+if(dsa == "dsa=true"){
     x.style.display = "none";
 }
 else{

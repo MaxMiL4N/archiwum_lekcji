@@ -1,5 +1,5 @@
 function myFunction2() {
-    document.cookie == "warning_turned_off=1";
+    document.cookie = "dsa=true";
     var x = document.getElementById("div_warning");
     if (x.style.display == "none") {
       x.style.display = "block";
