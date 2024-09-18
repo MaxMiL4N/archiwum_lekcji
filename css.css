@@ -35,9 +35,11 @@ p{
     text-align: center;
     text-shadow: 3px 3px 6px rgb(70, 70, 70);
 }
+/*
 .bit_taller{
     height:140px;
 }
+*/
 div.day:hover {
     background-color: #1a1b1d;
 }
