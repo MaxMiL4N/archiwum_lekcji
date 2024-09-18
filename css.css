@@ -18,6 +18,9 @@ a.file:active{
     background-color: white;
     color:black;
 }
+div {
+    padding: 10px;
+}
 div.day {
     height: auto;
     width: auto;
