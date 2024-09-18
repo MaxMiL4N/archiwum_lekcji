@@ -16,10 +16,10 @@ function getCookie(cookieName) {
     
     return null;
  }
-console.log(getCookie("dsa"));
+console.log("Warning disabled = "+getCookie("dsa"));
 if(getCookie("dsa")==="true"){
     x.style.display = "none";
-    console.log("brr");
+    console.log("Warning hidden successfully.");
 }
 else{
     x.style.display = "block";
