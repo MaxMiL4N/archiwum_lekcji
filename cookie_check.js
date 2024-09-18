@@ -1,7 +1,22 @@
 var x = document.getElementById("div_warning");
-let dsa = document.cookie;
-console.log(dsa);
-if(dsa == "dsa=true"){
+
+function getCookie(cookieName) {
+    let cookies = document.cookie;
+    let cookieArray = cookies.split("; ");
+ 
+    for (let i = 0; i < cookieArray.length; i++) {
+       let cookie = cookieArray[i];
+       let [name, value] = cookie.split("=");
+      
+       if (name === cookieName) {
+          return decodeURIComponent(value);
+       }
+    }
+    
+    return null;
+ }
+console.log(getCookie(dsa));
+if(getCookie(dsa)==true){
     x.style.display = "none";
 }
 else{
