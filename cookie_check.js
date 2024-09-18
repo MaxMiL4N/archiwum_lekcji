@@ -9,7 +9,6 @@ function getCookie(cookieName) {
        let [name, value] = cookie.split("=");
       
        if (name === cookieName) {
- //         return decodeURIComponent(value);
             return value;
        }
     }
