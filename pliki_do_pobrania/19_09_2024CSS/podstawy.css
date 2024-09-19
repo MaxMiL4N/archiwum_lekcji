@@ -1,0 +1,48 @@
+#wyrownanie_tekstu{
+    text-align: center;
+    /*              , right, left
+    */
+}
+#dekoracja {
+    text-decoration: overline wavy;
+    /*
+                     :none - bez dekoracji
+                     :blink - migotanie tekstu
+                     :underline - podkreślenie tekstu
+                     :line-through - przekreślenie tekstu
+                     :overline - linia nad tekstem
+                        dashed - linia przerywana
+                        dooted - linia kropkowana
+                        wavy - linia falowana
+                        double - linia podwójna
+    */
+}
+#rozmiar_tekstu {
+    text-transform: uppercase; /*duże litery
+                    capitalize - duże litery w pierszych wyrazach
+                    lowercase - małe litery
+                    none - domyślne
+                    */
+}
+#odleglosci {
+    letter-spacing: 40px;
+}
+#czcionka {
+    font-style: italic;     
+}
+body {
+    background-image:radial-gradient(#FFFFCC,#CCFF66,#CCFF33,#003399);
+    /*background-color:#ffffff;
+    background-image:url(nazwa_pliku);
+    background-image:linear-gradient(#FFFFFF,#FFFFFF,#FFFFFF,#FFFFFF); - gradient liniowy
+    */
+}
+#obramowanie{
+    border-color:#FFFFCC;
+    border-top-width:2px;
+    border-style:double;
+    /*          dotted
+                solid
+    */          
+    border-radius:20px 20px 20px;
+}

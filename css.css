@@ -1,8 +1,18 @@
-body{
+body.javascript{
     font-family:verdana;
     color:white;
     background: rgb(46,46,46);
     background: linear-gradient(0deg, rgb(31, 31, 31) 0%, rgb(70, 73, 83) 100%);
+}
+body.tworzenie_witryn{
+    font-family:verdana;
+    color:white;
+    background: rgb(46,46,46);
+    background: linear-gradient(0deg, rgb(23, 34, 25) 0%, rgb(70, 83, 71) 100%);
+}
+h3{
+    margin:10px;
+    color:rgb(201, 201, 201);
 }
 li:hover{
     font-weight: 800;
@@ -29,6 +39,7 @@ div.day {
     border-color: #575b64;
     border-width: 3px;
     padding: 10px;
+    clear:both;
 }
 p{
     font-weight: 800;
@@ -53,6 +64,7 @@ div.day:hover {
 h1{
     text-shadow: 2px 2px 5px rgb(0, 0, 0);
     margin-left:10px;
+    margin-top:0px;
 }
 .warning{
     color: #d4394d;
@@ -72,6 +84,7 @@ h1{
     border-style: solid;
     border-color: #ff2323;
     border-width: 2px;
+    clear: both;
 }
 .div_warning:hover{
     background-color: rgba(255, 0, 0, 0.2);
@@ -105,4 +118,33 @@ a.preview{
 a.preview:hover {
     color:lightgray;
     font-weight: 100;
+}
+div.header1{
+    text-align:left;
+    float:left;
+    width:45%;
+}
+div.header2{
+    text-align:right;
+    float:right;
+    width:50%;
+    
+}
+button.othersite{
+    color:rgb(255, 255, 255);
+    background:#1c2031;
+    border:solid 1px;
+    border-color: rgb(201, 201, 201);
+    border-radius: 5px;
+    margin-left:10px;
+}
+button.othersite:hover{
+    background:#313753;
+}
+hr{
+    clear:both;
+}
+a.invisible{
+    color:rgb(255, 255, 255);
+    text-decoration: none;
 }

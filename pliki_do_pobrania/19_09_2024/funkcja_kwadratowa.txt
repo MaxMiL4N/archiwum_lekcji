@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instrukcje warunkowe</title>
+</head>
+<body>
+    <script>
+        var z = 5; // parseFloat(prompt("Podaj liczbę:"));
+        
+        /*
+        if (a>10){
+            document.write("tak");
+        }
+        else{
+            document.write("nie");
+        }
+        */
+    //===== Forma skrócona if =====
+       (z > 10) ? document.write("Większe niż 10 <hr>") : document.write("Mniejsze lub równe 10 <hr>");
+    // (warunek) ? wartość-prawda : wartość-fałsz
+    //
+    //===== Rozszerzona wersja instrukcji warunkowej - else if =====
+        if (z > 0) {
+            document.write("dodatnia <hr>");
+        }
+        else if (z < 0) {
+            document.write("ujemna <hr>");
+        }
+        else {
+            document.write("zero <hr>")
+        }
+    // ===== Zadanie =====
+    // Wskaż wartość dofinansowania do wycieczki, zgodnie z wytycznymi dotyczącymi średniej ocen. 
+    // Jeśli średnia ocen jest większa od 4.5, to mamy dofinansowanie 300 zł.
+    // Jeśli średnia ocen jest między 4 a 4.5, to jest dofinansowanie 200 zł.
+    // W pozostałych przypadkach jest 100 zł.
+    // Uczeń podaje średnią ocen.
+        var s = parseFloat(prompt("Podaj średnią ocen:"));
+        console.log("Podano średnią ocen "+s);
+        if (s > 4.5) {
+            document.write("Otrzymano dofinansowanie 300 zł. <hr>");
+        }
+        else if (s < 4) {
+            document.write("Otrzymano dofinansowanie 100 zł. <hr>");
+        }
+        else {
+            document.write("Otrzymano dofinansowanie 200 zł. <hr>");
+        }
+    // ===== Zadanie =====
+    // Pobierz od użytkownika dwie liczby, następnie podziel pierwszą przez drugą.
+    // Wyświetl na ekranie wynik dzielenia, lub stosowny komunikat jeśli dzielenie jest niemożliwe do wykonania.
+    let m = parseFloat(prompt("Podaj pierwszą liczbę:"));
+    let n = parseFloat(prompt("Podaj drugą liczbę:"));
+    let o = parseFloat(prompt("Podaj trzecią liczbę:"));
+    console.log("Pierwsza liczba: "+m);
+    console.log("Druga liczba: "+n);
+    console.log("Trzecia liczba: "+o);
+    if (n == 0) {
+        document.write("Dzielenie nie jest możliwe. <hr>");
+    }
+    else {
+        let wynik = m/n;
+        document.write(wynik+"<hr>");
+    }
+
+    // ALT
+
+    if (n == 0 || o == 0) {
+        document.write("Dzielenie nie jest możliwe. <hr>");
+    }
+    
+    else {
+        let wynik = (m/n)+(1/o);
+        document.write(wynik+"<hr>");
+    }
+
+    // ===== Zadanie =====
+    let a = parseFloat(prompt("A:"));
+    let b = parseFloat(prompt("B:"));
+    let c = parseFloat(prompt("C:"));
+    let delta = (b**2)-4*a*c;
+    if (delta > 0) {
+        let pier = Math.sqrt(delta);
+        let x1 = ((-b)-pier)/(2*a); // Math.round((((-b)-pier)/(2*a))*100)/100;
+        let x2 = ((-b)+pier)/(2*a); // Math.round((((-b)+pier)/(2*a))*100)/100;
+        document.write("x1 = "+ Math.round(x1*100)/100 +"<br>");
+        document.write("x2 = "+ Math.round(x2*100)/100 +"<br>");
+        let rozwiazanie1 = a*x1**2+b*x1+c // Math.round((a*x1**2+b*x1+c) * 100)/100;
+        let rozwiazanie2 = a*x1**2+b*x1+c // Math.round((a*x1**2+b*x1+c) * 100)/100;
+        document.write("f(",x1,")=",rozwiazanie1,"<br>");
+        document.write("f(",x2,")=",rozwiazanie1,"<br>");
+        console.log(a+"*"+x1+"^2"+"+"+b+"*"+x1+"+"+c+"="+rozwiazanie1);
+        console.log(a+"*"+x2+"^2"+"+"+b+"*"+x2+"+"+c+"="+rozwiazanie2);
+        console.log(x1,x2);
+        }
+    else if (delta = 0) {
+        let x1 = (-b)/(2*a); 
+        document.write("x = "+x1);
+        let rozwiazanie1 = (a*(x1**2)+(b*x1)+c);
+        document.write("Wynik1: "+rozwiazanie1+"<br>");
+        console.log(a,"*",x1,"<sup>2</sup>","+",b,"*",x1,"+",c,"=",rozwiazanie1)
+        console.log(x1);
+    }
+    else {
+        document.write("Brak rozwiązań.");
+    }
+    
+    </script>
+</body>
+</html>
