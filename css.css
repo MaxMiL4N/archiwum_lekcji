@@ -60,6 +60,7 @@ div.day:hover {
 }
 .ZIP:hover{
     font-weight: 800;
+    color:rgb(136, 255, 215);
 }
 h1{
     text-shadow: 2px 2px 5px rgb(0, 0, 0);
