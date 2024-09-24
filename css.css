@@ -131,6 +131,16 @@ div.header2{
     width:50%;
     
 }
+div.stopka {
+    height: auto;
+    width: auto;
+    background-color: rgb(49, 49, 49);
+    border-style: solid;
+    border-color: #6d717c;
+    border-width: 3px;
+    padding: 10px;
+    clear:both;
+}
 button.othersite{
     color:rgb(255, 255, 255);
     background:#1c2031;
