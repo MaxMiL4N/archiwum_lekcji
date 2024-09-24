@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zaokrąglanie liczb</title>
+</head>
+<body>
+    <script>
+        // Zaokrąglanie liczb
+        
+        let a = 12.3456789;
+        let z1 = Math.ceil(a); // Zaokrąglenie do góry
+        let z2 = Math.floor(a); // Zaokrąglenie do dołu
+        let z3 = a.toFixed(2); // Zaokrąglenie zgodnie z arytmetyką do dwóch miejsc po przecinku
+        document.write("Liczba początkowa: ",a);
+        document.write("<br> Zaokrąglenie w górę: ",z1);
+        document.write("<br> Zaokrąglenie w dół: ",z2);
+        document.write("<br> Zaokgrąglenie arytmetyczne do części setnych: ",z3,"<hr>");
+        
+        // ===== Losowanie liczb =====
+
+        let los1 = Math.random();    // Od 0 do 1
+        document.write("<b> Od 0 do 1: </b>",los1,"<br>");
+
+        let los2 = Math.random()+1;    // Od 1 do 2
+        document.write("<b> Od 1 do 2: </b>",los2,"<br>");
+
+        let los3 = Math.floor(Math.random()*10); // Od 0 do 9
+        document.write("<b> Od 0 do 9: </b>",los3,"<br>");
+
+        let los4 = Math.ceil(Math.random()*10); // Od 1 do 10
+        document.write("<b> Od 1 do 10: </b>",los4,"<br>");
+
+        let los5 = Math.floor(Math.random()*100); // Od 0 do 99
+        document.write("<b> Od 0 do 99: </b>",los5,"<br>");
+
+        let los6 = Math.ceil(Math.random()*100); // Od 1 do 100
+        document.write("<b> Od 1 do 100: </b>",los6,"<hr>");
+
+        // ===== Ustawione wartości minimalnej i maksymalnej losowania =====
+
+        let min = 13;
+        let max = 29;
+       
+        let losowanie = Math.floor(Math.random()*(max-min))+min; // Uniwersalny kod
+
+        document.write(losowanie);
+
+    </script>
+</body>
+</html>

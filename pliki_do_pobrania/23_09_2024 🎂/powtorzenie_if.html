@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>23_09_2024 🎂</title>
+</head>
+<body>
+    <style>
+        body{
+            background-color: #24252b;
+            color:white;
+        }
+    </style>
+    <script>
+        // Przypisz dowolną wartość liczbową. Sprawdzenie czy liczba jest podzielna przez 2.
+        let a = 6;
+        if (a%2==0) {
+            document.write("Liczba jest parzysta. <hr>");
+        } else {
+            document.write("Liczba jest nieparzysta. <hr>");
+        }
+        // ===== Wersja skrócona =====
+        (a%2==0)?document.write("Liczba jest parzysta. <hr>"):document.write("Liczba jest nieparzysta. <hr>");
+        // ===== ZADANIE =====
+        // Uczeń dostaje nagrodę jeśli ma średnią ocen 4.75 i więcej oraz zachowanie dobre lub bardzo dobre;
+        let srednia = parseFloat(prompt("Podaj średnią ocen:"));
+        let zachowanie = prompt("Zachowanie:");
+        if (zachowanie == "bardzo dobre" || zachowanie == "dobre" && srednia >= 4.75) {
+            document.write("Nagroda przyznana. <hr>");
+        }
+        else {
+            document.write("Nagroda nie została przyznana. <hr>");
+        }
+    </script>
+</body>
+</html>
