@@ -107,7 +107,7 @@ button.warning_dsa{
 button.warning_dsa:hover{
     color:#e6576a;
 }
-a.preview{
+.preview{
     font-size:small;
     background:none;
     border:none;

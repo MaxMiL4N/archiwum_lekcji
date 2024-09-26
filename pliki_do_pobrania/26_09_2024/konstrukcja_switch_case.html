@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch</title>
+</head>
+<body>
+    <script>
+        // zadanie na if - else if - else
+        var x = 17;
+        if (x < 5) {
+            document.write("Mało");
+        } else if (x > 10) {
+            document.write("Dużo");
+        }
+        else {
+            document.write("Średnio");
+        }
+        document.write("<br>");
+        
+        // instrukcja switch case
+        
+        switch (true){
+            case (x < 5):
+                document.write("Mało");
+            break;
+            case (x > 10):
+                document.write("Dużo");
+            break;
+            case (x >= 5 && x <= 10 ):
+            document.write("Średnio");
+            break;
+        }
+        document.write("<br>");
+
+        // kalkulator
+
+        var znak = "*";
+        var liczba1 = 3;
+        var liczba2 = 5;
+       switch (znak){
+            case ("+"):
+                document.write("Suma dwóch liczb wynosi: " + (liczba1 + liczba2));
+            break;
+            case ("-"):
+                document.write("Różnica dwóch liczb wynosi: " + (liczba1 - liczba2));
+            break;
+            case ("*"):
+                document.write("Iloczyn dwóch liczb wynosi: " + (liczba1 * liczba2));
+            break;
+            case ("/"):
+                if (liczba2 !== 0){
+                document.write("Iloraz dwóch liczb wynosi: " + (liczba1 + liczba2));
+                } else {
+                    document.write("Nie istnieje");
+                }
+            break;
+            default:
+                document.write("zały znak");
+        }
+        document.write("<br>")
+       //DRUGA OPCJA
+        switch (true){
+            case (znak == "+"):
+                document.write("Suma dwóch liczb wynosi: " + (liczba1 + liczba2));
+            break;
+            case (znak == "-"):
+                document.write("Różnica dwóch liczb wynosi: " + (liczba1 - liczba2));
+            break;
+            case (znak == "*"):
+                document.write("Iloczyn dwóch liczb wynosi: " + (liczba1 * liczba2));
+            break;
+            case (znak == "/"):
+                if (liczba2 !== 0){
+                document.write("Iloraz dwóch liczb wynosi: " + (liczba1 + liczba2));
+                } else {
+                    document.write("Nie istnieje");
+                }
+            break;
+            default:
+                document.write("zały znak");
+        }
+        document.write("<br>");
+
+        // uzytkownik podaj numery 1 do 7 i w zależnosci od numeru ( 1 to pon, 2 to wt itd)
+        var system = parseInt(prompt("wybierz : system1 albo system2"));
+        var dzien = parseInt(prompt("Podaj liczbe od 1 do 7:"))
+        if (system == "system1") {
+        switch (dzien){
+            case (1):
+                document.write("poniedziałek");
+            break;
+            case (2):
+                document.write("wtorek");
+            break;
+            case (3):
+                document.write("środa");
+            break;
+            case (4):
+                document.write("czwartek");
+            break;
+            case (5):
+                document.write("piątek");
+            break;
+            case (6):
+                document.write("sobota");
+            break;
+            case (7):
+                document.write("niedzila");
+            break;
+        }
+    } else {
+        switch (dzien){
+            case (1):
+                document.write("niedziela");
+            break;
+            case (2):
+                document.write("poniedziałek");
+            break;
+            case (3):
+                document.write("wtorek");
+            break;
+            case (4):
+                document.write("środa");
+            break;
+            case (5):
+                document.write("czwartek");
+            break;
+            case (6):
+                document.write("piątek");
+            break;
+            case (7):
+                document.write("sobota");
+            break;
+        }
+    }
+    </script>
+</body>
+</html>
