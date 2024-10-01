@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie 30_09_2024</title>
+</head>
+<body>
+    <script>
+        // ===== ZADANIE 1 =====
+        //Pobierz od użytkownika liczbę, a następnie sprawdź jej znak (dodatnia, zero czy ujemna?). Jeśli większa od zera, wypisz dodatnia. Jeśli mniejsza od zera - ujemna. Jeśli równa zero, wypisz tekst zero.
+        
+        // ===== ZADANIE 2 =====
+        // Uczeń dostaje wyróżnienie, jeśli ma średnią większą lub równą 4.75, oraz zachowanie bardzo dobre lub wzorowe. Pod zmiennymi x y z przechowaj trzy oceny, oraz 'zachowanie' które zawiera nazwę zachowania ucznia. Oblicz średnią trzech ocen, którą użyjesz do zadania.
+
+        // ZADANIE 1
+
+        let liczba = parseFloat(prompt("Podaj liczbę:"));
+        if (liczba > 0){
+            document.write("Podana liczba jest dodatnia. <hr>");
+        }
+        else if (liczba < 0) {
+            document.write("Podana liczba jest ujemna. <hr>");
+        }
+        else {
+            document.write("Podana liczba to zero. <hr>");
+        }
+
+        // ZADANIE 2
+
+        let x = parseInt(prompt("(1) Podaj ocenę:"));
+        let y = parseInt(prompt("(2) Podaj ocenę:"));
+        let z = parseInt(prompt("(3) Podaj ocenę:"));
+        let zachowanie = prompt("Zachowanie:");
+        let srednia = (x+y+z)/3;
+
+        console.log("Podano liczbę "+liczba);
+        console.log("Obliczona średnia z ocen: "+srednia);
+        console.log("Podano zachowanie "+zachowanie);
+
+        if (srednia >= 4.75 && (zachowanie === "bardzo dobre" || zachowanie === "wzorowe")) {
+            document.write("Uczeń otrzymuje wyróżnienie.");
+        }
+        else {
+            document.write("Uczeń nie otrzymuje wyróżnienia.");
+        }
+    </script>
+</body>
+</html>

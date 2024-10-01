@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Przypisz 2 liczby, następnie wyświetl największą z nich.
+
+        let a = 5;
+        let b = 6;
+
+        if (a>b) {
+            document.write(a,", ",b,"<hr>");
+        }
+        else {
+            document.write(b,", ",a,"<hr>");
+        }
+
+        // 3 liczby "NA PIECHOTĘ"
+
+        let x = 10;
+        let y = 10;
+        let z = 8;
+
+        if (x>y && x>z) {
+            document.write(x,"<hr>");
+        }
+        else if (y>x && y>z) {
+            document.write(y,"<hr>");
+        }
+        else if (z>x && z>y) {
+            document.write(z,"<hr>");
+        }
+        else {
+            document.write("Dwie lub więcej liczb są równe. <hr>");
+        }
+
+        // 3 liczby - POPRAWNY SPOSÓB;
+
+        let m = 5;
+        let n = 6;
+        let o = 7;
+
+        if (m > n) {
+            max = m;
+        }
+        else {
+            max = n;
+        }
+
+        if (o>max) {
+            max = o;
+        }
+
+        document.write(max,"<hr>");
+        
+        // Od największej do najmniejszej
+
+        if (max == o) {
+            if (m>n) {
+                document.write(max," ",m," ",n);
+            }
+            else {
+                document.write(max," ",n," ",m);
+            }
+        }
+        else if (max == n) {
+            if (o>m) {
+                document.write(max," ",o," ",m);
+            }
+            else {
+                document.write(max," ",m," ",o);
+            }
+        }
+        else if (max == m) {
+            if (o>n) {
+                document.write(max," ",o," ",n);
+            }
+            else {
+                document.write(max," ",n," ",o);
+            }
+        }
+        
+        document.write("<hr>");
+
+        // Od najmniejszej do największej
+
+        if (max == o) {
+            if (m>n) {
+                document.write(n," ",m," ",max);
+            }
+            else {
+                document.write(m," ",n," ",max);
+            }
+        }
+        else if (max == n) {
+            if (o>m) {
+                document.write(m," ",o," ",max);
+            }
+            else {
+                document.write(o," ",m," ",max);
+            }
+        }
+        else if (max == m) {
+            if (o>n) {
+                document.write(n," ",o," ",max);
+            }
+            else {
+                document.write(o," ",n," ",max);
+            }
+        }
+    </script>
+</body>
+</html>
