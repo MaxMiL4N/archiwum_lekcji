@@ -34,7 +34,7 @@ div {
 div.day {
     height: auto;
     width: auto;
-    background-color: rgb(15, 15, 15);
+    background-color: rgb(15, 15, 15, 0.3);
     border-style: solid;
     border-color: #575b64;
     border-width: 3px;
