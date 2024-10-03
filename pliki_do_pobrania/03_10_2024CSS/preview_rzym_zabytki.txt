@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css_rzym_zabytki.css">
+</head>
+<body>
+    <div id="baner">
+        Rzym i jego zabytki
+    </div>
+    <div id="blok_l">
+        <p>Najciekawsze miejsca w Rzymie</p>
+        <ul>
+            <li>Koloseum</li>
+            <li>Panteon</li>
+            <li>Forum Romanum</li>
+            <li>Piazza Navona</li>
+            <li>Bazylika Św. Piotra</li>
+            <li>Kapitol</li>
+            <li>Schody Hiszpańskie</li>
+            <li>Fontanna diTrevi</li>
+        </ul>
+    </div>
+    <div id="blok_p">
+        <table>
+            <tr>
+                <td><img src="1.jpg"></td>
+                <td><img src="2.jpg"></td>
+                <td><img src="3.jpg"></td>
+            </tr>
+            <tr>
+                <td><img src="4.jpg"></td>
+                <td><img src="5.jpg"></td>
+                <td><img src="6.jpg"></td>
+            </tr>
+            <tr>
+                <td><img src="7.jpg"></td>
+                <td><img src="8.jpg"></td>
+                <td><img src="9.jpg"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

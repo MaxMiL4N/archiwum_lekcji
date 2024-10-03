@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>03.10.2024</title>
+</head>
+<body>
+    <style>
+        td, table{
+            border: 1px solid;
+            border-radius: 2px;
+        }
+    </style>
+    <hr>
+    <script>
+        // ===== ZADANIE 1 =====
+        // Wyświetl sumę wszystkich liczb ujemnych większych od -5. (Pętla wykonuje się 10 razy dla przykładu)
+        var suma = 0;
+        var licznik1 = 0;
+        for (var i=-5;i<5;i++) {
+            if (i<0) {
+            suma+=i;
+            }
+            licznik1++;
+        }
+        document.write(suma);
+        document.write("<br>")
+        document.write("Pętla wykona się ",licznik1," razy. <hr>");
+
+        // ===== ZADANIE 2 =====
+        // Obliczanie silni;
+        // Silnia !     5! = 1 * 2 * 3 * 4 * 5
+        // Użytkownik podaje liczbę
+        var silnia = parseInt(prompt("Podaj liczbę do obliczania silni:"));
+        var wynik_silni = 1;
+        for (var a=1;a <= silnia;a++) {
+            wynik_silni*=a;
+        }
+        document.write(silnia,"! wynosi ",wynik_silni,"<hr>");
+
+        // ===== ZADANIE 3 =====
+        // Pętla wyświetlająca liczby w formie listy nienumerowanej (<ul>)
+        document.write("<ul type = 'circle'>");
+        for (var i = 1; i <= 5; i++) {
+            document.write("<li>",i,"</li>");
+        }
+        document.write("</ul>");
+
+        // Tabela
+        document.write("<table> <tr>");
+        for (var i = 1; i <= 5; i++) {
+            document.write("<td>",i,"</td>");
+        }
+        document.write("</tr> </table>");
+    </script>
+
+    <h2>Inny sposób</h2>
+    <table>
+        <tr>
+            <td>a</td>
+            <td>b</td>
+            <td>c</td>
+            <td>d</td>
+            <td>e</td>
+        </tr>
+        <tr>
+            <script>
+                for (var i = 1; i <= 5; i++) {
+                document.write("<td>",i,"</td>");
+                } 
+            </script>
+        </tr>
+    </table>
+
+
+</body>
+</html>

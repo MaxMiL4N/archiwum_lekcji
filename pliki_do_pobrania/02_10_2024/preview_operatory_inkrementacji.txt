@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operatory inkrementacji</title>
+</head>
+<body>
+    <script>
+        /*
+            let i = 0;
+            i++ => i=i+1 => postinkrementacja
+            ++i => i=i+1 => preinkrementacja
+            i-- => i=i-1 => postdekrementacja
+            --i => i=i-1 => predekrementacja
+            i+=5 => i=i+5
+            i-=5 => i=i-5
+            i*=5 => i=i*5
+            i/=5 => i=i/5
+        */
+       //============ PRZYKŁADY =============
+       let i = 0;                   // 0
+       document.write(i,"<br>");    // 0
+       i++;                         // 1
+       document.write(i++,"<br>");  // 1 (+1)
+       document.write(i,"<hr>");    // 2
+       //====================================
+       let j = 0;                   // 0
+       document.write(j,"<br>");    // 0
+       j++;                         // 1
+       document.write(j--,"<br>");  // 1 (-1)
+       document.write(j,"<hr>");    // 0
+       //====================================
+       let k = 0;                   // 0
+       document.write(k,"<br>");    // 0
+       k+=10;                       // 10
+       k--;                         // 9
+       document.write(++k,"<br>");  // (9+1) 10
+       document.write(k,"<hr>");    // 10
+       
+       // Zadanie - co wyświetli program?
+
+       let a = 10;                  // a = 10
+       let b = 0;                   // b = 0
+       a+=b;                        // a = a+b == 10
+       a++;                         // a = a+1 == 11
+       document.write(a++,"<br>")   // 11
+       b++;                         // b = b+1 == 1
+       b+=5;                        // b = b+5 == 6
+       document.write(b);           // 6
+
+    </script>
+</body>
+</html>
