@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07.10.2024</title>
+</head>
+<body>
+    <script>
+        // Poproś użytkownika o podanie imienia, następnie wyświetl je 5 razy, linia pod linią. Dodatkowo, numerując każdy wpis.
+        var imie = prompt("Podaj imię:");
+        document.write("<ol>");
+            for (var i = 1;i<=5;i++) {
+                document.write("<li>",imie,"</li>");
+            }
+        document.write("</ol>");
+
+        var i = 1;
+        document.write("<ol>");
+        while (i<=5) {
+            document.write("<li>",imie,"</li>");
+            i++;
+        }
+        document.write("</ol>");
+
+        var suma = 0;
+        var i =1;
+        while(i<10) {
+            if(i%2 == 0) {
+                suma+=i;
+            }
+            i++;
+        }
+        document.write(suma);
+    </script>
+</body>
+</html>
