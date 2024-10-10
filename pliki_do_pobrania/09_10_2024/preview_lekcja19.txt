@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        table{
+            border: 1px solid;
+        }
+        td{
+            border: 1px solid;
+        }
+    </style>
+    <script>
+        /*
+            Zadanie
+            Utwórz skrypt który wczyta za pomocą okna dialogowego wartość żmiennej x. Za pomocą petli wyświetl liczby z zakresu od 1 do x, a anstępnie oblicz i wyświetl na ekranie ile wypisałeś liczb parzystych. Po wykonaniu tego zadania zmioen pętle na while
+        */
+
+        /*
+        var liczba = parseInt(prompt("Podaj liczbę"));
+        var ilosc = 0;
+        var i = 1;
+        
+        for (i; i<=liczba; i++){
+            document.write(i + ", ");
+            if(i % 2 == 0){
+                ilosc++;
+            }
+        }
+        document.write("<br>" + ilosc);
+        document.write("<br>");
+        
+
+        var liczba1 = parseInt(prompt("Podaj liczbę"));
+        var ilosc1 = 0;
+        var x = 1;
+        while (x<=liczba1) {
+            document.write(x + ", ");
+            x++;
+            if(x % 2 == 0){
+                ilosc1++;
+            }
+        }
+        document.write("<br>" + ilosc1);
+        */
+
+        /*
+        var liczba = parseInt(prompt("Podaj liczbę"));
+        var ilosc = 0;
+        var i = 1;
+        document.write("<table><tr>");
+        for (i; i<=liczba; i++){
+            document.write("<td>" + i + "</td>");
+        }
+        document.write("</tr></table>");
+        document.write("<br>");
+        */
+
+        /*
+        Zadanie
+        Utwórz skrypt który wygeneruje iczby w prtzedziuale 50 do 100 i wyświetl je w posataci tabeli złożonej z 20 komórek i jednego wiersza
+        */
+
+        document.write("<table border='1'><tr>");
+            for(var i = 0; i < 20; i++){
+                var los = Math.floor(Math.random()*(100-51))+50;
+                document.write("<td>" + los + "</td>");
+            }
+        document.write("</tr></table>");
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+#blok_l{
+    width:40%;
+    height:700px;
+    float:left;
+    background-color:#B22222;
+}   
+#blok_p{
+    width:60%;
+    height:700px;
+    float:left;
+    background-color:#FF8C00;
+}
+#stopka{
+    clear:both;
+    height:5%;
+    background-color:#800000;
+}
+p{
+    color:white;
+    text-align:right;
+    font-size:40px;
+}
+h1{
+    text-align:center;
+}
+table,td,tr{
+    border:2px solid #8B0000;
+    text-align:center;
+    height:60px;
+    width:300px;
+}

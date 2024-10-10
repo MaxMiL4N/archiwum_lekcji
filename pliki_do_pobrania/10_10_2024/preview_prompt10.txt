@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10.10.2024</title>
+</head>
+<body>
+    <script>
+        // Używając pętli napisz skrypt, który będzie wyświetlał okno 'prompt', dopóki ktoś nie da liczby większej niż 10.
+        var liczba = 0;
+        while (liczba<10) {
+            liczba = parseInt(prompt("Podaj liczbę większą niż 10:"));
+        }
+        document.write(liczba);
+    </script>
+</body>
+</html>

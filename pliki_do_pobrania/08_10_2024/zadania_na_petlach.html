@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>08.10.2024</title>
+</head>
+<body>
+    <script>
+
+        // ZADANIE 1
+
+        var liczba = 0;
+        var ilosc = 39;
+        var i = 14;
+        var j = ilosc+i;
+        for (i;i<j;i++) {
+            document.write(i,", ");
+            liczba++;
+        }
+        document.write("<hr> Ilość liczb: ",liczba,"<hr>");
+
+        // Pętla 'while'
+
+        var liczba = 0;
+        var ilosc = 39;
+        var i = 14;
+        var j = ilosc+i;
+        while(i<j) {
+            document.write(i,", ");
+            liczba++;
+            i++;
+        }
+        document.write("<hr> Ilość liczb: ",liczba,"<hr>");
+
+        // Pętla 'do while'
+        var liczba = 0;
+        var ilosc = 39;
+        var i = 14;
+        var j = ilosc+i;
+        do{
+            document.write(i,", ");
+            liczba++;
+            i++;
+        }
+        while(i<j);
+        document.write("<hr> Ilość liczb: ",liczba,"<hr>");
+
+
+        var liczba = 0;
+        var ilosc = 10;
+        var i = 5;
+        var j = 2*ilosc+i;
+
+        while(i<j) {
+            if (i%2 == 0) {
+                document.write(i,", ");
+                liczba++;
+            }
+            i++;
+        }
+        document.write("<hr> Ilość liczb: ",liczba,"<hr>");
+
+        // ZADANIE
+        // Wyświetl 5 kolejnych liczb podzielnych przez 5, ale nie mogą to być zakończone na 0
+
+        var liczba = 0;
+        var ilosc = 5;
+        var i = 0;
+        var j = 10*ilosc+i;
+
+        while(i<j) {
+            if (i%10 == 5) {
+                document.write(i,", ");
+                liczba++;
+            }
+            i++;
+        }
+        document.write("<hr> Ilość liczb: ",liczba,"<hr>");
+
+        //
+
+        var liczba = 0;
+        var ilosc = 5;
+        var i = 0;
+        var j = 10*ilosc+i;
+
+        while(i<j) {
+            if (i%5 == 0 && i%10!=0) {
+                document.write(i,", ");
+                liczba++;
+            }
+            i++;
+        }
+        document.write("<hr> Ilość liczb: ",liczba,"<hr>");
+
+        // Piramidka
+
+        /* for (var i = 0;i<=5;i++) {
+            for (var j = 1;j<=5;j++) {
+                document.write("x");
+            }
+            document.write("<br>");
+        }
+        */
+       var liczba = 5;
+
+       for (var i = 0;i<=liczba;i++) {
+        for (var j = 0;j<i;j++) {
+            document.write("█");
+        }
+        document.write("<br>");
+       }
+    </script>
+</body>
+</html>
