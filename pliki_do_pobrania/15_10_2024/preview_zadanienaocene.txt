@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        table,td{
+            border:1px solid black;
+        }
+    </style>
+    <script>
+
+
+    // ZADANIE 1
+    // Korzystając z pętli wyświetl w pierwszym wierszu w tabeli liczby od 1 do 10, zaś w drugim, od 10 do 1.
+    // Policz ile jest w tym przedziale liczb parzystych.
+        
+        var parzyste = 0;
+        document.write("<table> <tr>");
+            for (var i=1;i<=10;i++) {
+                document.write("<td>",i,"</td>");
+                if (i%2==0) {
+                    parzyste++;
+                }
+            }
+        document.write("</tr><tr>");
+            for (var i=10;i>=1;i--) {
+                document.write("<td>",i,"</td>");
+                if (i%2==0) {
+                    parzyste++;
+                }
+            }
+        document.write("</tr></table>Liczb parzystych jest ",parzyste,"<hr>")
+
+
+    // ZADANIE 2
+    // Wypisz 10 pierwszych liczb parzystych i ile jest podzielnych przez 3
+        
+        var liczba = 1;
+        var podz3 = 0;
+        for (var i=1;i<=10;liczba++) {
+            if (liczba%2==0) {
+                document.write(liczba,", ");
+                i++;
+                if (liczba%3==0) {
+                podz3++;
+            }
+            }
+        }
+        document.write("<br> Liczb podzielnych przez trzy jest ",podz3,"<hr>")
+
+    // ZADANIE 3
+    // Poproś użytkownika o podanie imienia oraz ilości wyświetleń. Każde imię jest w nowej linii.
+
+    var imie = prompt("Podaj imię:");
+    var displays = parseInt(prompt("Podaj ilość wyświetleń:"));
+
+    document.write("<ol>");
+    for (var i=1;i<=displays;i++) {
+        document.write("<li>",imie,"</li>");
+    }
+    document.write("</ol>");
+
+    </script>
+</body>
+</html>
