@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator</title>
+</head>
+<body>
+    <script>
+        // Napisz funkcję o nazwie "kalkulator", która przyjmuje 1 argument o nazwie "znak", 
+        // i w zależności od znaku, funkcja zwraca wynik mnożenia, dodawania odejmowania lub dzielenia.
+        
+        var a = parseInt(prompt("Podaj pierwszą liczbę:"));
+        var b = parseInt(prompt("Podaj drugą liczbę:"));
+
+        function kalkulator(znak) {
+            if (znak == "*") {
+                return a*b;
+            }
+            else if (znak == "+") {
+                return a+b;
+            }
+            else if (znak == "-") {
+                return a-b;
+            }
+            else if (znak == "/") {
+                return a/b;
+            }
+            else {
+                return "błędny znak"
+            }
+        }
+        document.write(kalkulator(prompt("Podaj znak:")));
+
+    </script>
+    <hr>
+    <script>
+
+        // Napisz funkcję, która wśród pierwszych 10 liczb całkowitych wyświetli
+        // parzyste oraz policzy ich ilość.
+
+        var ilosc = 0;
+        function il_parzyste() {
+            for (var i = 1;i <= 10;i++) {
+                if (i%2==0) {
+                    document.write(i,", ");
+                    ilosc++;
+                }
+            }
+            return ilosc;
+        }
+        document.write("<br> Liczb parzystych jest: ",il_parzyste());
+        
+    </script>
+</body>
+</html>

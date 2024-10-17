@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funkcje 17.10.2024</title>
+</head>
+<body>
+    <script>
+
+
+
+        // Definiowanie funkcji:
+        // function NAZWA(PARAMETRY) {INSTRUKCJE}
+
+        function wypisz() {
+            var a = "jola";
+            document.write(a);
+        }
+
+        // Wywołanie funkcji wypisz()
+
+        wypisz();
+
+        // Funkcja wypisz nie pobiera argumentów oraz nie zwraca wartości.
+        // Nazwa funkcji bez polskich znaków.
+
+    </script>
+    <br>
+    <script>
+
+        // Funkcja dwuargumentowa
+        // Funkcja nie zwraca wartości.
+
+        function pomnoz(a,b) {
+            var wynik = a*b;
+            document.write("Wynik mnożenia wynosi "+wynik);
+        }
+
+        var x = 3;
+        var y = 5;
+        pomnoz(x,y);
+
+    </script>
+    <br>
+    <script>
+
+        // Funkcja dwuargumentowa, ale zwracająca wartość
+
+        function pomnozyc(a,b) {
+            return a*b;
+        }
+
+        var wynik1 = pomnozyc(3,5);
+        document.write("Wynik mnożenia wynosi "+wynik1+"<br>");
+
+        // LUB
+
+        document.write("Wynik mnożenia wynosi "+pomnozyc(3,5));
+
+    </script>
+</body>
+</html>
