@@ -1,11 +1,16 @@
+@font-face { font-family: SamsungSans; src: url('SamsungSans-Regular.ttf'); } 
+@font-face { font-family: SamsungSharpSans; src: url('samsungsharpsans.otf'); } 
+@font-face { font-family: Fortnite; src: url('fortnite.otf'); } 
+@font-face { font-family: Burbank; src: url('Burbank\ Big\ Condensed\ Black.otf'); } 
+
 body.javascript{
-    font-family:verdana;
+    font-family:SamsungSans;
     color:white;
     background: rgb(46,46,46);
     background: linear-gradient(0deg, rgb(31, 31, 31) 0%, rgb(70, 73, 83) 100%);
 }
 body.tworzenie_witryn{
-    font-family:verdana;
+    font-family:SamsungSans;
     color:white;
     background: rgb(46,46,46);
     background: linear-gradient(0deg, rgb(23, 34, 25) 0%, rgb(70, 83, 71) 100%);
