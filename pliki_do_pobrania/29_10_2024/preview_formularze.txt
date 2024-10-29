@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        *{
+            background-color: rgb(49, 48, 48);
+            color: bisque;
+        }
+    </style>
+    <form action="" method="post" name="form">
+        Podaj imię <input type="text" name="imie"><br>
+        Podaj wiek <input type="number" name="wiek"><br>
+        Płeć <input type="radio" name="plec" value="kobieta">kobieta
+        <input type="radio" name="plec" value="mężczyzna">mężczyzna<br>
+        Wybierz kolor: <select name="lista">
+                            <option>czerwone</option>
+                            <option>czarny</option>
+                            <option>bordowy</option>
+                        </select><br><br>
+        Napis coś więcej: <textarea name="wiecej"></textarea><br>
+        Data urodzin <input type="date" name="data"><br>
+        Kolor <input type="color" name="kolor">
+<br>
+        <input type="button" name="przycisk" value="Prześlij dane" onclick="wyswietl()">
+    </form>
+    <section id="imie"></section>
+    <section id="wiek"></section>
+    <section id="plec"></section>
+    <section id="lista"></section>
+    <section id="wiecej"></section>
+    <section id="data"></section>
+    <section id="kolor"></section>
+
+
+
+    <script>
+        function wyswietl(){
+            var a = form.imie.value;
+            var b = form.wiek.value;
+            var c = form.plec.value;
+            var d = form.lista.value;
+            var e = form.wiecej.value;
+            var f = form.data.value;
+            var g = form.kolor.value;
+            imie.style.color =g;
+
+            document.getElementById("imie").innerHTML = "Twoje imię to: " + a + "<br>";
+            document.getElementById("wiek").innerHTML = "Twój wiek to: " + b + "<br>";
+            document.getElementById("plec").innerHTML = "Twoja płeć to: " + c + "<br>";
+            document.getElementById("lista").innerHTML = "Wybrany kolor to: " + d + "<br>";
+            document.getElementById("wiecej").innerHTML = "Napisz coś więcej: " + e + "<br>";
+            document.getElementById("data").innerHTML = "Data urodzin to: " + f + "<br>";
+            document.getElementById("kolor").innerHTML = "Kolor to: " + g + "<br>";
+
+
+
+        }
+    </script>
+</body>
+</html>

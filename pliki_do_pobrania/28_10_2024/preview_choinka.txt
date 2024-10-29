@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        // Napisz funkcję o nazwie "choinka" która przyjmuje jeden argument wskazujący na wysokość choinki budowanych z gwiazdek.
+
+        function choinka(wysokosc) {
+             for (var i = 1;i<=wysokosc;i++) {
+                for (var j = 1;j<=i;j++) {
+                    document.write("⅓");
+                }
+                document.write("<br>");
+             }
+        }
+        document.write("<center>");
+        choinka(15);
+        document.write("Choinka kasiuli</center>");
+
+        // Stwórz funkcję o nazwie 'wybierz', która przyjmuje jeden argument o nazwie 'ile', i ta funkcja wypisuje pierwsze liczby podzielne przez 3, w takiej ilości jaka jest wartość argumentu funkcji
+
+        function wybierz(ile) {
+            var od = 10;
+            var licznik = 1;
+            do {
+                if (od%3==0) {
+                    document.write(od,", ");
+                    licznik++;
+                }
+                od++;
+            }
+            while (licznik<=ile);
+        }
+        wybierz(10)
+    </script>
+</body>
+</html>
