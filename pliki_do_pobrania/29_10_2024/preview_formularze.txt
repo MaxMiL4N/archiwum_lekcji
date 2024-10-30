@@ -15,9 +15,12 @@
     </style>
     <form action="" method="post" name="form">
         Podaj imię <input type="text" name="imie"><br>
+        Narodowość <input type="text" name="narodowosc" value="Polska" hidden><br>
         Podaj wiek <input type="number" name="wiek"><br>
-        Płeć <input type="radio" name="plec" value="kobieta">kobieta
-        <input type="radio" name="plec" value="mężczyzna">mężczyzna<br>
+        Płeć <label for="k">
+        <input type="radio" name="plec" value="kobieta" id="k">Kobieta</label>
+        <label for="m">
+        <input type="radio" name="plec" value="mezczyzna" id="m">Mężczyzna</label><br>
         Wybierz kolor: <select name="lista">
                             <option>czerwone</option>
                             <option>czarny</option>
@@ -26,16 +29,19 @@
         Napis coś więcej: <textarea name="wiecej"></textarea><br>
         Data urodzin <input type="date" name="data"><br>
         Kolor <input type="color" name="kolor">
+        <input type="checkbox" name="faktura"> Faktura
 <br>
         <input type="button" name="przycisk" value="Prześlij dane" onclick="wyswietl()">
     </form>
-    <section id="imie"></section>
+    <section>Imię to: <label id="imie"></label></section>
+    <section>Narodowość: <label id="narodowosc"></label></section>
     <section id="wiek"></section>
     <section id="plec"></section>
     <section id="lista"></section>
     <section id="wiecej"></section>
     <section id="data"></section>
     <section id="kolor"></section>
+    <section id="faktura"></section>
 
 
 
@@ -48,19 +54,77 @@
             var e = form.wiecej.value;
             var f = form.data.value;
             var g = form.kolor.value;
-            imie.style.color =g;
+            imie.style.color =g; // Zmiana koloru do id = "imie"
+            var fa = form.faktura.checked;
+            var h = form.narodowosc.value;
 
-            document.getElementById("imie").innerHTML = "Twoje imię to: " + a + "<br>";
+            document.getElementById("imie").innerHTML = a + "<br>";
+            document.getElementById("narodowosc").innerHTML = h + "<br>";
             document.getElementById("wiek").innerHTML = "Twój wiek to: " + b + "<br>";
             document.getElementById("plec").innerHTML = "Twoja płeć to: " + c + "<br>";
             document.getElementById("lista").innerHTML = "Wybrany kolor to: " + d + "<br>";
             document.getElementById("wiecej").innerHTML = "Napisz coś więcej: " + e + "<br>";
             document.getElementById("data").innerHTML = "Data urodzin to: " + f + "<br>";
             document.getElementById("kolor").innerHTML = "Kolor to: " + g + "<br>";
-
-
+            // document.getElementById("faktura").innerHTML = "Faktura: " + fa + "<br>";
+            if (fa == true) {
+                document.getElementById("faktura").innerHTML = "Faktura: " + "Tak" + "<br>";
+            }
+            else {
+                document.getElementById("faktura").innerHTML = "Faktura: " + "Nie" + "<br>";
+            }
 
         }
+
     </script>
+        
+
+    <form action="" method="post" name="form2">
+        Zainteresowania: <br>
+
+        <label for="film"> <input type="checkbox" value="film" name="film" id="film"> Film </label><br>
+        <label for="gry"> <input type="checkbox" value="gry" name="gry" id="gry"> Gry </label><br>
+        <label for="gotowanie"> <input type="checkbox" value="gotowanie" name="gotowanie" id="gotowanie"> Gotowanie </label><br>
+
+        <input type="button" value="Sprawdź" onclick="sprawdz()">
+    </form>
+    <section id="zainteresowania1"></section>
+    <section id="zainteresowania2"></section>
+    <section id="zainteresowania3"></section>
+    <script>
+        function sprawdz() {
+            var z1 = form2.film.checked;
+            var z2 = form2.gry.checked;
+            var z3 = form2.gotowanie.checked;
+
+            if (z1==true) {
+                z1 = "Tak"
+            }
+            else {
+                z1 = "Nie"
+            }
+
+
+            if (z2==true) {
+                z2 = "Tak"
+            }
+            else {
+                z2 = "Nie"
+            }
+
+
+            if (z3==true) {
+                z3 = "Tak"
+            }
+            else {
+                z3 = "Nie"
+            }
+
+            
+    document.getElementById("zainteresowania1").innerHTML = "Interesują mnie filmy? "+z1+"<br>";
+    document.getElementById("zainteresowania2").innerHTML = "Interesują mnie gry? "+z2+"<br>";
+    document.getElementById("zainteresowania3").innerHTML = "Interesuje mnie gotowanie? "+z3+"<br>";
+    }
+    </script>   
 </body>
 </html>
