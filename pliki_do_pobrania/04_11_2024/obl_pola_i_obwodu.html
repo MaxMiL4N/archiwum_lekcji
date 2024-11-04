@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    <form name="form">
+    Podaj bok A <input type="text" name="bokA"><br>
+    Podaj bok B <input type="text" name="bokB"><br>
+    <input type="button" name="przycisk" value="Oblicz obwód" onclick="obwod()">
+    <input type="button" name="przycisk" value="Oblicz pole" onclick="pole()">
+    </form>
+
+    <section id="wynik"></section>
+    
+    <script>
+        function obwod(){
+            var a = parseFloat(form.bokA.value);
+            var b = parseFloat(form.bokB.value);
+            var obwod = 2*a+2*b;
+            document.getElementById("wynik").innerHTML = "Obwód wynosi: " + obwod +"<br>";
+        }
+    </script>
+
+    <script>
+        function pole(){
+            var a = parseFloat(form.bokA.value);
+            var b = parseFloat(form.bokB.value);
+            var obwod = a*b
+            document.getElementById("wynik").innerHTML = "Pole wynosi: " + obwod +"<br>";
+        }
+    </script>
+
+</body>
+</html>
