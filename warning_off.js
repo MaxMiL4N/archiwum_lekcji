@@ -1,4 +1,4 @@
-function myFunction2() {
+function NiePokazujPonownie() {
     document.cookie = "dsa=true";
     console.log("Warning hidden successfully.");
     var x = document.getElementById("div_warning");

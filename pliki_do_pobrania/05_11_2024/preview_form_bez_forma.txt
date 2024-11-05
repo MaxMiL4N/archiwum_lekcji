@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularz bez forma</title>
+</head>
+<body>
+    <form action="" method="post" name="form">
+        <input type="text" name="imie">Imię<br>
+        <input type="button" value="Wyślij" onclick="wyswietl()">
+    </form>
+    <p id="imie"></p>
+    <script>
+
+        function wyswietl() {
+            var a = form.imie.value;
+            document.getElementById("imie").innerHTML = "Twoje imię to " + a + "<br>";
+        }
+
+        function wypisz() {
+            // var b = document.getElementById("nazwisko").value
+            var b = nazwisko.value;
+            // document.getElementById("nazw").innerHTML = "Twoje nazwisko to " + b + "<br>";
+            n.innerHTML = b;
+        }
+
+    </script>
+    <hr>
+    <!-- Bez jawnej definicji formularza -->
+    <input type="text" name="nazwisko" id="nazwisko"> Nazwisko <br>
+    <input type="button" value="Wyślij" onclick="wypisz()">
+    <p id="nazw"></p>
+    <h3 id="n"></h3>
+
+    <hr>
+
+    <table>
+        <tr>
+            <td id="komorka" value="4" onclick="z_tabelki()">4</tr>
+        </tr>
+    </table>
+    <h3 id="liczba"></h3>
+    <script>
+        function z_tabelki() {
+            var c = document.getElementById("komorka").value;
+            liczba.innerHTML = c;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="post" name="form">
+        Bok 1: <input type="number" name="bok1"><br>
+        Bok 2: <input type="number" name="bok2"><br>
+        <label for="p">
+            <input type="radio" name="sposob_obliczania" value="pole" id="p"> Pole
+        </label>
+        <label for="o">
+            <input type="radio" name="sposob_obliczania" value="obwod" id="o"> Obwód
+        </label>
+        <input type="button" onclick="oblicz()" value="Oblicz">
+        <section id="wynik"></section>
+    </form>
+    <script>
+        // Stwórz formularz, poproś użytkownika o podanie długości dwóch boków prostokąta oraz wyboru co chce obliczyć - czy pole czy obwód. ponizej przycisk 'Oblicz'
+
+
+        function oblicz() {
+
+            var bok1 = parseInt(form.bok1.value);
+            var bok2 = parseInt(form.bok2.value);
+            var opcja = form.sposob_obliczania.value;
+
+            if (opcja == "pole") {
+            var wynik = bok1*bok2;
+            document.getElementById("wynik").innerHTML = wynik + "<br>";
+            }
+
+            else if (opcja == "obwod") {
+            var wynik = (bok1+bok2)*2;
+            document.getElementById("wynik").innerHTML = wynik + "<br>";
+            }
+
+            else {
+                document.getElementById("wynik").innerHTML = "Nie wybrano działania. <br>";
+            }
+        }
+
+    </script>
+</body>
+</html>
