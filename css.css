@@ -19,6 +19,9 @@ h3{
     margin:10px;
     color:rgb(201, 201, 201);
 }
+li{
+    margin-bottom: 7px;
+}
 li:hover{
     font-weight: 800;
 }
@@ -27,6 +30,8 @@ a.file{
 }
 a.file:hover{
     color:rgb(180, 255, 255);
+    text-shadow: 0px 0px 3px rgb(180, 255, 255);
+    transition: 0.2s;
 }
 a.file:active{
     font-weight: 800;
@@ -126,6 +131,18 @@ button.warning_dsa:hover{
     text-decoration: none;
     font-weight: 100;
 }
+a.preview{
+    font-size:small;
+    background:none;
+    border:none;
+    margin-left:10px;
+    color:gray;
+    text-decoration: none;
+    font-weight: 100;
+    background-color:#404349;
+    border-radius: 10px;
+    padding: 3px;
+}
 .only_preview{
     font-size:small;
     background:none;
@@ -137,6 +154,8 @@ button.warning_dsa:hover{
 a.preview:hover {
     color:lightgray;
     font-weight: 100;
+    box-shadow: 0px 0px 5px 0px;
+    transition: 0.2s;
 }
 a.only_preview:hover {
     color:lightgray;
