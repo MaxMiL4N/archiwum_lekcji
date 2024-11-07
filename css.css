@@ -6,8 +6,13 @@
 body.javascript{
     font-family:SamsungSans;
     color:white;
-    background: rgb(46,46,46);
-    background: linear-gradient(0deg, rgb(31, 31, 31) 0%, rgb(70, 73, 83) 100%);
+    background-image: url("fU2C6T2yfT.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 1920px 100%;
+    background-color: rgb(46,46,46);
+    /*background: rgb(46,46,46);
+    background: linear-gradient(0deg, rgb(31, 31, 31) 0%, rgb(70, 73, 83) 100%);*/
 }
 body.tworzenie_witryn{
     font-family:SamsungSans;
@@ -40,6 +45,7 @@ a.file:active{
 }
 div {
     padding: 10px;
+    height: 100vh;
 }
 div.day {
     margin-top:5px;
@@ -47,7 +53,7 @@ div.day {
     width: auto;
     background-color: rgb(15, 15, 15, 0.3);
     border-style: solid;
-    border-color: #575b64;
+    border-color: rgb(87, 91, 100, 0.5);
     border-width: 3px;
     border-radius: 5px;
     padding: 10px;
@@ -64,7 +70,7 @@ p{
 }
 */
 div.day:hover {
-    background-color: #202124;
+    background-color: rgba(52, 54, 58, 0.2);
     transition: 0.3s;
     border-color: #989ba3;
     box-shadow: 0px 0px 10px 0px;
@@ -93,22 +99,27 @@ h1{
     text-shadow: 1px 1px 4px rgb(70, 70, 70);
     font-size:small;
     font-weight: 100;
+    outline-color: black;
 }
 .div_warning{
     border-radius: 15px;
-    background-color: rgba(255, 0, 0, 0.2);
+    background-color: rgba(255, 0, 0, 0.3);
     border-style: solid;
     border-color: #ff2323;
     border-width: 2px;
     clear: both;
+    height: fit-content;
 }
+/*
 .div_warning:hover{
     background-color: rgba(255, 0, 0, 0.2);
 }
+*/
 button.warning_ok{
-    background:#d4394d;
+    background: rgb(212, 57, 77, 0.7);
     border:none;
     margin-left:10px;
+    border-radius: 5px;
 }
 button.warning_ok:hover{
     background:#e6576a;
@@ -139,7 +150,7 @@ a.preview{
     color:gray;
     text-decoration: none;
     font-weight: 100;
-    background-color:#404349;
+    background-color:rgb(64, 67, 73, 0.4);
     border-radius: 10px;
     padding: 3px;
 }
@@ -161,15 +172,26 @@ a.only_preview:hover {
     color:lightgray;
     font-weight: 100;
 }
+div.header_main{
+    text-align: center;
+    height:auto;
+    padding: 0px;
+    margin: 0px;
+    /*background-color: rgb(64, 67, 73, 0.3);*/
+}
 div.header1{
+    background-color: rgb(70, 70, 70, 0.4);
     text-align:left;
     float:left;
-    width:45%;
+    width:50%;
+    height: fit-content;
 }
 div.header2{
+    background-color: rgb(70, 70, 70, 0.4);
     text-align:right;
     float:right;
-    width:50%;
+    width:45%;
+    height: fit-content;
     
 }
 div.stopka {
@@ -195,6 +217,9 @@ button.othersite:hover{
 }
 hr{
     clear:both;
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
 }
 a.invisible{
     color:rgb(255, 255, 255);
