@@ -59,7 +59,10 @@ p{
 }
 */
 div.day:hover {
-    background-color: #1a1b1d;
+    background-color: #202124;
+    transition: 0.3s;
+    border-color: #989ba3;
+    box-shadow: 0px 0px 10px 0px;
 }
 .ZIP{
     color:rgb(0, 255, 170);
