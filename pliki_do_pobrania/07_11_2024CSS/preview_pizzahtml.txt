@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styl6.css">
+</head>
+<body>
+    <header><h2>Najlepsza pizza w mieście<img src="pizza.png" height="100px"></h2></header>
+    <div id="panel_lewy">
+        Zamów pizzę z dowozem
+    </div>
+    <div id="panel_srodkowy">
+        <h2>Pizza Margheritta</h2>ul. Botaniczna 4, Zielona Góra
+    </div>
+    <div id="panel_prawy">
+        <h2>Oferta</h2>
+        1. Pizza<br>
+        2. Lasagna<br>
+        3. Sałatki<br><br>
+        <a class="prawy">Pobierz costam</a>
+    </div>
+    <div id="panel_dolny">
+        <h2>Oblicz koszt dostawy</h2>
+        <input type="checkbox">Jestem z Zielonej Góry<br><br>
+        albo<br><br>
+        Podaj liczbę kilometrów od Zielonej Góry <input type="number"><br>
+        <input type="button" value="Oblicz">
+    </div>
+    <footer>bbbbbbbbb</footer>
+</body>
+</html>

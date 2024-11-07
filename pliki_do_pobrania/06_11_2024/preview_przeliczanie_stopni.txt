@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Przeliczanie stopni</title>
+</head>
+<body>
+
+    <style>
+        *{
+            font-family: Verdana;
+        }
+        body{
+            background-color: #7c7c7c;
+            color: white;
+        }
+        #input_celsjusz{
+            background-color: #3c3c3c;
+            color:white;
+            padding: 5px;
+            border-radius: 8px;
+        }
+        #kelwin_label{
+            padding: 5px;
+            border-radius: 8px;
+            background-color: #5c5c5c;
+        }
+        #kelwin_label:hover{
+            background-color: #8c8c8c;
+        }
+        #fahrenheit_label{
+            padding: 5px;
+            border-radius: 8px;
+            background-color: #5c5c5c;
+        }
+        #fahrenheit_label:hover{
+            background-color: #8c8c8c;
+        }
+        #zamien_button{
+            color:white;
+            padding:3px;
+            border-radius: 8px;
+            background-color: #979797;
+            border-color: #8c8c8c;
+        }
+        #zamien_button:hover{
+            background-color: white;
+            color:black;
+
+        }
+        #wynik{
+            text-align:center;
+            background-color: #3c3c3c;
+            border-radius: 8px;
+            text-shadow: 1px 1px 10px rgb(192, 192, 192);
+            padding-top: 3px;
+            padding-bottom: 3px;
+        }
+
+    </style>
+
+    <form action="" method="post" name="form">
+        <input id="input_celsjusz" type="text" name="celsjusz" placeholder="Podaj stopnie celsjusza">°C<br>
+        <p>Chcę przeliczyć na...</p>
+        <label id="fahrenheit_label"><input type="radio" name="wybor_stopni" value="fahrenheit_opcja">Fahrenheit</label>
+        <label id="kelwin_label"><input type="radio" name="wybor_stopni" value="kelwin_opcja">Kelwin</label><br><br>
+        <input id="zamien_button" type="button" onclick="zamien()" value="Zamień"><br><br>
+        <h2 id="wynik"></h2>
+
+    </form>
+    <script>
+        // Użytkownik podaje stopnie celcjusza, utwórz skrypt który użytkownik będzie mógł zamienić podanie stopni celcjusza na inne.
+        function zamien() {
+
+            var stopnie_celsjusza = parseFloat(form.celsjusz.value);
+            var wybor_stopni = form.wybor_stopni.value;
+
+            if (isNaN(stopnie_celsjusza)==true) {
+                wynik.innerHTML = "Podano złą wartość."
+            }
+            else{ 
+
+            if (wybor_stopni == "fahrenheit_opcja") {
+                var stopnie_fahrenheit = ((stopnie_celsjusza*9)/5)+32;
+                wynik.innerHTML = stopnie_celsjusza + "°C w przeliczeniu na stopnie Fahrenheita to "+stopnie_fahrenheit+"°F";
+            }
+            else if (wybor_stopni == "kelwin_opcja") {
+                var stopnie_kelwin = stopnie_celsjusza+273.15;
+                wynik.innerHTML = stopnie_celsjusza + "°C w przeliczeniu na stopnie Kelwina to "+stopnie_kelwin+"K";
+            }
+            }
+    }
+    </script>
+</body>
+</html>

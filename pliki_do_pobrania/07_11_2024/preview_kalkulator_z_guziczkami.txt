@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+        *{
+            font-family: verdana;
+        }
+        body{
+            background-color: rgb(63, 68, 68);
+        }
+        #wynik{
+            border:0px black solid;
+            margin-left: 3px;
+            background-color: silver;
+        }
+        td{
+            border:1px black solid;
+            border-radius: 3px;
+            background-color:rgb(201, 255, 255);
+            padding:5px;
+            text-align: center;
+        }
+        td:hover{
+            background-color: aqua;
+            box-shadow: 1px 1px 5px;
+        }
+        td:active{
+            border: 1px orange solid;
+            box-shadow: 1px 1px 5px orange;
+        }
+        input{
+            background-color: silver;
+            border:5px gray;
+            margin-bottom: 5px;
+            width:80px;
+        }
+        #znak{
+            color:white;
+        }
+        #znak_rownasie{
+            color:white;
+        }
+    </style>
+
+    <form action="" method="post" name="form">
+
+        <label><input type="text" name="liczba_1"></label>
+        <label id="znak"></label>
+        <label><input type="text" name="liczba_2"></label>
+        <label id="znak_rownasie">=</label><label id="wynik"></label>
+
+        <table>
+            <tr>
+                <td onClick="znak_dodawanie()">+</td>
+                <td onClick="znak_odejmowanie()">-</td>
+            </tr>
+            <tr>
+                <td onClick="znak_mnozenie()">*</td>
+                <td onClick="znak_dzielenie()">/</td>
+            </tr>
+            <tr>
+                <td colspan="2" onClick="obliczanie()">
+                    <b>Oblicz</b>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+
+        var wybrany_znak = "null";
+
+        function znak_dodawanie() {
+        znak.innerHTML="+";
+        wybrany_znak = "+";
+        wynik.innerHTML="";
+        return "+";
+        }
+        function znak_odejmowanie() {
+        znak.innerHTML="-";
+        wybrany_znak = "-";
+        wynik.innerHTML="";
+        return "-";
+        }
+        function znak_mnozenie() {
+        znak.innerHTML="*";
+        wybrany_znak = "*";
+        wynik.innerHTML="";
+        return "*";
+        }
+        function znak_dzielenie() {
+        znak.innerHTML="/";
+        wybrany_znak = "/";
+        wynik.innerHTML="";
+        return "/";
+        }
+        function obliczanie() {
+            var liczba1 = parseFloat(form.liczba_1.value);
+            var liczba2 = parseFloat(form.liczba_2.value);
+        if (isNaN(liczba1)==true || isNaN(liczba2)==true) {
+            wynik.innerHTML="Podano złe liczby.";
+        }
+        else if (wybrany_znak=="+") {
+            var w = (liczba1+liczba2).toFixed(2);
+            wynik.innerHTML=w;
+        }
+        else if (wybrany_znak=="-") {
+            var w = (liczba1-liczba2).toFixed(2);
+            wynik.innerHTML=w;
+        }
+        else if (wybrany_znak=="*") {
+            var w = (liczba1*liczba2).toFixed(2);
+            wynik.innerHTML=w;
+        }
+        else if (wybrany_znak=="/") {
+            var w = (liczba1/liczba2).toFixed(2);
+            wynik.innerHTML=w;
+        }
+        else {
+            wynik.innerHTML="Nie wybrano znaku.";
+        }
+    }
+    </script>
+    <br>
+    :)
+</body>
+</html>

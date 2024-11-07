@@ -1,0 +1,41 @@
+header {
+    background-color: #4E885C;
+    color:orange;
+    text-align: center;
+    height: 110px;
+}
+#panel_lewy {
+    background-color: #72A37D;
+    width: 30%;
+    height: 300px;
+    float:left;
+}
+#panel_srodkowy {
+    background-image: url(pizza.png);
+    background-color: #A2C3A9;
+    width: 40%;
+    height: 300px;
+    float:left;
+}
+#panel_prawy {
+    text-align: center;
+    background-color: #72A37D;
+    width: 30%;
+    height: 300px;
+    float:left;
+}
+#panel_dolny {
+    background-color: #A2C3A9;
+    text-align: center;
+    height: 250px;
+    clear: left;
+}
+footer {
+    background-color: #4E885C;
+    color: orange;
+}
+a.prawy{
+    background-color: orange;
+    color: green;
+    padding: 15px;
+}
