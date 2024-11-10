@@ -240,5 +240,8 @@ a.invisible{
 }
 .cat_image:active{
     color:rgb(255, 0, 0);
-    box-shadow: 0px 0px 5px 0px;
+    box-shadow: 0px 0px 50px 0px;
+    height: 100px;
+    width: 140px;
+    transition: 0.1px;
 }
