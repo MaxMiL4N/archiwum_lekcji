@@ -1,3 +1,9 @@
+if (isNaN(getCookie("klikniecia_kici"))==true) {
+    var counter_kicia = 0;
+}
+
+
+
 var counter_kicia = parseInt(getCookie("klikniecia_kici"));
 kici_counter.innerHTML="<img src='cat_cursor.png' height='25px'>"+counter_kicia;
 
