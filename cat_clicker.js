@@ -1,3 +1,5 @@
+var counter_kicia = parseInt(getCookie("klikniecia_kici"));
+document.cookie="klikniecia_kici="+counter_kicia;
 if (isNaN(getCookie("klikniecia_kici"))==true) {
     var counter_kicia = 0;
     document.cookie="klikniecia_kici="+counter_kicia;
