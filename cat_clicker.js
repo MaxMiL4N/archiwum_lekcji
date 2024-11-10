@@ -1,4 +1,4 @@
-var counter_kicia = getCookie("klikniecia_kici");
+var counter_kicia = parseInt(getCookie("klikniecia_kici"));
 kici_counter.innerHTML="<img src='cat_cursor.png' height='25px'>"+counter_kicia;
 
 
