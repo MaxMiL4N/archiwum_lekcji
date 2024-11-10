@@ -4,15 +4,11 @@ if (isNaN(getCookie("klikniecia_kici"))==true) {
     var counter_kicia = 0;
     document.cookie="klikniecia_kici="+counter_kicia;
 }
-
-
-
 var counter_kicia = parseInt(getCookie("klikniecia_kici"));
 kici_counter.innerHTML="<img src='cat_cursor.png' height='25px'>"+counter_kicia;
 
 console.log("counter_kicia="+counter_kicia);
 console.log("cookie klikniecia_kici="+getCookie("klikniecia_kici"));
-
 
 function klikniecie_kici() {
 
