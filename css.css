@@ -236,6 +236,7 @@ a.invisible{
     color:lightgray;
     box-shadow: 0px 0px 5px 0px;
     transition: 0.2s;
+    cursor:grab;
     /*cursor: url('cat_cursor.png'), auto;*/
 }
 .cat_image:active{
@@ -244,4 +245,5 @@ a.invisible{
     height: 100px;
     width: 140px;
     transition: 0.1px;
+    cursor:grabbing;
 }
