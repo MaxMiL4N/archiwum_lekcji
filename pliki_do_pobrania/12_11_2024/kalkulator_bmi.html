@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="div_form">
+        
+        <form action="" method="post" name="form">
+            <fieldset>
+            <legend>Kalkulator BMI</legend>
+            <!--  <label><input type=radio value="mezczyzna" name="plec">M</label>
+            <label><input type=radio value="kobieta" name="plec">K</label><br>  -->
+            <label>
+                Waga: <input class="input_text" type="text" name="input_waga"> kg <br>
+                Wzrost: <input class="input_text" type="text" name="input_wzrost"> cm
+            </label><br>
+            <input type="button" value="Oblicz" class="guzik_oblicz" name="guzik_oblicz" onclick="oblicz()"><br><br>
+            <label id="label_wynik"></label>
+            </fieldset>
+        </form>
+        </div>
+    <script>
+
+        function oblicz(){
+            var waga = parseFloat(form.input_waga.value);
+            var wzrost = parseFloat((form.input_wzrost.value)/100)
+            var bmi = (waga/(wzrost*wzrost));
+            bmi = bmi.toFixed(2);
+            switch(true){
+                case(bmi<16):
+                label_wynik.innerHTML=bmi+'<p class="p_wyglodzenie">Wygłodzenie</p>'
+                break;
+                case(bmi>=16 && bmi<17):
+                label_wynik.innerHTML=bmi+'<p class="p_wychudzenie">Wychudzenie</p>'
+                break;
+                case(bmi>=17 && bmi<18.5):
+                label_wynik.innerHTML=bmi+'<p class="p_niedowaga">Niedowaga</p>'
+                break;
+                case(bmi>=18.5 && bmi<25):
+                label_wynik.innerHTML=bmi+'<p class="p_waga_prawidlowa">Waga prawidłowa</p>'
+                break;
+                case(bmi>=25 && bmi<30):
+                label_wynik.innerHTML=bmi+'<p class="p_nadwaga">Nadwaga</p>'
+                break;
+                case(bmi>=30 && bmi<35):
+                label_wynik.innerHTML=bmi+'<p class="p_otylosc1">Otyłość I stopnia</p>'
+                break;
+                case(bmi>=35 && bmi<40):
+                label_wynik.innerHTML=bmi+'<p class="p_otylosc2">Otyłość II stopnia</p>'
+                break;
+                case(bmi>=40):
+                label_wynik.innerHTML=bmi+'<p class="p_otylosc3">Otyłość III stopnia</p>'
+                break;
+                default:
+                label_wynik.innerHTML='<p class="p_error">Coś poszło nie tak.</p>'
+            }
+            console.log("bmi="+bmi);
+            console.log("waga="+waga);
+            console.log("wzrost="+wzrost);
+        }
+
+    </script>
+    <style>
+        *{
+            font-family: Arial;
+        }
+        body{
+            height:100vh;
+            background-image: linear-gradient(0deg, rgba(103,100,145,1) 0%, rgba(113,193,209,1) 100%);
+            padding:0px;
+        }
+        .div_form{
+            background: white;
+            height:80%;
+            width: 500px;
+            margin-left:100px;
+            padding: 20px;
+            padding-top:12vh;
+            border-radius:10px;
+            box-shadow: 5px 5px 20px 0px;
+        }
+        .guzik_oblicz{
+            margin-top:10px;
+            border-radius:0px;
+            padding-left:15px;
+            padding-right:15px;
+            padding-top:5px;
+            padding-bottom:5px;
+            border:0px;
+            background-color: rgba(103,100,145,1);
+            color:white;
+            font-size: large;
+        }
+        .guzik_oblicz:hover{
+            background-color: rgba(113,193,209,1);
+        }
+        .guzik_oblicz:active{
+            background-color: black;
+        }
+        .input_text{
+            margin-top:5px;
+            width:50px;
+        }
+        fieldset{
+            border-color:lightgray;
+        }
+        legend{
+            font-size:xx-large;
+            font-weight: 800;
+        }
+    </style>
+</body>
+</html>
