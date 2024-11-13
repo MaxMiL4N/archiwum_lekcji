@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="" method="post" name="form">
+
+        Kształt: <input type="number" name="input_ksztalt"><br>
+        Podaj RGB: 
+        R<input type="number" name="input_r" min="0" max="255"> 
+        G<input type="number" name="input_g" min="0" max="255"> 
+        B<input type="number" name="input_b" min="0" max="255"><br>
+
+        <input type="button" value="Zamówienie" onclick="function_twoje_zamowienie()">
+
+        <p>Twoje zamówienie:</p>
+        <p id="twoje_zamowienie"></p>
+
+        <input type="button" value="Kolor" id="button_kolor">
+
+    </form>
+    <script>
+        
+        function function_twoje_zamowienie() {
+
+            
+            var numer_ksztaltu = form.input_ksztalt.value;
+            var color_r = form.input_r.value;
+            var color_g = form.input_g.value;
+            var color_b = form.input_b.value;
+
+            button_kolor.style.backgroundColor = "rgb("+color_r+","+color_g+","+color_b+")";
+
+            console.log("rgb("+color_r+","+color_g+","+color_b+")");
+
+            if (numer_ksztaltu == 1) {
+                var ksztalt = "cytryna";
+                twoje_zamowienie.innerHTML=ksztalt;
+            }
+            else if (numer_ksztaltu == 2) {
+                var ksztalt = "liść";
+                twoje_zamowienie.innerHTML=ksztalt;
+            }
+            else if (numer_ksztaltu == 3) {
+                var ksztalt = "banan";
+                twoje_zamowienie.innerHTML=ksztalt;
+            }
+            else {
+                twoje_zamowienie.innerHTML="Błędny numer kształtu.";
+            }
+        }
+    </script>
+</body>
+</html>
