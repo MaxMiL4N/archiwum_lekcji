@@ -3,7 +3,7 @@
 @font-face { font-family: Fortnite; src: url('fortnite.otf'); } 
 @font-face { font-family: Burbank; src: url('Burbank\ Big\ Condensed\ Black.otf'); } 
 
-body.javascript{
+#javascript{
     font-family:SamsungSans;
     color:white;
     background-image: url("fU2C6T2yfT.png");
@@ -19,6 +19,26 @@ body.tworzenie_witryn{
     color:white;
     background: rgb(46,46,46);
     background: linear-gradient(0deg, rgb(23, 34, 25) 0%, rgb(70, 83, 71) 100%);
+}
+.checkbox_center{
+    display: block;
+    font-size:small;
+    background:none;
+    border:none;
+    margin-left:10px;
+    color:rgb(54, 158, 255);
+    text-decoration: none;
+    font-weight: 100;
+    background-color:rgba(37, 26, 189, 0.4);
+    border-radius: 10px;
+    padding: 5px;
+    width: fit-content;
+}
+.checkbox_center:hover{
+    color:rgb(255, 255, 255);
+    font-weight: 100;
+    box-shadow: 0px 0px 5px 0px;
+    transition: 0.2s;
 }
 h3{
     margin:10px;
