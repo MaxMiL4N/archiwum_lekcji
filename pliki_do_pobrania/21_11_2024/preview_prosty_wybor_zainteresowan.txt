@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+        input.button{
+            /*background-color: rgb(37, 101, 156);*/
+            border:1px solid gray;
+            border-radius: 3px;
+            background-image: url(https://media1.tenor.com/m/b6ymPWEJEAIAAAAd/cat-dance.gif);
+            background-size:cover;
+
+        }
+        input.button:hover{
+            background-color: rgb(56, 131, 196);
+            box-shadow: 0px 0px 10px 0px lightgray;
+            border-color: lightgray;
+        }
+        input.button:active{
+            background-color: rgb(26, 63, 96);
+            box-shadow: 0px 0px 10px 0px goldenrod;
+            border-color: goldenrod;
+        }
+    </style>
+
+   <form action="" method="post" name="form">
+    <label><input type="checkbox" name="z1[]" id="z1" value="<img src='https://media1.tenor.com/m/4uld7cjw_N0AAAAd/meow-yes.gif' style='height:auto'>">🎮</label><br>
+    <label><input type="checkbox" name="z2[]" id="z2" value="🎞️">🎞️</label><br>
+    <input class="button" type="button" value="📤" onclick="wypisz()">
+    <p id="wypisz_checkbox"></p>
+   </form>
+
+   <script>
+    function wypisz() {
+        var wybor = z1.checked;
+        var wybor1 = z2.checked;
+        var zainteresowanie1 = z1.value;
+        var zainteresowanie2 = z2.value;
+        console.log(wybor);
+        if(wybor==true && wybor1==false){
+            wypisz_checkbox.innerHTML=zainteresowanie1;
+        }
+        else if(wybor==false && wybor1==true){
+            wypisz_checkbox.innerHTML=zainteresowanie2;
+        }
+        else if(wybor==true && wybor1==true){
+            wypisz_checkbox.innerHTML=zainteresowanie1+" "+zainteresowanie2;
+        }
+        else {
+            wypisz_checkbox.innerHTML="Nie wybrano.<br> (┬┬﹏┬┬)";
+        }
+        }
+        
+
+        // Inaczej
+        //document.write("<br>Drugi sposób<br>");
+        //var wybierz = "";
+        //for (var i=0;i<form.length;i++) {
+        //    if (form.z1[].)
+        //}
+        //}
+
+        // Dwie długości prostokąta oraz w polu checkbox zaznacza, co chce obliczyć.
+        // Pierwsza opcja to pole, druga obwód. Obliczenie zrealizowane jest po wciśnięciu przycisku oblicz. Pod spodem wyświetla się wynik.
+   </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        p{
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        // Stwórz pustą tablice, wypełnij ją liczbami nieparzystymi (5 liczb) i wypisz jej zawartość.
+        var tab_nieparzyste = new Array();
+        var komorka_tab = 0;
+        var maximum = 0;
+        
+        for (var i=0;komorka_tab<5;i++) {
+            var losowa = Math.floor(Math.random()*10);
+            if (losowa%2!=0) {
+                tab_nieparzyste[komorka_tab] = losowa;
+                document.write(tab_nieparzyste[komorka_tab]);
+                komorka_tab++;      
+            }
+        }
+        document.write("<br>");
+        var dlugosc = tab_nieparzyste.length;
+
+        // Długość tablicy
+        document.write("Długość tablicy to: "+dlugosc+"<br>");
+
+        // Maksymalny element
+        for (var i=0;i<dlugosc;i++) {
+            if (tab_nieparzyste[i] > maximum) {
+                maximum = tab_nieparzyste[i];
+            }
+        }
+        document.write("Maksymalny element tablicy to: "+maximum+"<br>");
+
+        // Inna metoda wyposywania elementów tablicy - join()
+        document.write("<p>Wypisanie używając join(): </p>"+tab_nieparzyste.join("<img src='https://maxmil4n.github.io/archiwum_lekcji/cat-gif.gif' style='height:20px'>"));
+        document.write("<br>");
+        // join(X) - w miejsce X wpisujemy dowolny znak
+
+        // Odwrócenie tablicy
+        tab_nieparzyste.reverse()
+        document.write("<p>Rewers: </p>"+tab_nieparzyste.join("<img src='https://maxmil4n.github.io/archiwum_lekcji/cat-gif.gif' style='height:20px'>"));
+        document.write("<br>");
+
+        // Sortowanie tablicy rosnąco
+        tab_nieparzyste.sort();
+        document.write("<p>Sortowanie (Rosnąco): </p>"+tab_nieparzyste.join("<img src='https://maxmil4n.github.io/archiwum_lekcji/cat-gif.gif' style='height:20px'>"));
+        document.write("<br>");
+
+        // Sortowanie tablicy malejąco
+        tab_nieparzyste.reverse();
+        document.write("<p>Sortowanie (Malejąco): </p>"+tab_nieparzyste.join("<img src='https://maxmil4n.github.io/archiwum_lekcji/cat-gif.gif' style='height:20px'>"));
+        document.write("<br><br><br>");
+
+        // Operacje na tablicy; dodawanie i usuwanie elementów tablicy
+        var tab = [1,2,3];
+        document.write("Nowa tablica: "+tab.join()+"<br>");
+
+        tab.push(4,5); // Dodaje elementy 4,5 na koniec tablicy
+        document.write("Po dodaniu (4,5) na koniec: "+tab.join()+"<br>");
+
+        tab.unshift(0); // Dodaje element 0 na początek tablicy
+        document.write("Po dodaniu (0) na początek: "+tab.join()+"<br>");
+
+        tab.pop(); // Usuwa ostatni element
+        document.write("Po usunięciu ost. elementu: "+tab.join()+"<br>");
+
+        tab.splice(2,1) // Usuwanie danego elementów
+        // KONSTRUKCJA: NAZWA.splice(ELEMENT,ILOŚĆ_ELEMENTÓW);
+        document.write("Po usunięciu [2] elementu: "+tab.join()+"<br>");
+
+        tab.splice(2,0,2); // Dodaje jeden element do tab w miejscu [2]
+        document.write("Po dodaniu elementu: "+tab.join()+"<br>");
+    </script>
+</body>
+</html>

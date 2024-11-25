@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablice</title>
+</head>
+<body>
+    
+    <script>
+
+        // Podstawy
+        var tab = ['Jaś','Małgosia','100','Jan','Kazio'];
+        document.write(tab[0]+"<br>");
+        document.write(tab[4]+"<br>");
+
+        var dlugosc_tab = tab.length;
+        document.write(dlugosc_tab+"<br>");
+        // document.write(tab.length);
+
+        // Wypisywanie całej zawartości tablicy automatycznie
+        for (var i=0;i<dlugosc_tab;i++) {
+            document.write(tab[i]+", ");
+        }
+        document.write("<br>");
+
+        // Deklaracja pustej tablicy
+        var tab_pusta = new Array();
+
+        // Wypełnianie tablicy dziesięcioma liczbami (dowolnymi) od 0 do 9
+        for(var j=0;j<10;j++) {
+            var a = Math.floor(Math.random()*10);
+            tab_pusta[j] = a;
+        }
+
+        // Po wypełnieniu tab_pusta, należy ją wyświetlić
+        for (var i=0;i<tab_pusta.length;i++) {
+            document.write(tab_pusta[i]+", ");
+        }
+        document.write("<br>");
+
+        // Wpakuj do tablicy 5 liczb parzystych
+        var tab_parzyste = new Array();
+        var i=1;
+        for (var licznik=0;licznik<5;i++) {
+            if (i%2==0) {
+                tab_parzyste[licznik] = i;
+                licznik++;
+            }
+        }
+        for (var p=0;p<tab_parzyste.length;p++) {
+            document.write(tab_parzyste[p]+", ");
+        }
+        document.write("<br>");
+
+        // Wpakuj do tablicy 5 losowych liczb parzystych
+        var tab_parzyste_losowe = new Array();
+        var i=Math.floor(Math.random()*10);
+        var licznik = 0;
+        for (var o=0;licznik<10;o++)  {
+        
+            i = Math.floor(Math.random()*10);
+        if (i%2==0) {
+    
+            tab_parzyste_losowe[licznik] = i;
+
+            licznik++;
+        }
+        }
+
+        for (var p=0;p<tab_parzyste_losowe.length;p++) {
+            document.write(tab_parzyste_losowe[p]+", ");
+        }
+        document.write("<br>");
+
+    </script>
+
+</body>
+</html>

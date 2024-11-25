@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="post" name="form">
+        <fieldset>
+            <legend>Kwadrat</legend>
+            Bok kwadratu<input type="text" name="input_bok">cm<br>
+            <input type="checkbox" name="checkbox_pole">Pole<br>
+            <input type="checkbox" name="checkbox_obwod">Obwód<br>
+            <input type="button" value="Oblicz" onClick="oblicz()">
+            <section id="section_wynik"></section>
+        </fieldset>
+    </form>
+    <script>
+        // Stwórz formularz pobierający długość boku kwadratu. Poniżej dwa checkboxy - pierwszy pole, drugi obwód, oraz przycisk oblicz. Niżej formularza ma się wyświetlić wynik.
+        function oblicz() {
+            var bok = parseFloat(form.input_bok.value);
+            if (isNaN(bok)==true) {
+                section_wynik.innerHTML="Niepoprawne dane.";
+            }
+            else {
+            if (form.checkbox_pole.checked == true && form.checkbox_obwod.checked == true) {
+                var pole = bok*bok;
+                var obwod = bok*4;
+                section_wynik.innerHTML="Pole="+pole+"cm<sup>2</sup><br>"+"Obwód="+obwod+"cm";
+            }
+            else if (form.checkbox_pole.checked == true && form.checkbox_obwod.checked == false) {
+                var pole = bok*bok;
+                section_wynik.innerHTML="Pole="+pole+"cm<sup>2</sup>";
+            }
+            else if (form.checkbox_pole.checked == false && form.checkbox_obwod.checked == true) {
+                var obwod = bok*4;
+                section_wynik.innerHTML="Obwód="+obwod+"cm";
+            }
+            else {
+                section_wynik.innerHTML="Nie wybrano metody obliczania.";
+            }
+            }
+        }
+    </script>
+</body>
+</html>

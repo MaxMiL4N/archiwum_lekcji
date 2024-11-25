@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="form">
+        Zainteresowania:<br>
+        <label><input type="checkbox" name="z1" value="gry">Gry<br></label>
+        <label><input type="checkbox" name="z1" value="muzyka">Muzyka<br></label>
+        <label><input type="checkbox" name="z1" value="film">Filmy<br></label>
+        <label><input type="checkbox" name="z1" value="fotografia">Fotografia<br></label>
+        <input type="button" value="Wyślij" onclick="wypisz()">
+        <p id="wypisz_checkbox"></p>
+    </form>
+    <script>
+        function wypisz() {
+            var f = form.z1;
+            var v = '';
+            for (var i=0;i<f.length;i++) {
+                if(f[i].checked){
+                    v+=f[i].value+" ";
+                    wypisz_checkbox.innerHTML = v;
+                }
+                if (v=='') {
+                    wypisz_checkbox.innerHTML = "Nie dokonano wyboru.";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

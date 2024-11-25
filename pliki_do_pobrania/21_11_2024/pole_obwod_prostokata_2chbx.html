@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="post" name="form">
+        Podaj długości boków (w cm)<br>
+        <label><input type="text" name="input_bok1">
+        <input type="text" name="input_bok2"></label><br>
+        <label><input type="checkbox" name="checkbox_pole">Pole</label><br>
+        <label><input type="checkbox" name="checkbox_obwod">Obwód</label><br>
+        <input type="button" value="Oblicz" onclick="oblicz()">
+        <p id="p_wynik"></p>
+        <img src="https://media1.tenor.com/m/_ORGJLIoHVQAAAAd/dancing-cat.gif" style="height:50px">
+    </form>
+    <style>
+        img:hover{
+            scale:1000%;
+            transition: 2s;
+            display: block;
+            margin-left: 50%;
+            margin-right:50%;
+            margin-top:25%;
+            box-shadow: black 0px 0px 100px 100px;
+            border: 1000px rgb(255, 0, 0, 0);
+            border-radius:5px;
+        }
+    </style>
+    <script>
+        // Dwie długości prostokąta oraz w polu checkbox zaznacza, co chce obliczyć.
+        // Pierwsza opcja to pole, druga obwód. Obliczenie zrealizowane jest po wciśnięciu przycisku oblicz. Pod spodem wyświetla się wynik.
+        function oblicz() {
+
+            var bok1 = parseFloat(form.input_bok1.value);
+            var bok2 = parseFloat(form.input_bok2.value);
+            var wybor_pole = form.checkbox_pole.checked;
+            var wybor_obwod = form.checkbox_obwod.checked;
+
+            if (isNaN(bok1)==true || isNaN(bok2)==true) {
+                p_wynik.innerHTML="Podano błędne dane (┬┬﹏┬┬)";
+            }
+            else {
+                var pole = bok1*bok2;
+                var obwod = (bok1+bok2)*2;
+
+                if (wybor_pole == true && wybor_obwod == true) {
+                    p_wynik.innerHTML="Pole = "+pole+"cm<sup>2</sup><br>Obwód = "+obwod+"cm";
+                }
+                else if (wybor_pole == true && wybor_obwod == false) {
+                    p_wynik.innerHTML="Pole = "+pole+"cm<sup>2</sup>";
+                }
+                else if (wybor_pole == false && wybor_obwod == true) {
+                    p_wynik.innerHTML="Obwód = "+obwod+"cm";
+                }
+                else {
+                    p_wynik.innerHTML="Nie wybrano metody obliczania (¬_¬ )";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
