@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie 2</title>
+</head>
+<body>
+    <form name="rejestracja">
+        Imię <input type="text" name="imie"><br>
+        Wiek <input type="number" name="wiek"><br><br>
+        Rodzaj wizyty: <label><input type="radio" name="rodzaj_wizyty" value="osobista">Osobista</label> <label><input type="radio" name="rodzaj_wizyty" value="teleporada">Teleporada</label><br><br>
+        Telefon <input type="tel" name="nr_tel"><br><br>
+        Objawy:<br>
+        <label><input type="checkbox" name="objawy" value="Kaszel">Kaszel<br></label>
+        <label><input type="checkbox" name="objawy" value="Ból gardła">Ból gardła<br></label>
+        <label><input type="checkbox" name="objawy" value="Ból głowy">Ból głowy<br></label>
+        <label><input type="checkbox" name="objawy" value="Nudności">Nudności<br></label>
+        <label><input type="checkbox" name="objawy" value="Ból zęba">Ból zęba<br></label>
+        <label><input type="checkbox" name="objawy" value="Ból oczu">Ból oczu<br><br></label>
+        Informacje dodatkowe:<br>
+        <textarea id="textarea_dodinfo"></textarea><br><br>
+        <input type="reset" name="rejestracja"><input type="button" value="Podsumowanie" onclick="podsumowanie()"><br>
+        <p id="p_podsumowanie"></p>
+        <section id="p_podsumowanie_objawy_header"></section>
+        <section id="p_podsumowanie_objawy"></section>
+        <section id="dodatkowe_info"></section>
+    </form>
+    <script>
+        function podsumowanie() {
+
+            p_podsumowanie.innerHTML = "<h3>Podsumowanie</h3> Imię: "+rejestracja.imie.value+"<br>Wiek: "+rejestracja.wiek.value+"<br>Rodzaj wizyty: "+rejestracja.rodzaj_wizyty.value+"<br>Telefon: "+rejestracja.nr_tel.value+"<br>";
+
+            p_podsumowanie_objawy_header.innerHTML = "<h4>Objawy:</h4>";
+
+            var f = rejestracja.objawy;
+            var v = '';
+            for (var i=0;i<f.length;i++) {
+                if(f[i].checked){
+                    v+=f[i].value+" ";
+                    p_podsumowanie_objawy.innerHTML = v;
+                }
+                if (v=='') {
+                    p_podsumowanie_objawy.innerHTML = "Nie wybrano objaw.";
+                }
+            }
+            dodatkowe_info.innerHTML="<br><h4>Dodatkowe informacje:</h4>"+textarea_dodinfo.value;
+
+        }
+    </script>
+</body>
+</html>
