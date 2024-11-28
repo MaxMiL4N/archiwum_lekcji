@@ -15,12 +15,28 @@
     <input type="button" value="Opublikuj" onclick="opublikuj()">
     <section id="wiadomosc"></section>
     <script>
+        var licznik = 0;
         function opublikuj() {
-            if (select_jasmalg.value=="jas") {
-                wiadomosc.innerHTML+="Jaś: "+textarea_jasmalg.value+"<br>";
+            if (licznik<10) {
+                if (select_jasmalg.value=="jas") {
+                    wiadomosc.innerHTML+="Jaś: "+textarea_jasmalg.value+"<br>";
+                    licznik++;
+                }
+                else if (select_jasmalg.value=="malgosia") {
+                    wiadomosc.innerHTML+="Małgosia: "+textarea_jasmalg.value+"<br>";
+                    licznik++;
+                }
             }
-            else if (select_jasmalg.value=="malgosia") {
-                wiadomosc.innerHTML+="Małgosia: "+textarea_jasmalg.value+"<br>";
+            else {
+                licznik = 0;
+                if (select_jasmalg.value=="jas") {
+                    wiadomosc.innerHTML="Jaś: "+textarea_jasmalg.value+"<br>";
+                    licznik++;
+                }
+                else if (select_jasmalg.value=="malgosia") {
+                    wiadomosc.innerHTML="Małgosia: "+textarea_jasmalg.value+"<br>";
+                    licznik++;
+                }
             }
         }
     </script>
