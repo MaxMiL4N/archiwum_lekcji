@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="body">
+    <form name="form">
+        <input type="text" name="imie" id="imie">Imię<br>
+        <input type="text" name="nazwisko" id="nazwisko">Nazwisko<br>
+        <input type="button" value="Wyślij" onclick="wypisz()">
+        <p id="zdanie1">Witaj na mojej stronie</p>
+        <p id="zdanie2">Witaj na mojej stronie</p><br><br><br>
+
+        <input type="color" name="input_kolorek"><input type="button" value="Ustaw" id="ustawianie" onclick="kolorek()">
+        
+        
+    </form>
+    
+    <h1 id="tytul">CSS po przycisku</h1>
+    <input type="button" value="Kolorek" onclick="document.getElementById('tytul').style.color='blue';document.getElementById('tytul').style.backgroundColor='pink'">
+    <input type="button" value="✨Aesthetic✨" onclick="aesthetic()">
+    <input type="button" value="Usuń" onclick="usun()"><br><br><br>
+
+    <input id="przycisk1" type="button" value="🙌" onclick="zmien()"><input id="przycisk2" type="button" value=".❌." onclick="resetowanie()">
+
+    <script>
+        document.getElementById("zdanie1").style.color="blue";
+        document.getElementById("zdanie2").style.fontFamily="magneto";
+        document.getElementById("zdanie2").style.fontSize="150%";
+        document.getElementById("zdanie2").style.backgroundColor="yellow";
+
+        document.getElementById("body").style.backgroundColor="gray";
+
+        // =========================
+
+        function aesthetic() {
+            document.getElementById("tytul").style.color="white";
+            document.getElementById("tytul").style.backgroundColor="pink";
+            document.getElementById("tytul").style.padding="5px";
+            document.getElementById("tytul").style.borderRadius="5px";
+            document.getElementById("tytul").style.boxShadow="0px 0px 20px 5px pink";
+            document.getElementById("tytul").style.textShadow="0px 0px 5px white";
+            document.getElementById("tytul").style.fontFamily="magneto";
+        }
+        function usun() {
+            document.getElementById("tytul").style.color="";
+            document.getElementById("tytul").style.backgroundColor="";
+            document.getElementById("tytul").style.boxShadow="";
+            document.getElementById("tytul").style.textShadow="";
+        }
+        function zmien() {
+            document.getElementById("przycisk2").style.color="white";
+            document.getElementById("przycisk2").style.backgroundColor="red";
+        }
+        function resetowanie() {
+            document.getElementById("przycisk2").style.color="";
+            document.getElementById("przycisk2").style.backgroundColor="";
+        }
+        function kolorek() {
+            document.getElementById("ustawianie").style.backgroundColor=form.input_kolorek.value;
+        }
+
+
+        // Stwórz funkcję, która po wybraniu przycisku 'ustaw' zmieni tło na czerwone, czcionkę na biały innego przycisku.
+
+
+        //
+    </script>
+</body>
+</html>
