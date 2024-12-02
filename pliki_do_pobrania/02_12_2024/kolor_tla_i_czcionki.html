@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        td{
+            border:1px solid black;
+            padding:5px;
+        }
+    </style>
+    <form name="form">
+        <table>
+            <tr>
+                <td id="td_a">A</td><td id="td_b">B</td>
+            </tr>
+        </table>
+        <input type="color" name="input_kolor_tlo">Kolor tła<br>
+        <input type="color" name="input_kolor_czcionka">Kolor czcionki<br>
+        <select id="wybor">
+            <option>A</option>
+            <option>B</option>
+        </select>
+        <input type="button" value="Ustaw" onclick="ustawianie()">
+    </form>
+    <script>
+        // stworz tabele - jeden wiersz i dwie komorki, ponizej tabeli kontrolka formularza kolor oraz lista rozwijana wskazujaca komorke 1 lub 2 i przycisk wykonaj. napisz skrypt, ktory w momencie wyboru przez uzytkownika koloru oraz komorki po przycisnieciu przycisku 'wykonaj' zmieni jej tło na wybrany kolor. (mozna zrobic jeden wybor do tla i czcionki)
+        function ustawianie() {
+            if (wybor.value == "A") {
+                document.getElementById("td_a").style.backgroundColor=form.input_kolor_tlo.value;
+                document.getElementById("td_a").style.color=form.input_kolor_czcionka.value;
+            }
+            else if (wybor.value == "B") {
+                document.getElementById("td_b").style.backgroundColor=form.input_kolor_tlo.value;
+                document.getElementById("td_b").style.color=form.input_kolor_czcionka.value;
+            }
+        }
+    </script>
+</body>
+</html>
