@@ -1,0 +1,43 @@
+.komunikator{
+    width: 300px;
+    word-wrap: break-word;
+    min-height: 600px;
+    height: fit-content;
+    background-color: beige;
+    box-shadow: 3px 3px 10px orange;
+    border: 3px solid brown;
+    border-radius: 15px;
+    padding:10px;
+}
+.miniaturka{
+    height:30px;
+    border-radius: 100%;
+}
+.wiadomosc_jas{
+    color:blue;
+    font-weight: 800;
+    text-align:left;
+    padding: 5px;
+    border-radius:15px;
+}
+.wiadomosc_jas:hover,.wiadomosc_malgosia:hover{
+    background-color: rgb(228, 228, 204);
+}
+.wiadomosc_malgosia{
+    padding: 5px;
+    border-radius:15px;
+    color:rgb(255, 0, 0);
+    font-style:italic;
+    text-align:right;
+}
+.pole_tekstowe{
+    min-width: 280px;
+    max-width: 280px;
+    min-height: 17px;
+    height: 17px;
+    max-height: 200px;
+}
+#wiadomosci{
+    overflow: auto;
+    max-height: 500px;
+}

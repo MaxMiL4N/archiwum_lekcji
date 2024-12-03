@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03_12_2024</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <form name="czat" class="komunikator">
+        <textarea name="pole_tekstowe" class="pole_tekstowe" maxlength="500"></textarea><br>
+        <select name="wybor_osoby">
+            <option>Jaś</option>
+            <option>Małgosia</option>
+        </select>
+        <input type="button" value="Wyślij" onclick="wyslij_wiadomosc()">
+        <input type="button" value="Wyczyść czat" onclick="wyczysc()"><hr>
+        <section id="wiadomosci"></section>
+    </form>
+    <script>
+        // jaś niebieski, do lewej, pogrubione, a malgosia czerwone, kursywa, do prawej.
+        //var licznik = 0;
+        function wyczysc() {
+            wiadomosci.innerHTML="";
+        }
+        function wyslij_wiadomosc() {
+            if (czat.wybor_osoby.value == "Jaś") {
+                if (czat.pole_tekstowe.value == "") {
+
+                }
+                else {
+                    wiadomosci.innerHTML+="<p class='wiadomosc_jas'><img src='https://cdn.aniagotuje.com/pictures/articles/2019/07/921425-v-720x720.jpg' class='miniaturka'> Jaś: "+czat.pole_tekstowe.value+"</p>"
+                    //licznik++;
+                    //if (licznik==10) {
+                    //wiadomosci.innerHTML="<p class='wiadomosc_jas'><img src='https://cdn.aniagotuje.com/pictures/articles/2019/07/921425-v-720x720.jpg' class='miniaturka'> Jaś: "+czat.pole_tekstowe.value+"</p>";
+                    //licznik=0;
+                    //}
+                }
+            }
+            else if (czat.wybor_osoby.value == "Małgosia") {
+                if (czat.pole_tekstowe.value == "") {
+
+                }
+                else {
+                    wiadomosci.innerHTML+="<p class='wiadomosc_malgosia'> Małgosia: "+czat.pole_tekstowe.value+" <img src='https://profit.sklepkupiec.pl/946799-thickbox_default/winiary-pomysl-na-leczo-z-tego-co-jest-pod-reka-35-g.jpg' class='miniaturka'></p>"
+                    //licznik++;
+                    //if (licznik==10) {
+                    //wiadomosci.innerHTML="<p class='wiadomosc_malgosia'><img src='https://profit.sklepkupiec.pl/946799-thickbox_default/winiary-pomysl-na-leczo-z-tego-co-jest-pod-reka-35-g.jpg' class='miniaturka'> Małgosia: "+czat.pole_tekstowe.value+"</p>";
+                    //licznik=0;
+                    //}
+                }
+            }
+        }
+    </script>
+</body>
+</html>
