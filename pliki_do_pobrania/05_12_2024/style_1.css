@@ -1,0 +1,59 @@
+*{
+    font-family:arial;
+}
+body{
+    padding:0px;
+}
+header{
+    height:20%;
+    background-color: azure;
+    text-align: center;
+    font-size: 500%;
+}
+nav{
+    height:fit-content;
+    background-color: rgb(216, 230, 230);
+    text-align:center;
+}
+main{
+    padding-top:50px;
+    height:50%;
+    text-align: center;
+    font-size:200%;
+}
+footer{
+    height: 15%;
+    background-color: rgb(179, 199, 218);
+    text-align:center;
+    color:gray;
+}
+#progress_bar{
+    border: 3px dotted gray;
+    height:5%;
+    background-color: rgb(230, 230, 230);
+}
+#box{
+    height:1200px;
+}
+table{
+    margin-left:auto;
+    margin-right:auto;
+}
+#nav_1,#nav_2,#nav_3{
+    padding:5px;
+    padding-left:15px;
+    padding-right:15px;
+    background-color: azure;
+}
+#nav_1:hover,#nav_2:hover,#nav_3:hover{
+    background-color: rgb(179, 179, 179);
+}
+#prgbar{
+    height:100%;
+    background-color:rgb(174, 255, 255);
+    display: block;
+    transition: 0.2s ease-in-out;
+    width:0%;
+}
+
+

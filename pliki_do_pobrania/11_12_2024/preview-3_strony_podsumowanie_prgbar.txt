@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section id="box">
+    <header>
+        Zamówienie
+    </header>
+    <nav>
+        <table>
+            <td id="nav_1" onclick="nav_1_f()">1</td><td id="nav_2" onclick="nav_2_f()" hidden>2</td><td id="nav_3" onclick="nav_3_f()" hidden>Podsumowanie</td>
+        </table>
+    </nav>
+    <main>
+        <section id="sec_1" hidden>
+            <h2>Uzupełnij dane</h2><br>
+            Imię <input type="text" id="input_imie" onfocus="prg_1()"><br>
+            Nazwisko <input type="text" id="input_nazwisko" onfocus="prg_2()"><br>
+            Adres e-mail <input type="email" id="input_adres" onfocus="prg_3()"><br>
+            <table>
+                <td id="nav_przejdz2" onclick="nav_2_f()" hidden>Przejdź dalej</td>
+            </table>
+        </section>
+        <section id="sec_2" hidden>
+            <h2>Uzupełnij dane</h2><br>
+            Wiek <input type="number" id="input_wiek" onfocus="prg_4()"><br>
+            Nr buta <input type="number" id="input_nr_buta" onfocus="prg_5()"><br>
+            <table>
+            <td id="nav_podsumowanie" onclick="nav_3_f()" hidden>Podsumowanie</td>
+            </table>
+        </section>
+        <section id="sec_3" hidden>
+            <h2>Podsumowanie</h2><br>
+            <section id="wypisz_imie"></section>
+            <section id="wypisz_nazwisko"></section>
+            <section id="wypisz_adres"></section>
+            <section id="wypisz_wiek"></section>
+            <section id="wypisz_nr_buta"></section>
+            <img src="kicia-dane.png" style="height:500px;margin-top:20px;box-shadow:0px 0px 100px pink;border-radius: 20px;">
+        </section>
+    </main>
+    <section id="progress_bar">
+        <section id="prg_bar"></section>
+    </section>
+    <footer>
+        <table>
+        
+        </table>
+    </footer>
+</section>
+<script>
+    function nav_1_f() {
+        sec_1.hidden=false;
+        sec_2.hidden=true;
+        sec_3.hidden=true;
+        nav_1.style.backgroundColor="rgb(95, 96, 100)";
+        nav_2.style.backgroundColor="";
+        nav_3.style.backgroundColor="";
+    }
+    function nav_2_f() {
+        sec_1.hidden=true;
+        sec_2.hidden=false;
+        sec_3.hidden=true;
+        nav_1.style.backgroundColor="";
+        nav_2.style.backgroundColor="rgb(95, 96, 100)";
+        nav_3.style.backgroundColor="";
+        nav_2.hidden=false;
+    }
+    function nav_3_f() {
+        sec_1.hidden=true;
+        sec_2.hidden=true;
+        sec_3.hidden=false;
+        nav_1.style.backgroundColor="";
+        nav_2.style.backgroundColor="";
+        nav_3.style.backgroundColor="rgb(95, 96, 100)";
+        nav_3.hidden=false;
+
+        wypisz_imie.innerHTML="<label class='ni'>Imię: </label>"+input_imie.value;
+        wypisz_nazwisko.innerHTML="<label class='ni'>Nazwisko: </label>"+input_nazwisko.value;
+        wypisz_adres.innerHTML="<label class='ni'>Adres e-mail: </label>"+input_adres.value+"<br>";
+        wypisz_wiek.innerHTML="<label class='ni'>Wiek: </label>"+input_wiek.value;
+        wypisz_nr_buta.innerHTML="<label class='ni'>Nr buta: </label>"+input_nr_buta.value;
+    }
+    /*
+    var szerokosc = 0;
+    function prg() {
+    szerokosc += 20;
+    if(szerokosc<=100) {
+        prg_bar.style.width=szerokosc+"%";
+    }
+    }
+    */
+   var szerokosc = 0;
+   var prg_1_wykonano = false;
+   var prg_2_wykonano = false;
+   var prg_3_wykonano = false;
+   var prg_4_wykonano = false;
+   var prg_5_wykonano = false;
+    function prg_1() {
+        if (prg_1_wykonano == false) {
+        szerokosc+=20;
+        prg_bar.style.width=szerokosc+"%";
+        prg_1_wykonano = true;
+        }
+        if (szerokosc==60) {
+            nav_przejdz2.hidden=false;
+        }
+    }
+    function prg_2() {
+        if (prg_2_wykonano == false) {
+        szerokosc+=20;
+        prg_bar.style.width=szerokosc+"%";
+        prg_2_wykonano = true;
+        }
+        if (szerokosc==60) {
+            nav_przejdz2.hidden=false;
+        }
+    }
+    function prg_3() {
+        if (prg_3_wykonano == false) {
+        szerokosc+=20;
+        prg_bar.style.width=szerokosc+"%";
+        prg_3_wykonano = true;
+        }
+        if (szerokosc==60) {
+            nav_przejdz2.hidden=false;
+        }
+    }
+    function prg_4() {
+        if (prg_4_wykonano == false) {
+        szerokosc+=20;
+        prg_bar.style.width=szerokosc+"%";
+        prg_4_wykonano = true;
+        }
+        if (szerokosc==100) {
+            nav_podsumowanie.hidden=false;
+        }
+    }
+    function prg_5() {
+        if (prg_5_wykonano == false) {
+        szerokosc+=20;
+        prg_bar.style.width=szerokosc+"%";
+        prg_5_wykonano = true;
+        }
+        if (szerokosc==100) {
+            nav_podsumowanie.hidden=false;
+        }
+    }
+</script>
+    <style>
+        *{
+            font-family:'Courier New', Courier, monospace;
+            color:white;
+        }
+        input{
+            margin-top:5px;
+            color:black;
+        }
+        header{
+            height:15%;
+            width: 100%;
+            background-color:rgb(36, 37, 41);
+            text-align:center;
+            font-size: 300%;
+        }
+        nav{
+            height:fit-content;
+            background-color:rgb(107, 110, 121);
+            width: 100%;
+            text-align:center;
+        }
+        main{
+            height:70%;
+            background-color:rgb(64, 67, 78);
+            width: 100%;
+            text-align:center;
+            padding-top:10px;
+        }
+        #progress_bar{
+            height:3%;
+            background-color:rgb(128, 128, 128);
+            border:3px dotted lightgray;
+        }
+        footer{
+            height:7%;
+            background-color:rgb(24, 26, 32);
+            width: 100%;
+            text-align:center;
+        }
+        td{
+            padding:3px;
+            padding-left:7px;
+            padding-right:7px;
+            background-color: rgb(148, 150, 160);
+        }
+        table{
+            margin-left:auto;
+            margin-right:auto;
+        }
+        #box{
+            height:1200px;
+        }
+        td:hover{
+            background-color: rgb(185, 186, 192);
+            cursor:pointer;
+        }
+        .ni{
+            color:lightgrey;
+        }
+        #prg_bar{
+            width:0%;
+            height:100%;
+            background-color: rgb(93, 199, 199);
+            transition: 0.2s;
+        }
+    </style>
+</body>
+</html>

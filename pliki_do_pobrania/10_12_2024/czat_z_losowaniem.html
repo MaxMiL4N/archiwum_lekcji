@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="fgdhj" onclick="wypisz()">
+    <section id="wypisywanie"></section>
+    <form name="czat" class="komunikator">
+        <textarea name="pole_tekstowe" class="pole_tekstowe" maxlength="500"></textarea><br>
+        <select name="wybor_osoby">
+            <option>Jaś</option>
+            <option>Małgosia</option>
+        </select>
+        <input type="button" value="Wyślij" onclick="wyslij_wiadomosc()">
+        <input type="button" value="Wyczyść czat" onclick="wyczysc()"><input type="button" value="Losuj" onclick="wypisz()"><hr>
+        <section id="wiadomosci"></section>
+    </form>
+    <script>
+        function wyczysc() {
+            wiadomosci.innerHTML="";
+        }
+        function wyslij_wiadomosc() {
+            if (czat.wybor_osoby.value == "Jaś") {
+                if (czat.pole_tekstowe.value == "") {
+
+                }
+                else {
+                    wiadomosci.innerHTML+="<p class='wiadomosc_jas'><img src='https://cdn.aniagotuje.com/pictures/articles/2019/07/921425-v-720x720.jpg' class='miniaturka'> Jaś: "+czat.pole_tekstowe.value+"</p>"
+                }
+            }
+            else if (czat.wybor_osoby.value == "Małgosia") {
+                if (czat.pole_tekstowe.value == "") {
+
+                }
+                else {
+                    wiadomosci.innerHTML+="<p class='wiadomosc_malgosia'> Małgosia: "+czat.pole_tekstowe.value+" <img src='https://profit.sklepkupiec.pl/946799-thickbox_default/winiary-pomysl-na-leczo-z-tego-co-jest-pod-reka-35-g.jpg' class='miniaturka'></p>"
+                }
+            }
+        }
+    </script>
+    <script>
+        // Napisz skrypt który w momencie wybrania przycisku losuj wybiera dowolną, lecz wczytanej wcześniej tablicy sentencji. Wartość wyświetla poniżej przycisku... poprostu wyświetl losowy element tablicy.
+        var tablica = ['pppp','fghdx','yyyyy','oooo','lllll','mmmm','nnnn','jfff','kkokoko'];
+        function wypisz() {
+        var a = (Math.floor(Math.random()*10));
+        if (a <= (tablica.length)-1) {
+        //wypisywanie.innerHTML=tablica[a];
+        console.log(a);
+        
+        if (czat.wybor_osoby.value == "Jaś") {
+
+                    wiadomosci.innerHTML+="<p class='wiadomosc_jas'><img src='https://cdn.aniagotuje.com/pictures/articles/2019/07/921425-v-720x720.jpg' class='miniaturka'> Jaś: "+tablica[a]+"</p>"
+            }
+            else if (czat.wybor_osoby.value == "Małgosia") {
+
+                
+                    wiadomosci.innerHTML+="<p class='wiadomosc_malgosia'> Małgosia: "+tablica[a]+" <img src='https://profit.sklepkupiec.pl/946799-thickbox_default/winiary-pomysl-na-leczo-z-tego-co-jest-pod-reka-35-g.jpg' class='miniaturka'></p>"
+                
+            }
+        }
+       
+        }
+        // 
+    </script>
+    <style>
+       .komunikator{
+    width: 300px;
+    word-wrap: break-word;
+    min-height: 600px;
+    height: fit-content;
+    background-color: beige;
+    box-shadow: 3px 3px 10px orange;
+    border: 3px solid brown;
+    border-radius: 15px;
+    padding:10px;
+}
+.miniaturka{
+    height:30px;
+    border-radius: 100%;
+}
+.wiadomosc_jas{
+    color:blue;
+    font-weight: 800;
+    text-align:left;
+    padding: 5px;
+    border-radius:15px;
+}
+.wiadomosc_jas:hover,.wiadomosc_malgosia:hover{
+    background-color: rgb(228, 228, 204);
+}
+.wiadomosc_malgosia{
+    padding: 5px;
+    border-radius:15px;
+    color:rgb(255, 0, 0);
+    font-style:italic;
+    text-align:right;
+}
+.pole_tekstowe{
+    min-width: 280px;
+    max-width: 280px;
+    min-height: 17px;
+    height: 17px;
+    max-height: 200px;
+}
+#wiadomosci{
+    overflow: auto;
+    max-height: 500px;
+} 
+    </style>
+</body>
+</html>

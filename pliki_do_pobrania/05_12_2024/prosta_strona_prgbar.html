@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05.12.2024</title>
+    <link rel="stylesheet" href="style_1.css">
+</head>
+<body>
+    <section id="box">
+    <header>
+        Baner
+    </header>
+    <nav>
+        <table>
+            <td id="nav_1" onclick="navig_1()">1</td>
+            <td id="nav_2" onclick="navig_2()">2</td>
+            <td id="nav_3" onclick="navig_3()">3</td>
+        </table>
+    </nav>
+    <main id="main">
+        <form name="form">
+            <input type="button" value="przycisk" id="przycisk1" hidden>
+            <input type="button" value="bbbbbbb" id="przycisk2" hidden>
+            <input type="button" value="ggggggg" id="przycisk3" hidden>
+            <input type="button" value="rrrrrr" id="przycisk4" hidden>
+        </form>
+        <p id="tekst1">sgyiosfguid</p>
+        <p id="tekst2">gygyyyyyy</p>
+        <p id="tekst3">sgygggyioyyyyugyugyugyugyugyusfguid</p>
+        <p id="tekst4">ddddddddddddddddddddddddsgyiosfguid</p>
+    </main>
+    <section id="progress_bar">
+        <section id="prgbar"></section>
+    </section>
+    <footer>
+        Stopka
+    </footer></section>
+    <script>
+            document.getElementById("main").style.backgroundColor="rgb(179, 199, 218)";
+            document.getElementById("main").style.color="white";
+            document.getElementById("nav_1").style.backgroundColor="lightgray";
+            document.getElementById("nav_2").style.backgroundColor="azure";
+            document.getElementById("nav_3").style.backgroundColor="azure";
+            document.getElementById("prgbar").style.width="33%";
+                form.przycisk1.hidden=false;
+                tekst1.hidden=false;
+                tekst2.hidden=true;
+                tekst3.hidden=true;
+                tekst4.hidden=true;
+
+                form.przycisk2.hidden=true;
+                form.przycisk3.hidden=true;
+                form.przycisk4.hidden=true;
+            var progress = 1;
+        function navig_1() {
+            document.getElementById("main").style.backgroundColor="rgb(179, 199, 218)";
+            document.getElementById("main").style.color="white";
+            document.getElementById("nav_1").style.backgroundColor="lightgray";
+            document.getElementById("nav_2").style.backgroundColor="azure";
+            document.getElementById("nav_3").style.backgroundColor="azure";
+            form.przycisk1.hidden=true;
+                form.przycisk2.hidden=false;
+                form.przycisk3.hidden=true;
+                form.przycisk4.hidden=true;
+                tekst1.hidden=true;
+                tekst2.hidden=false;
+                tekst3.hidden=true;
+                tekst4.hidden=true;
+        }
+        function navig_2() {
+            document.getElementById("main").style.backgroundColor="palegreen";
+            document.getElementById("main").style.color="red";
+            document.getElementById("nav_2").style.backgroundColor="lightgray";
+            document.getElementById("nav_3").style.backgroundColor="azure";
+            document.getElementById("nav_1").style.backgroundColor="azure";
+            form.przycisk1.hidden=true;
+                form.przycisk2.hidden=true;
+                form.przycisk3.hidden=false;
+                form.przycisk4.hidden=true;
+            if (progress<2) {
+                document.getElementById("prgbar").style.width="66%";
+                progress = 2;
+            }
+            tekst1.hidden=true;
+                tekst2.hidden=true;
+                tekst3.hidden=false;
+                tekst4.hidden=true;
+        }
+        function navig_3() {
+            document.getElementById("main").style.backgroundColor="palevioletred";
+            document.getElementById("main").style.color="purple";
+            document.getElementById("nav_3").style.backgroundColor="lightgray";
+            document.getElementById("nav_1").style.backgroundColor="azure";
+            document.getElementById("nav_2").style.backgroundColor="azure";
+            if (progress<3) {
+                document.getElementById("prgbar").style.width="100%";
+                progress = 3;
+            }
+            form.przycisk1.hidden=true;
+                form.przycisk2.hidden=true;
+                form.przycisk3.hidden=true;
+                form.przycisk4.hidden=false;
+                tekst1.hidden=true;
+                tekst2.hidden=true;
+                tekst3.hidden=true;
+                tekst4.hidden=false;
+        }
+    </script>
+</body>
+</html>
