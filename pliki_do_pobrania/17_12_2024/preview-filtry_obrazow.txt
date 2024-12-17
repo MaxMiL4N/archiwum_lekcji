@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        Efekty na obrazach
+    </header>
+
+    <section id="blok_1">
+        <img id="zdj1" src="pszczola.jpg"><br>
+        <form name="zdj1_form">
+            <input type="radio" name="filtry" value="blur">Blur<br>
+            <input type="radio" name="filtry" value="sepia">Sepia<br>
+            <input type="radio" name="filtry" value="negatyw">Negatyw<br>
+        </form>
+        <input type="button" value="Zastosuj" class="przycisk" onclick="zast1()">
+    </section>
+    <section id="blok_2">
+        <img id="zdj2" src="pomarancza.jpg"><br>
+        <input type="button" value="Kolory" class="przycisk" onclick="zast2_k()">
+        <input type="button" value="Czarno-biały" class="przycisk" onclick="zast2_cb()">
+    </section>
+    <section id="blok_3">
+        <img id="zdj3" src="owoce.jpg"><br>
+        <input type="range" min="0" max="100" id="suwak1" class="suwak" value="100"><br>
+        <input type="button" value="Zastosuj" class="przycisk" onclick="zast3()">
+    </section>
+    <section id="blok_4">
+        <img id="zdj4" src="zolw.jpg"><br>
+        <input type="range" min="0" max="100" id="suwak2" class="suwak"><br>
+        <input type="button" value="Zastosuj" class="przycisk" onclick="zast4()">
+    </section>
+
+    <footer>
+        <a href="jfgj">Zobacz inne efekty obrazu</a>
+        <p>Stronę wykonał: 00000000000</p>
+    </footer>
+<script>
+    function zast1() {
+        if (zdj1_form.filtry.value=="blur") {
+            document.getElementById("zdj1").style.filter="blur(5px)";
+        }
+        else if (zdj1_form.filtry.value=="sepia") {
+            document.getElementById("zdj1").style.filter="sepia(100%)";
+        }
+        else if (zdj1_form.filtry.value=="negatyw") {
+            document.getElementById("zdj1").style.filter="invert(100%)";
+        }
+    }
+    function zast2_k() {
+        document.getElementById("zdj2").style.filter="";
+    }
+    function zast2_cb() {
+        document.getElementById("zdj2").style.filter="grayscale(100%)";
+    }
+    function zast3() {
+        var stan_suwaka1 = suwak1.value;
+        document.getElementById("zdj3").style.filter="opacity("+stan_suwaka1+"%)"; 
+    }
+    function zast4() {
+        var stan_suwaka2 = suwak2.value*2;
+        document.getElementById("zdj4").style.filter="contrast("+stan_suwaka2+"%)"; 
+    }
+</script>
+<style>
+    *{
+        font-family: Century, serif;
+        text-align: center;
+    }
+    header,footer{
+        background-color: indigo;
+        color:white;
+        font-style: italic;
+        padding:2px;
+        clear:both;
+    }
+    #blok_1,#blok_2,#blok_3,#blok_4{
+        width: 50%;
+        height:470px;
+        float:left;
+    }
+    img{
+        padding:3px;
+        margin:10px;
+        border:2px dotted slateblue;
+        height: 330px;
+    }
+    a{
+        color:White;
+    }
+    .przycisk{
+        background-color: slateblue;
+        color:White;
+        border:0px;
+        padding-top:10px;
+        padding-bottom:10px;
+        padding-left:20px;
+        padding-right:20px;
+        margin-top:10px;
+    }
+    .przycisk:hover{
+        background-color: indigo;
+    }
+    .suwak{
+        width:80%;
+    }
+</style>
+</body>
+</html>
