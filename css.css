@@ -56,7 +56,7 @@ li:hover{
 a.file{
     color:rgb(54, 158, 255);
     text-decoration:underline;
-    text-decoration-color: rgb(3, 133, 255);
+    text-decoration-color: #0385ff;
 }
 a.file:hover{
     /*color:rgb(180, 255, 255);
@@ -275,3 +275,7 @@ a.invisible{
     transition: 0.1px;
     cursor:grabbing;
 }
+ul {
+    list-style-image: url('download-icon-3.png');
+    list-style-position: inside;
+  }
