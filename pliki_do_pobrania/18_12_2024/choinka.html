@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<section id="box">
+    <img src="choinka.png" id="choinka"><br>
+    <table>
+        <tr>
+            <td class="przycisk" onclick="kolorowe()">Normalne</td> <td class="przycisk" onclick="czarnobiale()">Czarno-białe</td>
+             <td class="przycisk" onclick="sepia()">Sepia</td> <td class="przycisk" onclick="mocny_kontrast()">Mocny kontrast</td> 
+            <td class="przycisk" onclick="blur_f()">Blur</td><td class="przycisk" onclick="negatyw()">Negatyw</td>
+        </tr>
+    </table>
+</section>
+<script>
+    function kolorowe() {
+        document.getElementById("choinka").style.filter="";
+        document.getElementById("box").style.filter="";
+    }
+    function czarnobiale() {
+        document.getElementById("choinka").style.filter="grayscale(100%)";
+        document.getElementById("box").style.filter="grayscale(100%)";
+    }
+    function sepia() {
+        document.getElementById("choinka").style.filter="sepia(100%)";
+        document.getElementById("box").style.filter="sepia(100%)";
+    }
+    function mocny_kontrast() {
+        document.getElementById("choinka").style.filter="contrast(200%)";
+        document.getElementById("box").style.filter="";
+    }
+    function blur_f() {
+        document.getElementById("choinka").style.filter="blur(5px)";
+        document.getElementById("box").style.filter="blur(5px)";
+    }
+    function negatyw() {
+        //document.getElementById("choinka").style.filter="invert(100%)";
+        document.getElementById("choinka").style.filter="";
+        document.getElementById("box").style.filter="invert(100%)";
+    }
+</script>
+<style>
+    #box{
+        width: 100%;
+        height: 100vh;
+        background-image: linear-gradient(0deg,rgb(147, 71, 223) 0%,rgb(155,218,255) 100%);
+    }
+    body{
+        /*background-color:rgb(150, 35, 35);*/
+        background-image: linear-gradient(0deg,rgb(147, 71, 223) 0%,rgb(155,218,255) 100%);
+        background-color: brown;
+    }
+    img{
+        margin-left: auto;
+        margin-right:auto;
+        display: block;
+        height:80vh;
+    }
+    .przycisk{
+        padding-top:10px;
+        padding-bottom:10px;
+        padding-left:20px;
+        padding-right:20px;
+        border-radius:5px;
+        background-color: brown;
+        font-size: x-large;
+        text-align: center;
+        color:white;
+        cursor:pointer;
+        
+    }
+    .przycisk:hover{
+        box-shadow: 0px 0px 20px gold;
+        background-color: rgb(190, 49, 49);
+    }
+    .przycisk:active{
+        box-shadow: 0px 0px 50px gold;
+        background-color: rgb(109, 28, 28);
+        cursor:wait;
+    }
+    table{
+        margin-left:auto;
+        margin-right:auto;
+        border-spacing: 20px;
+    }
+</style>
+</body>
+</html>
