@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+</head>
+<body>
+    <header>
+        Chat
+    </header>
+    <section id="blok_prawy">
+        <h3>Chaty</h3>
+        <ul>
+            <li>Ogólny</li>
+            <li>Tematyczne
+                <ol>
+                    <li>Turystyczny</li>
+                    <li>Żeglarski</li>
+                    <li>Filatelistyczny</li>
+                    <li>Hodowla zwierzątek
+                        domowych</li>
+                </ol>
+            </li>
+        </ul>
+        <h3>Uczestnicy</h3>
+        <p>Jolanta Nowak</p>
+        <img src="jola.jpg" alt="Jolanta Nowak">
+        <p>Krzysztof Łukasiński</p>
+        <img src="krzysiek.jpg" alt="Krzysztof Łukasiński">
+    </section>
+    <main>
+        <section id="chat">
+
+            <section class="wiadomosc_jola">
+                <img src="jola.jpg" class="jola">
+                <section class="wiadomosc">
+                    fbjhdbfsdjdf
+                </section>
+            </section>
+
+            <section class="wiadomosc_krzysiek">
+                <img src="krzysiek.jpg" class="krzysiek">
+                <section class="wiadomosc">
+                    fbjhdbfsdjdf
+                </section>
+            </section>
+
+        </section>
+        Wpis wiadomość: <input type="text" id="wiadomosc_input"> <input type="button" value="Wyślij" class="przycisk" onclick="wyslij()"><br>
+        <input type="button" value="Generuj losową wiadomość" class="przycisk" onclick="generuj_losowe()">
+    </main>
+    <footer>
+        WDTBYUIRAWE7TBOWXER
+    </footer>
+    <script>
+
+        var losowa_odp = ['Sigma Sigma Boy Sigma Boy','Skibidi Rizz?','I ❤️ Ptichki','🍎🍏','😝🔥','🤟','😐😐😐','✔️','🎉',]
+
+        function wyslij() {
+            if (wiadomosc_input.value == "") {
+            }
+            else{
+                var wiadomosc = wiadomosc_input.value;
+                document.getElementById("chat").innerHTML+="<section class='wiadomosc_jola'><img src='jola.jpg' class='jola'><section class='wiadomosc'>"+wiadomosc+"</section></section>";
+                document.getElementById("chat").scrollTop=document.getElementById("chat").scrollHeight;
+            }
+        }
+        function generuj_losowe() {
+            var wygenerowana_wiad = (Math.floor(Math.random()*10));
+            if (wygenerowana_wiad < 9) {
+                document.getElementById("chat").innerHTML+="<section class='wiadomosc_krzysiek'><img src='krzysiek.jpg' class='krzysiek'><section class='wiadomosc'>"+losowa_odp[wygenerowana_wiad]+"</section></section>";
+            }
+            document.getElementById("chat").scrollTop=document.getElementById("chat").scrollHeight;
+        }
+    </script>
+    <style>
+        *{
+            font-family:garamond;
+        }
+        header{
+            background-color: tomato;
+            color:white;
+            text-align: center;
+            width: 80%;
+            height:80px;
+            float:left;
+        }
+        main{
+            width: 80%;
+            height:600px;
+            
+        }
+        #blok_prawy{
+            background-color: coral;
+            width: 20%;
+            height:680px;
+            float:right;
+        }
+        footer{
+            background-color: tomato;
+            color: white;
+            text-align: center;
+            clear: both;
+        }
+        img{
+            border-radius:50%;
+            padding-left:10px;
+            padding-right:10px;
+            height:70px;
+            width: 70px;
+        }
+        .jola{
+            float:left;
+        }
+        .krzysiek{
+            float:right;
+        }
+        #chat{
+            border:1px solid tomato;
+            padding:10px;
+            height:470px;
+            margin:15px;
+            overflow:scroll;
+        }
+        .wiadomosc_jola{
+            background-color: #EEE;
+            border-radius: 5px;
+            width:90%;
+            height:70px;
+            margin:2%;
+            padding:3px;
+        }
+        .wiadomosc_krzysiek{
+            background-color: #CCC;
+            text-align: right;
+            border-radius: 5px;
+            width:90%;
+            height:70px;
+            margin:2%;
+            padding:3px;
+        }
+        #wiadomosc_input{
+            width: 500px;
+        }
+        .przycisk{
+            background-color: tomato;
+            border:1px solid darkred;
+            padding:5px;
+            font-weight: bold;
+        }
+
+    </style>    
+</body>
+</html>
