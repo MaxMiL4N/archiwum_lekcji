@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main id="main">
+        <img src="kicia1.jpg">
+    </main>
+    <footer>
+        <table>
+            <tr>
+                <td id="wybor_zdjecia_1" onclick="wybor1()">
+                    <img src="kicia1.jpg" class="miniaturka">
+                </td>
+                <td id="wybor_zdjecia_2" onclick="wybor2()">
+                    <img src="kicia2.jpg" class="miniaturka">
+                </td>
+                <td id="wybor_zdjecia_3" onclick="wybor3()">
+                    <img src="kicia3.jpg" class="miniaturka">
+                </td>
+                <td id="wybor_zdjecia_4" onclick="wybor4()">
+                    <img src="kicia4.jpg" class="miniaturka">
+                </td>
+                <td id="wybor_zdjecia_5" onclick="wybor5()">
+                    <img src="kicia5.jpg" class="miniaturka">
+                </td>
+            </tr>
+        </table>
+    </footer>
+    <table id="podfooter"><tr><td>
+    <label class="wybor_filtra"><input type="radio" name="wybor_filtrow" onclick="kolorowe()" checked="true">Bez filtrów</label>
+    <label class="wybor_filtra"><input type="radio" name="wybor_filtrow" onclick="czarnobiale()">Czarnobiałe</label>
+    <label class="wybor_filtra"><input type="radio" name="wybor_filtrow" onclick="sepia()">Sepia</label>
+    <label class="wybor_filtra"><input type="radio" name="wybor_filtrow" onclick="negatyw()">Negatyw</label></td></tr></table>
+    <script>
+        // Ala galeria! 
+        document.getElementById("wybor_zdjecia_1").style.backgroundColor="rgb(184, 118, 151)";
+        function wybor1() {
+            document.getElementById("main").innerHTML="<img src='kicia1.jpg'>";
+            document.getElementById("wybor_zdjecia_1").style.backgroundColor="rgb(184, 118, 151)";
+            document.getElementById("wybor_zdjecia_2").style.backgroundColor="deeppink";
+            document.getElementById("wybor_zdjecia_3").style.backgroundColor="deeppink";
+            document.getElementById("wybor_zdjecia_4").style.backgroundColor="deeppink";
+            document.getElementById("wybor_zdjecia_5").style.backgroundColor="deeppink";
+        }
+        function wybor2() {
+            document.getElementById("main").innerHTML="<img src='kicia2.jpg'>";
+            document.getElementById("wybor_zdjecia_1").style.backgroundColor="deeppink";
+            document.getElementById("wybor_zdjecia_2").style.backgroundColor="rgb(184, 118, 151)";
+            document.getElementById("wybor_zdjecia_3").style.backgroundColor="deeppink";
+            document.getElementById("wybor_zdjecia_4").style.backgroundColor="deeppink";
+            document.getElementById("wybor_zdjecia_5").style.backgroundColor="deeppink";
+        }
+        function wybor3() {
+            document.getElementById("main").innerHTML="<img src='kicia3.jpg'>";
+            document.getElementById("wybor_zdjecia_1").style.backgroundColor="deeppink";
+            document.getElementById("wybor_zdjecia_2").style.backgroundColor="deeppink";
+            document.getElementById("wybor_zdjecia_3").style.backgroundColor="rgb(184, 118, 151)";
+            document.getElementById("wybor_zdjecia_4").style.backgroundColor="deeppink";
+            document.getElementById("wybor_zdjecia_5").style.backgroundColor="deeppink";
+        }
+        function wybor4() {
+            document.getElementById("main").innerHTML="<img src='kicia4.jpg'>";
+            document.getElementById("wybor_zdjecia_1").style.backgroundColor="deeppink";
+            document.getElementById("wybor_zdjecia_2").style.backgroundColor="deeppink";
+            document.getElementById("wybor_zdjecia_3").style.backgroundColor="deeppink";
+            document.getElementById("wybor_zdjecia_4").style.backgroundColor="rgb(184, 118, 151)";
+            document.getElementById("wybor_zdjecia_5").style.backgroundColor="deeppink";
+        }
+        function wybor5() {
+            document.getElementById("main").innerHTML="<img src='kicia5.jpg'>";
+            document.getElementById("wybor_zdjecia_1").style.backgroundColor="deeppink";
+            document.getElementById("wybor_zdjecia_2").style.backgroundColor="deeppink";
+            document.getElementById("wybor_zdjecia_3").style.backgroundColor="deeppink";
+            document.getElementById("wybor_zdjecia_4").style.backgroundColor="deeppink";
+            document.getElementById("wybor_zdjecia_5").style.backgroundColor="rgb(184, 118, 151)";
+        }
+        function kolorowe() {
+            document.getElementById("main").style.filter="";
+        }
+        function czarnobiale() {
+            document.getElementById("main").style.filter="grayscale(100%)";
+        }
+        function sepia() {
+            document.getElementById("main").style.filter="sepia(100%)";
+        }
+        function negatyw() {
+            document.getElementById("main").style.filter="invert(100%)";
+        }
+    </script>
+    <style>
+        main{
+            height: 500px;
+            width: 500px;
+            border:1px solid black;
+            margin-left: auto;
+            margin-right: auto;
+            padding:2px;
+            box-shadow: 0px 0px 50px black;
+        }
+        img{
+            height: 500px;
+            width: 500px;
+        }
+        #wybor_zdjecia_1,#wybor_zdjecia_2,#wybor_zdjecia_3,#wybor_zdjecia_4,#wybor_zdjecia_5{
+            height:100px;
+            width: 100px;
+            border:1px solid purple;
+            padding:2px;
+            background-color: deeppink;
+        }
+        #wybor_zdjecia_1:hover,#wybor_zdjecia_2:hover,#wybor_zdjecia_3:hover,#wybor_zdjecia_4:hover,#wybor_zdjecia_5:hover{
+            border:1px solid white;
+            box-shadow: 0px 0px 10px white;
+        }
+        table{
+            margin-top:50px;
+            margin-left:auto;
+            margin-right:auto;
+            border-spacing: 20px;
+        }
+        .miniaturka{
+            height: 100px;
+            width: 100px;
+            
+        }
+        body{
+            background-image: linear-gradient(0deg,hotpink 0%,pink 100%);
+            height:98vh;
+        }
+        .wybor_filtra{
+            padding-top:10px;
+            padding-bottom: 10px;
+            padding-left:20px;
+            padding-right:20px;
+            border-radius: 10px;
+            background-color: rgb(184, 118, 151);
+            color:white;
+        }
+        .wybor_filtra:hover{
+            background-color: rgb(150, 100, 125);
+        }
+        .wybor_filtra:active{
+            box-shadow: 0px 0px 5px white;
+        }
+        #podfooter{
+            margin-top:50px;
+            margin-left:auto;
+            margin-right:auto;
+            border-spacing: 20px;
+        }
+    </style>
+</body>
+</html>
