@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurs</title>
+</head>
+<body>
+    <form name="form">
+    <label><input type="checkbox" name="checkbox_kurs_react" onclick="checked_kurs_react()">Kurs react</label><br>
+    <label><input type="checkbox" name="checkbox_kurs_js" onclick="checked_kurs_js()">Kurs JS</label><br>
+    Liczba rat <input type="number" name="input_liczba_rat"><br>
+    Miasto <select name="wybor_miasta">
+        <option>Kraków</option>
+        <option>Wrocław</option>
+        <option>Warszawa</option>
+    </select><br>
+    <input type="button" value="Oblicz" onclick="oblicz()">
+    </form>
+    <hr>
+    <section id="wyniki"></section>
+    <script>
+        // wykonaj skrypt po stronie klienta po kliknieciu przycisku oblicz. Pobiera dane z komórek, ustala całkowitą kwotę za wybrane kursy na podstawie cen z tabeli. Nazwa kursu react liczba godzin 220 cena 5000.
+        // javascript 150 godzin cena 3000; Oblicz koszt jednej raty na podstawie kwoty całkowitej, dla uproszczenia kwota całkowita jest dzielona przez podaną ilość rat. Wyświetl pod przyciskiem 'Oblicz' w paragrafie ___ kurs odbywa się w "Miasto". Koszt całkowity to "Koszt" zł. Płacisz "Liczba" rat po "Kwota" zł. Z formularza bierzemy "Miasto" - lista rozwijana z trzema miastami, "Kwota" to kwota całkowita, liczbę rat podaje użytkownik i użytkownik wybiera w polu checkbox nazwę kursu.
+
+        // DEKLARACJA ZMIENNYCH
+        var koszt_kurs_react = 5000;
+        var miasto = form.wybor_miasta.value;
+        var koszt_kurs_js = 3000;
+        var koszt_raty = 0;
+        var koszt_calkowity = 0;
+
+
+        // DWIE FUNKCJE DOT. CHECKBOXÓW
+        function checked_kurs_react() {
+            if (form.checkbox_kurs_react.checked==true) {
+                koszt_calkowity+=koszt_kurs_react;
+            }
+            else{
+                koszt_calkowity-=koszt_kurs_react;
+            }
+        }
+
+        function checked_kurs_js() {
+            if (form.checkbox_kurs_js.checked==true) {
+            koszt_calkowity+=koszt_kurs_js;
+            }
+            else{
+                koszt_calkowity-=koszt_kurs_js;
+            }
+        }
+
+
+        // FUNKCJA OBLICZANIA I WYŚWIETLANIA WYNIKÓW
+        function oblicz() {
+            var liczba_rat = form.input_liczba_rat.value;
+            if (liczba_rat>0) {
+                if (form.checkbox_kurs_react.checked==false && form.checkbox_kurs_js.checked==false) {
+                    wyniki.innerHTML="Nie wybrano kursu.";
+                } 
+                else{
+                var miasto = form.wybor_miasta.value;
+                koszt_raty = koszt_calkowity/liczba_rat;
+                wyniki.innerHTML="Kurs odbywa się w "+miasto+". Koszt całkowity to "+koszt_calkowity+" zł. Płacisz "+liczba_rat+" rat po "+koszt_raty+" zł."
+                }
+            }
+            else{
+                wyniki.innerHTML="Nie podano liczby rat.";
+            }
+        }
+    </script>
+</body>
+</html>

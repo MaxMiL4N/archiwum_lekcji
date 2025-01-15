@@ -9,7 +9,7 @@
     background-image: url("fU2C6T2yfT.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: 1920px 100%;
+    background-size: 100% 100%;
     background-color: rgb(46,46,46);
     /*background: rgb(46,46,46);
     background: linear-gradient(0deg, rgb(31, 31, 31) 0%, rgb(70, 73, 83) 100%);*/
@@ -20,6 +20,43 @@ body.tworzenie_witryn{
     background: rgb(46,46,46);
     background: linear-gradient(0deg, rgb(23, 34, 25) 0%, rgb(70, 83, 71) 100%);
 }
+#main_box{
+    background-color: rgba(0,0,0,0.2);
+    max-height: 55vh;
+    width: fit-content;
+    overflow-y: scroll;
+    margin-bottom:auto;
+    margin-left: auto;
+    margin-right: auto;
+    border:1px solid rgba(0,0,0,0.5);
+    border-radius: 10px;
+    padding: 5px;
+    position: fixed;
+    bottom:10px;
+    left:0;
+    right:0;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.5);
+    border-radius: 10px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
 .checkbox_center{
     display: block;
     font-size:small;
@@ -86,6 +123,10 @@ div.day {
     border-radius: 5px;
     padding: 10px;
     clear:both;
+    
+    max-width: 50vh;
+    margin-left: auto;
+    margin-right: auto;
 }
 p{
     font-weight: 800;
@@ -102,6 +143,27 @@ div.day:hover {
     transition: 0.3s;
     border-color: #989ba3;
     box-shadow: 0px 0px 10px 0px;
+}
+div.day_missing {
+    margin-top:5px;
+    height: auto;
+    width: auto;
+    background-color: rgba(49, 0, 0, 0.3);
+    border-style: solid;
+    border-color: rgba(145, 76, 76, 0.5);
+    border-width: 3px;
+    border-radius: 5px;
+    padding: 10px;
+    clear:both;
+    max-width: 50vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+div.day_missing:hover {
+    background-color: rgba(117, 0, 0, 0.3);
+    transition: 0.3s;
+    border-color: rgba(196, 107, 107, 0.5);
+    box-shadow: 0px 0px 10px rgb(255, 71, 71);
 }
 .ZIP{
     color:rgb(0, 255, 170);
