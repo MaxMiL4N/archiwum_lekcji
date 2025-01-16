@@ -15,6 +15,11 @@
     background: linear-gradient(0deg, rgb(31, 31, 31) 0%, rgb(70, 73, 83) 100%);*/
     overflow-y: hidden;
 }
+#kici_counter{
+    position: fixed;
+    top:20px;
+    left:20px;
+}
 body.tworzenie_witryn{
     font-family:SamsungSans;
     color:white;
@@ -28,6 +33,7 @@ body.tworzenie_witryn{
     
     overflow-y: scroll;
     margin-bottom:auto;
+    margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
     border:1px solid rgba(0,0,0,0.5);
