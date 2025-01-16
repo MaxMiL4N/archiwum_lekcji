@@ -13,6 +13,7 @@
     background-color: rgb(46,46,46);
     /*background: rgb(46,46,46);
     background: linear-gradient(0deg, rgb(31, 31, 31) 0%, rgb(70, 73, 83) 100%);*/
+    overflow-y: hidden;
 }
 body.tworzenie_witryn{
     font-family:SamsungSans;
@@ -22,8 +23,9 @@ body.tworzenie_witryn{
 }
 #main_box{
     background-color: rgba(0,0,0,0.2);
-    max-height: 55vh;
-    width: fit-content;
+    max-height: 500px;
+    height:max-content;
+    
     overflow-y: scroll;
     margin-bottom:auto;
     margin-left: auto;
@@ -31,10 +33,18 @@ body.tworzenie_witryn{
     border:1px solid rgba(0,0,0,0.5);
     border-radius: 10px;
     padding: 5px;
-    position: fixed;
+    position:relative;
+    
+    /*position: fixed;
     bottom:10px;
     left:0;
-    right:0;
+    right:0;*/
+    max-width: 100%;
+    min-width: 50%;
+    width: fit-content;
+}
+#upper_box{
+    min-height: 50%;
 }
 /* width */
 ::-webkit-scrollbar {
@@ -124,7 +134,7 @@ div.day {
     padding: 10px;
     clear:both;
     
-    max-width: 50vh;
+
     margin-left: auto;
     margin-right: auto;
 }
@@ -155,7 +165,7 @@ div.day_missing {
     border-radius: 5px;
     padding: 10px;
     clear:both;
-    max-width: 50vh;
+
     margin-left: auto;
     margin-right: auto;
 }
