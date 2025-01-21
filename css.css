@@ -14,6 +14,7 @@
     /*background: rgb(46,46,46);
     background: linear-gradient(0deg, rgb(31, 31, 31) 0%, rgb(70, 73, 83) 100%);*/
     overflow-y: hidden;
+    height: 100vh;
 }
 #kici_counter{
     position: fixed;
@@ -28,8 +29,8 @@ body.tworzenie_witryn{
 }
 #main_box{
     background-color: rgba(0,0,0,0.2);
-    max-height: 500px;
-    height:max-content;
+    /*max-height: 500px;*/
+    height: 50%;
     
     overflow-y: scroll;
     margin-bottom:auto;
@@ -50,7 +51,7 @@ body.tworzenie_witryn{
     width: fit-content;
 }
 #upper_box{
-    min-height: 50%;
+    
 }
 /* width */
 ::-webkit-scrollbar {
