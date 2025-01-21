@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styl.css">
+    <link rel="shortcut icon" href="icon.png">
+    <title>Sklep - rejestracja</title>
+</head>
+<body>
+    
+    <aside>
+        <img src="etykieta1.png" alt="promocje">
+        <h2>Sprawdź promocje</h2>
+        <table>
+            <tr>
+                <th>co?</th><th>ile taniej?</th>
+            </tr>
+            <tr>
+                <td>ubrania</td><td>15%</td>
+            </tr>
+            <tr>
+                <td>buty</td><td>25%</td>
+            </tr>
+        </table>
+    </aside>
+    <header>
+        <h1>Zarejestruj się w sklepie</h1>
+    </header>
+    <main>
+        <input type="button" class="button" value="Klient" onclick="strona1()">
+        <input type="button" class="button" value="Adres" onclick="strona2()">
+        <input type="button" class="button" value="Kontakt" onclick="strona3()">
+        <section id="kontrolka1">
+            <p>Imię</p>
+            <input type="text" placeholder="Wpisz dane..." id="input_imie" onfocusout="prgbar1_12()">
+            <p>Nazwisko</p>
+            <input type="text" placeholder="Wpisz dane..." id="input_nazwisko" onfocusout="prgbar2_12()">
+            <p>Data urodzenia</p>
+            <input type="date" id="input_data" onfocusout="prgbar3_12()">
+        </section>
+        <section id="kontrolka2">
+            <p>Ulica</p>
+            <input type="text" id="input_ulica" onfocusout="prgbar4_12()">
+            <p>Numer</p>
+            <input type="number" id="input_ulica_numer" onfocusout="prgbar5_12()">
+            <p>Miasto</p>
+            <input type="text" id="input_miasto" onfocusout="prgbar6_12()">
+        </section>
+        <section id="kontrolka3">
+            <p>Numer kontaktowy</p>
+            <input type="number" id="input_numer" onfocusout="prgbar7_12()"><br>
+            <label><input type="checkbox" id="checkbox_rodo" onclick="prgbar8_12()">Akceptuję RODO</label><br>
+            <input type="button" class="button" value="Zatwierdź dane" onclick="zatwierdz()">
+        </section>
+    </main>
+    <section id="prgbar">
+        <section id="prgbar_puste">
+
+        </section>
+    </section>
+    <footer><h4>Rejestrację do sklepu wykonał: 0000000000000</h4></footer>
+
+    <script>
+        function strona1() {
+            document.getElementById("kontrolka1").style.display="block";
+            document.getElementById("kontrolka2").style.display="none";
+            document.getElementById("kontrolka3").style.display="none";
+        }
+        function strona2() {
+            document.getElementById("kontrolka1").style.display="none";
+            document.getElementById("kontrolka2").style.display="block";
+            document.getElementById("kontrolka3").style.display="none";
+        }
+        function strona3() {
+            document.getElementById("kontrolka1").style.display="none";
+            document.getElementById("kontrolka2").style.display="none";
+            document.getElementById("kontrolka3").style.display="block";
+        }
+
+        var prgbar_width = 4;
+
+        var input1viewed = false;
+        var input2viewed = false;
+        var input3viewed = false;
+        var input4viewed = false;
+        var input5viewed = false;
+        var input6viewed = false;
+        var input7viewed = false;
+        var input8viewed = false;
+
+        function prgbar1_12() {
+            if (input1viewed==false){
+                input1viewed=true;
+                if (prgbar_width < 100) {
+                    prgbar_width+=12;
+                    document.getElementById("prgbar_puste").style.width=prgbar_width+"%";
+                    }
+                else{
+                    prgbar_width = 100;
+                }
+
+            }
+        }
+        function prgbar2_12() {
+            if (input2viewed==false){
+                input2viewed=true;
+                if (prgbar_width < 100) {
+                    prgbar_width+=12;
+                    document.getElementById("prgbar_puste").style.width=prgbar_width+"%";
+                    }
+                else{
+                    prgbar_width = 100;
+                }
+            }
+        }
+        function prgbar3_12() {
+            if (input3viewed==false){
+                input3viewed=true;
+                if (prgbar_width < 100) {
+                    prgbar_width+=12;
+                    document.getElementById("prgbar_puste").style.width=prgbar_width+"%";
+                    }
+                else{
+                    prgbar_width = 100;
+                }
+            }
+        }
+        function prgbar4_12() {
+            if (input4viewed==false){
+                input4viewed=true;
+                if (prgbar_width < 100) {
+                    prgbar_width+=12;
+                    document.getElementById("prgbar_puste").style.width=prgbar_width+"%";
+                    }
+                else{
+                    prgbar_width = 100;
+                }
+            }
+        }
+        function prgbar5_12() {
+            if (input5viewed==false){
+                input5viewed=true;
+                if (prgbar_width < 100) {
+                    prgbar_width+=12;
+                    document.getElementById("prgbar_puste").style.width=prgbar_width+"%";
+                    }
+                else{
+                    prgbar_width = 100;
+                }
+            }
+        }
+        function prgbar6_12() {
+            if (input6viewed==false){
+                input6viewed=true;
+                if (prgbar_width < 100) {
+                    prgbar_width+=12;
+                    document.getElementById("prgbar_puste").style.width=prgbar_width+"%";
+                    }
+                else{
+                    prgbar_width = 100;
+                }
+            }
+        }
+        function prgbar7_12() {
+            if (input7viewed==false){
+                input7viewed=true;
+                if (prgbar_width < 100) {
+                    prgbar_width+=12;
+                    document.getElementById("prgbar_puste").style.width=prgbar_width+"%";
+                    }
+                else{
+                    prgbar_width = 100;
+                }
+            }
+        }
+        function prgbar8_12() {
+            if (input8viewed==false){
+                input8viewed=true;
+                if (prgbar_width < 100) {
+                    prgbar_width+=12;
+                    document.getElementById("prgbar_puste").style.width=prgbar_width+"%";
+                    }
+                else{
+                    prgbar_width = 100;
+                }
+            }
+        }
+        function zatwierdz() {
+            console.log("Imię: "+input_imie.value);
+            console.log("Nazwisko: "+input_nazwisko.value);
+            console.log("Data ur.: "+input_data.value);
+            console.log("Ulica i nr: "+input_ulica.value+" "+input_ulica_numer.value);
+            console.log("Miasto: "+input_miasto.value);
+            console.log("Numer: "+input_numer.value);
+            console.log("Akceptacja RODO: "+checkbox_rodo.checked);
+        }
+    </script>
+</body>
+</html>
