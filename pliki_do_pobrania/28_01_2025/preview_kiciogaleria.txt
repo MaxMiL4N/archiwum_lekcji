@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main id="main">
+        <section id="wybrane_zdjecie">
+            
+        </section>
+    </main>
+    <section id="strzalki_section">
+        <input type="button" class="wybor_filtra" value="◄" onclick="strzalka_lewo()">
+        <input type="button" class="wybor_filtra" value="►" onclick="strzalka_prawo()">
+    </section>
+    <footer>
+        <table>
+            <tr>
+                <td id="wybor_zdjecia_1" onclick="wybor(1)">
+                    <img src="kicia1.jpg" class="miniaturka"><br>[1]
+                </td>
+                <td id="wybor_zdjecia_2" onclick="wybor(2)">
+                    <img src="kicia2.jpg" class="miniaturka"><br>[2]
+                </td>
+                <td id="wybor_zdjecia_3" onclick="wybor(3)">
+                    <img src="kicia3.jpg" class="miniaturka"><br>[3]
+                </td>
+                <td id="wybor_zdjecia_4" onclick="wybor(4)">
+                    <img src="kicia4.jpg" class="miniaturka"><br>[4]
+                </td>
+                <td id="wybor_zdjecia_5" onclick="wybor(5)">
+                    <img src="kicia5.jpg" class="miniaturka"><br>[5]
+                </td>
+            </tr>
+        </table>
+    </footer>
+    <table id="podfooter"><tr><td>
+    <label class="wybor_filtra"><input type="radio" name="wybor_filtrow" id="radio_kolorowe" onclick="kolorowe()" checked="true">[Q] Bez filtrów</label>
+    <label class="wybor_filtra"><input type="radio" name="wybor_filtrow" id="radio_czarnobiale" onclick="czarnobiale()">[W] Czarnobiałe</label>
+    <label class="wybor_filtra"><input type="radio" name="wybor_filtrow" id="radio_sepia" onclick="sepia()">[E] Sepia</label>
+    <label class="wybor_filtra"><input type="radio" name="wybor_filtrow" id="radio_negatyw" onclick="negatyw()">[R] Negatyw</label></td></tr></table>
+
+    <script>
+        // Ala galeria! 
+        
+        wybor(1);
+
+        var aktualne_zdjecie = 1;
+
+        function strzalka_lewo() {
+
+            aktualne_zdjecie-=1;
+
+            if (aktualne_zdjecie<1) {
+                aktualne_zdjecie = 5;
+                wybor(aktualne_zdjecie);
+            }
+            else if (aktualne_zdjecie > 5) {
+                aktualne_zdjecie = 1;
+                wybor(aktualne_zdjecie);
+            }
+            else {
+                wybor(aktualne_zdjecie);
+            }
+        }
+
+        function strzalka_prawo() {
+
+            aktualne_zdjecie+=1;
+
+            if (aktualne_zdjecie<1) {
+                aktualne_zdjecie = 5;
+                wybor(aktualne_zdjecie);
+            }
+            else if (aktualne_zdjecie > 5) {
+                aktualne_zdjecie = 1;
+                wybor(aktualne_zdjecie);
+            }
+            else {
+                wybor(aktualne_zdjecie);
+            }
+        }
+
+
+    // ========== OBSŁUGA KLAWIATURY ==========
+    // Dzięki temu można np. wywoływać funkcje wciskajać dany klawisz na klawiaturze
+    //
+    // ===== Wyjaśnienie składni
+    //  METODA WCIŚNIĘCIA - Przykładowo 'keydown', 'keyup', 'keypress';
+    //  KLAWISZ - Klawisz klawiatury, np. 'a' 'B' 'ArrowRight' 'Escape' 'Backspace', wielkość litery ma znaczenie!;
+    //  INSTRUKCJE - Zwykłe instrukcje javascript, polecam podpiąć funkcję - jest wygodniej;
+    //  [INNE WARUNKI] - Opcjonalne - dodatkowe warunki do spełnienia;
+    //
+    // ===== Składnia:
+    //  document.addEventListener("METODA WCIŚNIĘCIA", (event) => {
+    //      if (event.key == "KLAWISZ" [INNE WARUNKI]) {INSTRUKCJE};
+    
+    document.addEventListener("keydown", (event) => {
+        if (event.key == "ArrowRight") {strzalka_prawo()};
+        if (event.key == "ArrowLeft") {strzalka_lewo()};
+        if (event.key == "1" || event.key == "2" || event.key == "3" || event.key == "4" || event.key == "5") {wybor(event.key)};
+        if (event.key == "q" || event.key == "Q") {kolorowe()};
+        if (event.key == "w" || event.key == "W") {czarnobiale()};
+        if (event.key == "e" || event.key == "E") {sepia()};
+        if (event.key == "r" || event.key == "R") {negatyw()};
+    })
+
+        function wybor(x) {
+            
+                document.getElementById("wybrane_zdjecie").innerHTML="<img src='kicia"+x+".jpg'>";
+
+                document.getElementById("wybor_zdjecia_"+x).style.backgroundColor="rgb(184, 118, 151)";
+                document.getElementById("wybor_zdjecia_"+x).style.color="white";
+                document.getElementById("wybor_zdjecia_"+x).style.borderColor="white";
+
+                for (var i = 1;i<=5;i++) {
+                    if (i != x) {
+
+                        document.getElementById("wybor_zdjecia_"+i).style.backgroundColor="deeppink";
+                        document.getElementById("wybor_zdjecia_"+i).style.color="#470729";
+                        document.getElementById("wybor_zdjecia_"+i).style.borderColor="#470729";
+
+                    }
+                }
+
+                aktualne_zdjecie = x;
+        }
+      
+        function kolorowe() {
+            document.getElementById("wybrane_zdjecie").style.filter="";
+            document.getElementById("radio_kolorowe").checked="true";
+        }
+        function czarnobiale() {
+            document.getElementById("wybrane_zdjecie").style.filter="grayscale(100%)";
+            document.getElementById("radio_czarnobiale").checked="true";
+        }
+        function sepia() {
+            document.getElementById("wybrane_zdjecie").style.filter="sepia(100%)";
+            document.getElementById("radio_sepia").checked="true";
+        }
+        function negatyw() {
+            document.getElementById("wybrane_zdjecie").style.filter="invert(100%)";
+            document.getElementById("radio_negatyw").checked="true";
+        }
+
+        // ========== STARY KOD ==========
+
+            /*
+
+
+            else if (x==1) {
+                document.getElementById("main").innerHTML="<img src='kicia"+x+".jpg'>";
+            document.getElementById("wybor_zdjecia_1").style.backgroundColor="deeppink";
+            document.getElementById("wybor_zdjecia_2").style.backgroundColor="rgb(184, 118, 151)";
+            document.getElementById("wybor_zdjecia_3").style.backgroundColor="deeppink";
+            document.getElementById("wybor_zdjecia_4").style.backgroundColor="deeppink";
+            document.getElementById("wybor_zdjecia_5").style.backgroundColor="deeppink";
+            aktualne_zdjecie = 2;
+            }else if (x==2) {
+                document.getElementById("main").innerHTML="<img src='kicia"+x+".jpg'>";
+            document.getElementById("wybor_zdjecia_1").style.backgroundColor="deeppink";
+            document.getElementById("wybor_zdjecia_2").style.backgroundColor="rgb(184, 118, 151)";
+            document.getElementById("wybor_zdjecia_3").style.backgroundColor="deeppink";
+            document.getElementById("wybor_zdjecia_4").style.backgroundColor="deeppink";
+            document.getElementById("wybor_zdjecia_5").style.backgroundColor="deeppink";
+            aktualne_zdjecie = 2;
+            }
+            else if (x==3) {
+                document.getElementById("main").innerHTML="<img src='kicia"+x+".jpg'>";
+            document.getElementById("wybor_zdjecia_1").style.backgroundColor="deeppink";
+            document.getElementById("wybor_zdjecia_2").style.backgroundColor="deeppink";
+            document.getElementById("wybor_zdjecia_3").style.backgroundColor="rgb(184, 118, 151)";
+            document.getElementById("wybor_zdjecia_4").style.backgroundColor="deeppink";
+            document.getElementById("wybor_zdjecia_5").style.backgroundColor="deeppink";
+            aktualne_zdjecie = 3;
+            }
+            else if (x==4) {
+                document.getElementById("main").innerHTML="<img src='kicia"+x+".jpg'>";
+            document.getElementById("wybor_zdjecia_1").style.backgroundColor="deeppink";
+            document.getElementById("wybor_zdjecia_2").style.backgroundColor="deeppink";
+            document.getElementById("wybor_zdjecia_3").style.backgroundColor="deeppink";
+            document.getElementById("wybor_zdjecia_4").style.backgroundColor="rgb(184, 118, 151)";
+            document.getElementById("wybor_zdjecia_5").style.backgroundColor="deeppink";
+            aktualne_zdjecie = 4;
+            }
+            else if (x==5) {
+                document.getElementById("main").innerHTML="<img src='kicia"+x+".jpg'>";
+            document.getElementById("wybor_zdjecia_1").style.backgroundColor="deeppink";
+            document.getElementById("wybor_zdjecia_2").style.backgroundColor="deeppink";
+            document.getElementById("wybor_zdjecia_3").style.backgroundColor="deeppink";
+            document.getElementById("wybor_zdjecia_4").style.backgroundColor="deeppink";
+            document.getElementById("wybor_zdjecia_5").style.backgroundColor="rgb(184, 118, 151)";
+            aktualne_zdjecie = 5;
+            }
+            
+            */
+    </script>
+    <style>
+        main{
+            height: 500px;
+            width: 500px;
+            border:1px solid black;
+            margin-left: auto;
+            margin-right: auto;
+            padding:2px;
+            box-shadow: 0px 0px 50px black;
+        }
+        #strzalki_section{
+            display: block;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            width: fit-content;
+            margin-top: 15px;
+        }
+        img{
+            height: 500px;
+            width: 500px;
+        }
+        #wybor_zdjecia_1,#wybor_zdjecia_2,#wybor_zdjecia_3,#wybor_zdjecia_4,#wybor_zdjecia_5{
+            height:100px;
+            width: 100px;
+            border:1px solid purple;
+            padding:2px;
+            background-color: deeppink;
+        }
+        #wybor_zdjecia_1:hover,#wybor_zdjecia_2:hover,#wybor_zdjecia_3:hover,#wybor_zdjecia_4:hover,#wybor_zdjecia_5:hover{
+            border:1px solid white;
+            box-shadow: 0px 0px 10px white;
+        }
+        table{
+            margin-top:35px;
+            margin-left:auto;
+            margin-right:auto;
+            border-spacing: 20px;
+        }
+        td{
+            color:#470729;
+            text-align: center;
+            border-color: #470729;
+        }
+        .miniaturka{
+            height: 100px;
+            width: 100px;
+            
+        }
+        body{
+            background-image: linear-gradient(0deg,hotpink 0%,pink 100%);
+            height:98vh;
+        }
+        .wybor_filtra{
+            padding-top:10px;
+            padding-bottom: 10px;
+            padding-left:20px;
+            padding-right:20px;
+            border-radius: 10px;
+            background-color: rgb(184, 118, 151);
+            color:white;
+        }
+        .wybor_filtra:hover{
+            background-color: rgb(150, 100, 125);
+        }
+        .wybor_filtra:active{
+            box-shadow: 0px 0px 5px white;
+        }
+        #podfooter{
+            margin-top:50px;
+            margin-left:auto;
+            margin-right:auto;
+            border-spacing: 20px;
+        }
+    </style>
+</body>
+</html>
