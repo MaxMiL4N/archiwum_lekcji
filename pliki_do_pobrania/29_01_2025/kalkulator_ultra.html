@@ -158,11 +158,16 @@
 
     function backspace() {
 
+
+        
+
+
         if (aktualne_pole == 1) {
-            liczba_1.value = liczba_1.value / 10 ^ 0;
+            
+            liczba_1.value = Number(((liczba_1.value).toString()).slice(0, -1));
         }
         if (aktualne_pole == 2) {
-            liczba_2.value = liczba_2.value / 10 ^ 0;
+            liczba_2.value = Number(liczba_2.value.toString().slice(0, -1));
         }
     }
 
