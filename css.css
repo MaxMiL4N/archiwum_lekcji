@@ -145,10 +145,32 @@ div.day {
     margin-left: auto;
     margin-right: auto;
 }
+div.day_bonus {
+    margin-top:5px;
+    height: auto;
+    width: auto;
+    background-color: rgba(255, 62, 168, 0.219);
+    border-style: solid;
+    border-color: rgb(255, 45, 150);
+    border-width: 3px;
+    border-radius: 5px;
+    padding: 10px;
+    clear:both;
+    
+
+    margin-left: auto;
+    margin-right: auto;
+}
 p{
     font-weight: 800;
     text-align: center;
     text-shadow: 3px 3px 6px rgb(70, 70, 70);
+}
+div.day_bonus:hover {
+    background-color: rgba(255, 62, 168, 0.315);
+    transition: 0.3s;
+    border-color: rgb(255, 63, 159);
+    box-shadow: 0px 0px 10px hotpink;
 }
 /*
 .bit_taller{

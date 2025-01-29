@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator</title>
+</head>
+<body>
+    <main>
+        <!--<textarea class="input_text" id="liczba_1"></textarea>-->
+        <input class="input_text" type="text" id="liczba_1" onfocus="pole1()" onfocusout="de_pole1()">
+        <input type="text" id="wysw_znak" class="wyswietlanie" style="width: 10px; text-align: center;" readonly><!--style="color:#5f6d7a"-->
+        <input class="input_text" type="text" id="liczba_2" onfocus="pole2()" onfocusout="de_pole2()">
+        <!--<textarea class="input_text" id="liczba_2"></textarea>--> = 
+        <section id="wysw_wynik" class="wyswietlanie"></section>
+        <table>
+            <tr>
+                <td id="td_07"><button onclick="cyfra(7)">7</button></td><td id="td_08"><button onclick="cyfra(8)">8</button></td><td id="td_09"><button onclick="cyfra(9)">9</button></td><td id="td_plus"><button onclick="znak('+')">+</button></td>
+            </tr>
+            <tr>
+                <td id="td_04"><button onclick="cyfra(4)">4</button></td><td id="td_05"><button onclick="cyfra(5)">5</button></td><td id="td_06"><button onclick="cyfra(6)">6</button></td><td id="td_min"><button onclick="znak('-')">-</button></td>
+            </tr>
+            <tr>
+                <td id="td_01"><button onclick="cyfra(1)">1</button></td><td id="td_02"><button onclick="cyfra(2)">2</button></td><td id="td_03"><button onclick="cyfra(3)">3</button></td><td id="td_mnoz"><button onclick="znak('*')">*</button></td>
+            </tr>
+            <tr>
+                <td id="td_00"><button onclick="cyfra(0)">0</button></td><td id="td_dot"><button onclick="cyfra('.')">.</button><td id="td_wyn"><button onclick="oblicz()">=</button></td><td id="td_dziel"><button onclick="znak('/')">/</button></td>
+            </tr>
+            <tr>
+                <td colspan="4" id="td_reset"><button onclick="reset()">RESET</button></td>
+            </tr>
+        </table>
+    </main>
+
+<script>
+    //var audio = new Audio('a6-82015.mp3');
+    //audio.play();
+    var aktualne_pole = 1;
+    var aktualny_znak = "null";
+    var wynik = "null";
+    var input_klawiatury = true;
+
+    function cyfra(x) {
+        if(aktualne_pole == 1) {
+            liczba_1.value+=x;
+        }
+        if(aktualne_pole == 2) {
+            liczba_2.value+=x;
+        }
+        
+    }
+    function pole1() {
+        aktualne_pole=1;
+        input_klawiatury = false;
+    }
+    function pole2() {
+        aktualne_pole=2;
+        input_klawiatury = false;
+    }
+    function de_pole1() {
+        input_klawiatury = true;
+    }
+    function de_pole2() {
+        input_klawiatury = true;
+    }
+    function znak(y) {
+        if (y === '+') {
+            wysw_znak.style.color="white";
+            wysw_znak.value='+';
+            aktualny_znak = "+";
+            aktualne_pole = 2;
+            wysw_wynik.innerHTML="";
+        }
+        if (y === '-') {
+            wysw_znak.style.color="white";
+            wysw_znak.value='-';
+            aktualny_znak = "-";
+            aktualne_pole = 2;
+            wysw_wynik.innerHTML="";
+        }
+        if (y === '*') {
+            wysw_znak.style.color="white";
+            wysw_znak.value='*';
+            aktualny_znak = "*";
+            aktualne_pole = 2;
+            wysw_wynik.innerHTML="";
+        }
+        if (y === '/') {
+            wysw_znak.style.color="white";
+            wysw_znak.value='/';
+            aktualny_znak = "/";
+            aktualne_pole = 2;
+            wysw_wynik.innerHTML="";
+        }
+    }
+
+    function oblicz() {
+        if (aktualny_znak == "+") {
+
+            wynik = (liczba_1.value*1)+(liczba_2.value*1);
+            wysw_wynik.innerHTML=wynik;
+        }
+        if (aktualny_znak == "-") {
+
+            wynik = (liczba_1.value*1)-(liczba_2.value*1);
+            wysw_wynik.innerHTML=wynik;
+        }
+        if (aktualny_znak == "*") {
+
+            wynik = (liczba_1.value*1)*(liczba_2.value*1);
+            wysw_wynik.innerHTML=wynik;
+        }
+        if (aktualny_znak == "/") {
+
+            wynik = (liczba_1.value*1)/(liczba_2.value*1);
+            wysw_wynik.innerHTML=wynik;
+        }
+    }
+
+    function reset() {
+        aktualny_znak = "null";
+        aktualne_pole = 1;
+        liczba_1.value="";
+        wysw_znak.value="";
+        liczba_2.value="";
+        wysw_wynik.innerHTML="";
+    }
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key == "1" && input_klawiatury == true) {cyfra(1); td_01.style.backgroundColor="#6b7986"}
+        if (event.key == "2" && input_klawiatury == true) {cyfra(2); td_02.style.backgroundColor="#6b7986"}
+        if (event.key == "3" && input_klawiatury == true) {cyfra(3); td_03.style.backgroundColor="#6b7986"}
+        if (event.key == "4" && input_klawiatury == true) {cyfra(4); td_04.style.backgroundColor="#6b7986"}
+        if (event.key == "5" && input_klawiatury == true) {cyfra(5); td_05.style.backgroundColor="#6b7986"}
+        if (event.key == "6" && input_klawiatury == true) {cyfra(6); td_06.style.backgroundColor="#6b7986"}
+        if (event.key == "7" && input_klawiatury == true) {cyfra(7); td_07.style.backgroundColor="#6b7986"}
+        if (event.key == "8" && input_klawiatury == true) {cyfra(8); td_08.style.backgroundColor="#6b7986"}
+        if (event.key == "9" && input_klawiatury == true) {cyfra(9); td_09.style.backgroundColor="#6b7986"}
+        if (event.key == "0" && input_klawiatury == true) {cyfra(0); td_00.style.backgroundColor="#6b7986"}
+        if (event.key == "+" && input_klawiatury == true) {znak('+'); td_plus.style.backgroundColor="#6b7986"}
+        if (event.key == "-" && input_klawiatury == true) {znak('-'); td_min.style.backgroundColor="#6b7986"}
+        if (event.key == "*" && input_klawiatury == true) {znak('*'); td_mnoz.style.backgroundColor="#6b7986"}
+        if (event.key == "/" && input_klawiatury == true) {znak('/'); td_dziel.style.backgroundColor="#6b7986"}
+        if (event.key == "." && input_klawiatury == true) {cyfra("."); td_dot.style.backgroundColor="#6b7986"}
+        if (event.key == "Enter" && input_klawiatury == true) {oblicz(); td_wyn.style.backgroundColor="#6b7986"}
+        if (event.key == "Backspace" && input_klawiatury == true) {reset(); td_reset.style.backgroundColor="#6b7986"}
+    })
+    document.addEventListener("keyup", (event) => {
+        if (event.key == "1") {td_01.style.backgroundColor=""}
+        if (event.key == "2") {td_02.style.backgroundColor=""}
+        if (event.key == "3") {td_03.style.backgroundColor=""}
+        if (event.key == "4") {td_04.style.backgroundColor=""}
+        if (event.key == "5") {td_05.style.backgroundColor=""}
+        if (event.key == "6") {td_06.style.backgroundColor=""}
+        if (event.key == "7") {td_07.style.backgroundColor=""}
+        if (event.key == "8") {td_08.style.backgroundColor=""}
+        if (event.key == "9") {td_09.style.backgroundColor=""}
+        if (event.key == "0") {td_00.style.backgroundColor=""}
+        if (event.key == "+") {td_plus.style.backgroundColor=""}
+        if (event.key == "-") {td_min.style.backgroundColor=""}
+        if (event.key == "*") {td_mnoz.style.backgroundColor=""}
+        if (event.key == "/") {td_dziel.style.backgroundColor=""}
+        if (event.key == ".") {td_dot.style.backgroundColor=""}
+        if (event.key == "Enter") {td_wyn.style.backgroundColor=""}
+        if (event.key == "Backspace") {td_reset.style.backgroundColor=""}
+    })
+</script>    
+
+<style>
+    body{
+        background-color: slategray;
+        padding: 0%;
+        background-image: linear-gradient(0deg,slategray 0%, rgb(146, 165, 184) 100%);
+        background-attachment: fixed;
+
+    }
+    main{
+       margin-left: auto;
+       margin-right: auto;
+       border: 1px solid black;
+       box-shadow: 0px 0px 5px black;
+       background-color: slategrey;
+       width: 600px;
+       height: 800px;
+       margin-top:1%;
+       padding: 15px;
+       color: white;
+    }
+    .input_text{
+        background-color: rgb(95, 109, 122);
+        border-radius: 10px;
+        margin-bottom: 10px;
+        border: 2px solid gray;
+        padding:3px;
+        height:20px;
+        color:white;
+        width: 200px;
+    }
+    .wyswietlanie{
+        background-color: rgb(95, 109, 122);
+        border-radius: 10px;
+        margin-bottom: 10px;
+        border: 2px solid gray;
+        padding:3px;
+        height:20px;
+        
+        color:white;
+    }
+    table{
+        width: 100%;
+        height: 85%;
+    }
+    td{
+        text-align: center;
+        background-color: rgb(125, 141, 158);
+        font-size: 500%;
+    }
+    td:hover{
+        background-color: rgb(144, 162, 180);
+    }
+    td:active{
+        background-color: rgb(107, 121, 134);
+    }
+    button{
+        height: 100%;
+        width: 100%;
+        background: none;
+        border: none;
+        font-size: 100%;
+    }
+</style>
+</body>
+</html>
