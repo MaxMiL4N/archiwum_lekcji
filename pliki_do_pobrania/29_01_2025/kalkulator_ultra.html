@@ -8,7 +8,7 @@
 <body>
     <main>
         <!--<textarea class="input_text" id="liczba_1"></textarea>-->
-        ↪ [ <input class="input_text" type="text" id="liczba_1" onfocus="pole1()" onfocusout="de_pole1()">
+        ↳ [ <input class="input_text" type="text" id="liczba_1" onfocus="pole1()" onfocusout="de_pole1()">
         <input type="text" id="wysw_znak" class="wyswietlanie" style="width: 10px; text-align: center;" readonly><!--style="color:#5f6d7a"-->
         <input class="input_text" type="text" id="liczba_2" onfocus="pole2()" onfocusout="de_pole2()"> ] =
         <!--<textarea class="input_text" id="liczba_2"></textarea>-->
@@ -27,7 +27,7 @@
                 <td id="td_00"><button onclick="cyfra(0)">0</button></td><td id="td_dot"><button onclick="cyfra('.')">.</button><td id="td_wyn"><button onclick="oblicz()">=</button></td><td id="td_dziel"><button onclick="znak('/')">/</button></td>
             </tr>
             <tr>
-                <td colspan="4" id="td_reset"><button onclick="reset()">RESET</button></td>
+                <td colspan="2" id="td_reset"><button style="font-size: 30%;" onclick="reset()">RESET</button></td><td colspan="2" id="td_backspace"><button onclick="backspace()">⌫</button></td>
             </tr>
         </table>
     </main>
@@ -49,6 +49,36 @@
         }
         wysw_wynik.innerHTML="";
     }
+
+    var ujemna_1 = false;
+    var ujemna_2 = false;
+
+    function ujemne() {
+        if(aktualne_pole == 1 && ujemna_1 == false) {
+            liczba_1.value="-"+liczba_1.value;
+            ujemna_1 = true;
+        }
+        else if (aktualne_pole == 1 && ujemna_1 == true) {
+            liczba_1.value=usun_minusa(liczba_1.value);
+            ujemna_1 = false;
+        }
+        if(aktualne_pole == 2 && ujemna_2 == false) {
+            liczba_2.value="-"+liczba_2.value;
+            ujemna_2 = true;
+        }
+        else if (aktualne_pole == 2 && ujemna_2 == true) {
+            liczba_2.value=usun_minusa(liczba_2.value);
+            ujemna_2 = false;
+        }
+
+        wysw_wynik.innerHTML="";
+    }
+
+    function usun_minusa(ujemna_liczba) {
+
+    return ujemna_liczba.replace('-', '');
+    }
+
     function pole1() {
         aktualne_pole=1;
         input_klawiatury = false;
@@ -126,6 +156,16 @@
         wysw_wynik.innerHTML="";
     }
 
+    function backspace() {
+
+        if (aktualne_pole == 1) {
+            liczba_1.value = liczba_1.value / 10 ^ 0;
+        }
+        if (aktualne_pole == 2) {
+            liczba_2.value = liczba_2.value / 10 ^ 0;
+        }
+    }
+
     document.addEventListener("keydown", (event) => {
         if (event.key == "1" && input_klawiatury == true) {cyfra(1); td_01.style.backgroundColor="#6b7986"}
         if (event.key == "2" && input_klawiatury == true) {cyfra(2); td_02.style.backgroundColor="#6b7986"}
@@ -143,9 +183,11 @@
         if (event.key == "/" && input_klawiatury == true) {znak('/'); td_dziel.style.backgroundColor="#6b7986"}
         if (event.key == "." && input_klawiatury == true) {cyfra("."); td_dot.style.backgroundColor="#6b7986"}
         if (event.key == "Enter" && input_klawiatury == true) {oblicz(); td_wyn.style.backgroundColor="#6b7986"}
-        if (event.key == "Backspace" && input_klawiatury == true) {reset(); td_reset.style.backgroundColor="#6b7986"}
+        if (event.key == "Delete" && input_klawiatury == true) {reset(); td_reset.style.backgroundColor="#6b7986"}
+        if (event.key == "Backspace" && input_klawiatury == true) {backspace(); td_backspace.style.backgroundColor="#6b7986"}
         if (event.key == "[" && input_klawiatury == true) {aktualne_pole=1;}
         if (event.key == "]" && input_klawiatury == true) {aktualne_pole=2;}
+        if (event.key == "`" && input_klawiatury == true) {ujemne(); td_min.style.backgroundColor="#6b7986"}
     })
     document.addEventListener("keyup", (event) => {
         if (event.key == "1") {td_01.style.backgroundColor=""}
@@ -164,7 +206,9 @@
         if (event.key == "/") {td_dziel.style.backgroundColor=""}
         if (event.key == ".") {td_dot.style.backgroundColor=""}
         if (event.key == "Enter") {td_wyn.style.backgroundColor=""}
-        if (event.key == "Backspace") {td_reset.style.backgroundColor=""}
+        if (event.key == "Delete") {td_reset.style.backgroundColor=""}
+        if (event.key == "`") {td_min.style.backgroundColor=""}
+        if (event.key == "Backspace") {td_backspace.style.backgroundColor=""}
     })
 </script>    
 
