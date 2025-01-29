@@ -166,6 +166,12 @@ p{
     text-align: center;
     text-shadow: 3px 3px 6px rgb(70, 70, 70);
 }
+.p_bonus{
+    color: rgb(255, 255, 255);
+    font-weight: 800;
+    text-align: center;
+    text-shadow: 0px 0px 10px rgb(255, 77, 201);
+}
 div.day_bonus:hover {
     background-color: rgba(255, 62, 168, 0.315);
     transition: 0.3s;
