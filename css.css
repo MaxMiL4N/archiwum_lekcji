@@ -193,7 +193,7 @@ div.day_disabled {
     width: auto;
     background-color: rgba(48, 22, 22, 0.219);
     border-style: dashed;
-    border-color: rgb(53, 30, 30);
+    border-color: rgba(53, 30, 30, 0);
     border-width: 3px;
     border-radius: 5px;
     padding: 10px;
