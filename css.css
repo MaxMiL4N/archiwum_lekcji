@@ -172,11 +172,42 @@ p{
     text-align: center;
     text-shadow: 0px 0px 10px rgb(255, 77, 201);
 }
+.class_pobierz_calosc{
+    background-color: rgba(39, 147, 255, 0.4);
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+}
+.class_pobierz_calosc>a{
+    color:#cecece;
+}
 div.day_bonus:hover {
     background-color: rgba(255, 62, 168, 0.315);
     transition: 0.3s;
     border-color: rgb(255, 63, 159);
     box-shadow: 0px 0px 10px hotpink;
+}
+div.day_disabled {
+    margin-top:5px;
+    height: auto;
+    width: auto;
+    background-color: rgba(48, 22, 22, 0.219);
+    border-style: dashed;
+    border-color: rgb(53, 30, 30);
+    border-width: 3px;
+    border-radius: 5px;
+    padding: 10px;
+    clear:both;
+    
+
+    margin-left: auto;
+    margin-right: auto;
+}
+.p_disabled{
+    color: rgb(201, 201, 201);
+    font-weight: 800;
+    text-align: center;
+    /* text-shadow: 0px 0px 10px rgb(255, 77, 201); */
 }
 /*
 .bit_taller{
