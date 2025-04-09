@@ -10,17 +10,18 @@
     <p class="info">Witaj na poligonie ćwiczebnym.</p>
     <h1>Tworzenie użytkowników, przyznawanie uprawnień, tworzenie widoków i procedur z argumentami wejściowymi i wyjściowymi</h1>
     <hr>
+<!--██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████-->
     <h3>Tworzenie użytkowników</h3>
     <section class="cwiczenie">
     <section class="pole_cwiczebne">
-        <p class="console_comment">// Tworzenie użytkownika 'user1' z hasłem 'zaq1@WSX'</p>
-        <input type="text" class="cwiczebny_input" placeholder="Polecenie" id="input_01"> USER '<input type="text" class="cwiczebny_input" placeholder="Nazwa użytkownika" id="input_02">'@'localhost' <input type="text" class="cwiczebny_input" placeholder="Argument polecenia" id="input_03"> BY '<input type="text" class="cwiczebny_input" placeholder="Hasło" id="input_04">';
+        <p class="console_comment">// Tworzenie użytkownika '<label id="label_los_uzytkownik"></label>' z hasłem '<label id="label_los_haslo"></label>'</p>
+        <input type="text" class="cwiczebny_input" style="text-align:center;" placeholder="Polecenie" id="input_01"> USER '<input type="text" class="cwiczebny_input" placeholder="Nazwa użytkownika" style="text-align:right;" id="input_02">'@'localhost' <input type="text" class="cwiczebny_input" placeholder="Argument polecenia" style="text-align:center;" id="input_03"> BY '<input type="text" class="cwiczebny_input" placeholder="Hasło" style="text-align:center;" id="input_04">';
     </section>
-    <button onclick="sprawdz_zad(1)">Sprawdź</button><label id="odpowiedz_zad1"></label><br>
-    <label>Odpowiedź i wyjaśnienie:</label>
+    <button onclick="sprawdz_zad(1)">Sprawdź</button><label id="odpowiedz_zad1"></label><hr>
+    <label style="margin-left:6px;">Odpowiedź i wyjaśnienie:</label>
     <section class="section_odpowiedz" id="sec_zad1" onclick="odkryj_zad(sec_zad1)">
         <section class="pole_cwiczebne">
-            CREATE USER 'user1'@'localhost' IDENTIFIED BY 'zaq1@WSX';
+            CREATE USER '<label id="label_odp_user"></label>'@'localhost' IDENTIFIED BY '<label id="label_odp_haslo"></label>';
         </section>
         Aby utworzyć nowego użytkownika w systemie należy użyć komendy <b>CREATE</b>.<br>
         Następnie określane jest co jest tworzone, w tym przypadku użytkownik czyli <b>USER</b>.<br>
@@ -30,19 +31,70 @@
         no i oczywiście samo hasło, również w apostrofach.
     </section>
     </section>
+<!--██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████-->
+    <h3>Nadawanie uprawnień użytkownikowi</h3>
+    <section class="cwiczenie">
+    <section class="pole_cwiczebne">
+        <p class="console_comment">// Nadawanie użytkownikowi '<label id="label_zad2_uzytkownik"></label>' uprawnienia <label id="label_zad2_uprawnienie"></label> w bazie danych 'bazadanych' i tabeli 'listaosob'</p>
+        GRANT <input type="text" class="cwiczebny_input" placeholder="Uprawnienie" style="text-align:center;" id="input_05"> ON <input type="text" class="cwiczebny_input" placeholder="Baza danych" style="text-align:right;" id="input_06">.<input type="text" class="cwiczebny_input" placeholder="Tabela" id="input_07"> TO <input type="text" class="cwiczebny_input" placeholder="Użytkownik" style="text-align:right;" id="input_08">@localhost IDENTIFIED BY '<input type="text" class="cwiczebny_input" style="text-align:center;" placeholder="Hasło" id="input_09">';
+    </section>
+    <button onclick="sprawdz_zad(2)">Sprawdź</button><label id="odpowiedz_zad2"></label><hr>
+    <label style="margin-left:6px;">Odpowiedź i wyjaśnienie:</label>
+    <section class="section_odpowiedz" id="sec_zad2" onclick="odkryj_zad(sec_zad2)">
+        <section class="pole_cwiczebne">
+            GRANT <label id="label_odp_uprawnienie"></label> ON bazadanych.listaosob TO <label id="label_odp_zad2_user"></label>@localhost IDENTIFIED BY '<label id="label_odp_zad2_haslo"></label>';
+        </section>
+        Można zarządzać uprawnieniami przy użyciu polecenia <b>GRANT</b>.<br>
+        Trzeba określić jakie uprawnienie chcemy nadać, w jakim miejscu<br>
+        (chodzi o konkretną tabelę w bazie danych, jeśli polecenie wskazuje<br>
+        wszystkie tabele należy wpisać '*' w miejsce nazwy tabeli).<br>
+        Następnie należy wskazać użytkownika, oraz jego hasło.
+    </section>
+    </section>
+<!--██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████-->
 <p class="info">Jest to wersja testowa nowych poligonów ćwiczebnych.</p>
+<!--██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████-->
 <script>
+    var losowy_uzytkownik = ["user1","skibidi","dzejkej","dartmonkey","gingerbrave","shadowmilk","darkcacao","evilowa","zaphawa","skoczi"];
+    var losowe_haslo = ["zaq1@WSX","ZAQ!2wsx","Qwerty123","haslo-trzaslo","Zaphawa123","Skibidi5","Malpo-Balon","Brr123","aaabbbccc","b2-4ac"];
+    var losowe_uprawnienie = ["SELECT","DELETE"];
+
+    var l_01 = Math.floor(Math.random() * 10);
+    var l_02 = Math.floor(Math.random() * 10);
+    var l_03 = Math.floor(Math.random() * 2);
+
+    label_los_uzytkownik.innerHTML=losowy_uzytkownik[l_01];
+    label_los_haslo.innerHTML=losowe_haslo[l_02];
+
+    label_odp_user.innerHTML=losowy_uzytkownik[l_01];
+    label_odp_haslo.innerHTML=losowe_haslo[l_02];
+
+    label_zad2_uzytkownik.innerHTML=losowy_uzytkownik[l_01];
+    label_zad2_uprawnienie.innerHTML=losowe_uprawnienie[l_03];
+
+    label_odp_uprawnienie.innerHTML=losowe_uprawnienie[l_03];
+    label_odp_zad2_user.innerHTML=losowy_uzytkownik[l_01];
+    label_odp_zad2_haslo.innerHTML=losowe_haslo[l_02];
+
     function odkryj_zad(x) {
         x.style.filter="blur(0px)";
         x.style.cursor="unset";
     }
     function sprawdz_zad(x) {
         if (x == 1) {
-            if (input_01.value.toLowerCase() == "create" && input_02.value == "user1" && input_03.value.toLowerCase() == "identified" && input_04.value == "zaq1@WSX") {
-                odpowiedz_zad1.innerHTML="<label class='dobra_odp'>Uzupełniono poprawnie!</label>";
+            if (input_01.value.toLowerCase() == "create" && input_02.value == losowy_uzytkownik[l_01] && input_03.value.toLowerCase() == "identified" && input_04.value == losowe_haslo[l_02]) {
+                odpowiedz_zad1.innerHTML="<label style='margin-left:6px;' class='dobra_odp'>Uzupełniono poprawnie!</label>";
             }
             else {
-                odpowiedz_zad1.innerHTML="<label class='zla_odp'>Coś jest nie tak. Wielkość liter ma czasem znaczenie!</label>";
+                odpowiedz_zad1.innerHTML="<label style='margin-left:6px;' class='zla_odp'>Coś jest nie tak. Wielkość liter ma czasem znaczenie!</label>";
+            }
+        }
+        if (x == 2) {
+            if (input_05.value == losowe_uprawnienie[l_03] && input_06.value == "bazadanych" && input_07.value == "listaosob" && input_08.value == losowy_uzytkownik[l_01] && input_09.value == losowe_haslo[l_02]) {
+                odpowiedz_zad2.innerHTML="<label style='margin-left:6px;' class='dobra_odp'>Uzupełniono poprawnie!</label>";
+            }
+            else {
+                odpowiedz_zad2.innerHTML="<label style='margin-left:6px;' class='zla_odp'>Coś jest nie tak. Wielkość liter ma czasem znaczenie!</label>";
             }
         }
     }
