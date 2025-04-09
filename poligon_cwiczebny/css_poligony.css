@@ -52,7 +52,6 @@ hr{
     border:1px solid #4d4d4d;
     background-color: #272727;
     max-width: fit-content;
-    box-shadow: 1px 1px 5px rgb(0, 0, 0);
     font-family: 'lucida console';
 }
 .console_comment{
