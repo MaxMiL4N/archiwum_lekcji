@@ -1,0 +1,112 @@
+@font-face { font-family: SamsungSans; src: url('SamsungSans-Regular.ttf'); } 
+@font-face { font-family: SamsungSharpSans; src: url('samsungsharpsans.otf'); } 
+@font-face { font-family: Fortnite; src: url('fortnite.otf'); } 
+@font-face { font-family: Burbank; src: url('Burbank\ Big\ Condensed\ Black.otf'); } 
+
+body{
+    font-family:SamsungSans;
+    color:white;
+    background-image: url("../dark_red_backgound.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    background-color: rgb(46,46,46);
+    padding:15px;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: rgba(0,0,0,1);
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #290000;
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #4b0000;
+  }
+.info{
+    color:rgb(201, 201, 201);
+    text-shadow: 1px 1px 4px rgb(70, 70, 70);
+    font-size:small;
+    font-weight: 100;
+    outline-color: black;
+}
+hr{
+    clear:both;
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
+}
+.pole_cwiczebne{
+    padding:5px;
+    border-radius: 2px;
+    border:1px solid #4d4d4d;
+    background-color: #272727;
+    max-width: fit-content;
+    box-shadow: 1px 1px 5px rgb(0, 0, 0);
+    font-family: 'lucida console';
+}
+.console_comment{
+    color: #6a9955;
+}
+.cwiczebny_input{
+    background-color: #383838;
+    color:white;
+    font-family: 'lucida console';
+}
+h1{
+    text-shadow: 1px 1px 3px rgb(170, 170, 170);
+}
+.cwiczenie{
+    border-radius: 2px;
+    border:1px solid rgb(22, 22, 22);
+    width: fit-content;
+    background-color: rgba(0,0,0,0.5);
+    padding: 2px;
+}
+button{
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-radius: 2px;
+    border:unset;
+    background-color: #272727;
+    color:white;
+}
+button:hover{
+    background-color: #750000;
+    box-shadow: 0px 0px 10px #750000;
+    cursor:pointer;
+}
+label{
+    margin-left: 6px;
+}
+.section_odpowiedz{
+    width: fit-content;
+    padding:10px;
+    filter: blur(10px);
+    border-radius: 10px;
+}
+.section_odpowiedz:hover{
+    filter: blur(7px);
+    cursor: pointer;
+}
+.zla_odp{
+    color:red;
+}
+.dobra_odp{
+    color:greenyellow;
+}

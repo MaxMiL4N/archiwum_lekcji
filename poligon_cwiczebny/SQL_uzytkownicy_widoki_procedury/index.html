@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poligon</title>
+    <link rel="stylesheet" href="../css_poligony.css">
+</head>
+<body>
+    <p class="info">Witaj na poligonie ćwiczebnym.</p>
+    <h1>Tworzenie użytkowników, przyznawanie uprawnień, tworzenie widoków i procedur z argumentami wejściowymi i wyjściowymi</h1>
+    <hr>
+    <h3>Tworzenie użytkowników</h3>
+    <section class="cwiczenie">
+    <section class="pole_cwiczebne">
+        <p class="console_comment">// Tworzenie użytkownika 'user1' z hasłem 'zaq1@WSX'</p>
+        <input type="text" class="cwiczebny_input" placeholder="Polecenie" id="input_01"> USER '<input type="text" class="cwiczebny_input" placeholder="Nazwa użytkownika" id="input_02">'@'localhost' <input type="text" class="cwiczebny_input" placeholder="Argument polecenia" id="input_03"> BY '<input type="text" class="cwiczebny_input" placeholder="Hasło" id="input_04">';
+    </section>
+    <button onclick="sprawdz_zad(1)">Sprawdź</button><label id="odpowiedz_zad1"></label><br>
+    <label>Odpowiedź i wyjaśnienie:</label>
+    <section class="section_odpowiedz" id="sec_zad1" onclick="odkryj_zad(sec_zad1)">
+        <section class="pole_cwiczebne">
+            CREATE USER 'user1'@'localhost' IDENTIFIED BY 'zaq1@WSX';
+        </section>
+        Aby utworzyć nowego użytkownika w systemie należy użyć komendy <b>CREATE</b>.<br>
+        Następnie określane jest co jest tworzone, w tym przypadku użytkownik czyli <b>USER</b>.<br>
+        Po tym ustalamy nazwę użytkownika i na jakim serwerze ma się znajdować,<br>
+        wpisywane nazwy powinny znajdować się w apostrofach (').<br>
+        Aby ustalić hasło, należy podać argument polecenia - <b>IDENTIFIED BY</b><br>
+        no i oczywiście samo hasło, również w apostrofach.
+    </section>
+    </section>
+<p class="info">Jest to wersja testowa nowych poligonów ćwiczebnych.</p>
+<script>
+    function odkryj_zad(x) {
+        x.style.filter="blur(0px)";
+        x.style.cursor="unset";
+    }
+    function sprawdz_zad(x) {
+        if (x == 1) {
+            if (input_01.value == "CREATE" && input_02.value == "user1" && input_03.value == "IDENTIFIED" && input_04.value == "zaq1@WSX") {
+                odpowiedz_zad1.innerHTML="<label class='dobra_odp'>Uzupełniono poprawnie!</label>";
+            }
+            else {
+                odpowiedz_zad1.innerHTML="<label class='zla_odp'>Coś jest nie tak. Wielkość liter ma znaczenie!</label>";
+            }
+        }
+    }
+</script>
+</body>
+</html>
