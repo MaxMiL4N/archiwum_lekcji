@@ -38,11 +38,11 @@
     }
     function sprawdz_zad(x) {
         if (x == 1) {
-            if (input_01.value == "CREATE" && input_02.value == "user1" && input_03.value == "IDENTIFIED" && input_04.value == "zaq1@WSX") {
+            if (input_01.value.toLowerCase() == "create" && input_02.value == "user1" && input_03.value.toLowerCase() == "identified" && input_04.value == "zaq1@WSX") {
                 odpowiedz_zad1.innerHTML="<label class='dobra_odp'>Uzupełniono poprawnie!</label>";
             }
             else {
-                odpowiedz_zad1.innerHTML="<label class='zla_odp'>Coś jest nie tak. Wielkość liter ma znaczenie!</label>";
+                odpowiedz_zad1.innerHTML="<label class='zla_odp'>Coś jest nie tak. Wielkość liter ma czasem znaczenie!</label>";
             }
         }
     }
