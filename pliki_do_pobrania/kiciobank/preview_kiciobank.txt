@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="tytul_strony">KicioBank</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="icon.png">
+</head>
+<body>
+    <header>
+        <section id="header_1">
+            KicioBank
+        </section>
+        <section id="header_2">
+            <input type="button" class="class_logowanie" id="guzik_logowanie" onclick="strona_logowania()" value="Zaloguj">
+        </section>
+    </header>
+    <section id="pasek_nawigacji">
+        <table id="table01">
+            <tr>
+                <td class="nawigacyjne" id="nawigacja_strona_glowna" onclick="strona_glowna()">Strona główna</td>
+            </tr>
+        </table>
+        <table id="table02" hidden>
+            <tr>
+                <td class="nawigacyjne" id="nawigacja_panel_glowny" onclick="panel_glowny()">Panel główny</td>
+                <td class="nawigacyjne" id="nawigacja_2" onclick="sec_historia_transakcji()">Historia transakcji</td>
+                <td class="nawigacyjne" id="nawigacja_3" onclick="sec_operacja_wplaty()">Wpłata</td>
+                <td class="nawigacyjne" id="nawigacja_4" onclick="sec_operacja_wyplaty()">Wypłata</td>
+            </tr>
+        </table>
+    </section>
+    <main>
+
+
+        <section id="section_strona_glowna">
+            <section id="podsection_strona_glowna_1">
+                <h1>⚠️ KicioBank ostrzega - uwaga na oszustów!</h1>
+                <p>Oszuści często podszywają się pod pracowników KicioBanku. Nigdy nie poprosimy o dane logowania podczas rozmowy telefonicznej i nie tylko.</p>
+                <p>Dowiedz się więcej o bezpieczeństwie w sieci <a href="placeholder">klikając tutaj</a>.</p>
+            </section>
+        </section>
+
+        <section id="section_logowanie" hidden>
+            <section id="podsection_logowanie1">
+                <h2>Zaloguj się</h2><br>
+                    <label>Login <input type="text" id="input_login"></label><br>
+                    <label>Hasło <input type="password" id="input_haslo"></label><br><br>
+                    <button class="button_zaloguj_sie" onclick="zaloguj_sie()">Zaloguj się</button><br>
+                    <button class="button_zaloguj_sie" onclick="zmien_haslo()">Zmień hasło</button>
+                    <p id="info_niepoprawne_dane"></p>
+            </section>
+        </section>
+
+        <section id="section_panel_glowny" hidden>
+            <section id="podsection_panel_glowny_main">
+            <section id="podsection_panel_glowny_historia">
+                <h1>Historia transakcji</h1>
+                <section id="hist_trans_panel_glowny" class="class_historia_transakcji">
+                    
+                </section>
+            </section>
+            <section id="podsection_panel_glowny_saldo">
+                <h1>Saldo</h1>
+                <label class="label_wyswietlanie_saldo"><label id="panel_glowny_saldo"></label> PLN</label>
+            </section>
+            <section id="podsection_panel_glowny_operacje">
+                <h1>Operacje</h1>
+                <button onclick="sec_operacja_wplaty()" class="button_zaloguj_sie">Wpłać</button><br>
+                <button onclick="sec_operacja_wyplaty()" class="button_zaloguj_sie">Wypłać</button>
+            </section></section>
+        </section>
+
+        <section id="section_historia_transakcji" hidden>
+            <section id="podsection_historia_transakcji">
+                <h1>Historia transakcji</h1>
+                <section id="hist_trans_full" class="class_historia_transakcji">
+                    
+                </section>
+            </section>
+        </section>
+
+        <section id="section_operacja_wplaty" hidden>
+            <section id="podsection_operacja_wplaty">
+                <h1>Wpłać</h1>
+                <label>Wpłata od <input type="text" id="input_kto_wplaca"></label><br>
+                <label>Kwota <input type="text" id="input_ile_wplaca"></label><br><br>
+                <button class="button_zaloguj_sie" onclick="wplata()">Wpłać</button>
+                <p id="info_niepoprawne_dane_wplata"></p>
+            </section>
+        </section>
+
+        <section id="section_operacja_wyplaty" hidden>
+            <section id="podsection_operacja_wyplaty">
+                <h1>Wypłać</h1>
+                <label>Wypłata do <input type="text" id="input_do_kogo_wyplata"></label><br>
+                <label>Kwota <input type="text" id="input_kwota_wyplaty"></label><br><br>
+                <button class="button_zaloguj_sie" onclick="wyplata()">Wypłać</button>
+                <p id="info_niepoprawne_dane_wyplata"></p>
+            </section>
+        </section>
+
+
+    </main>
+    <footer>
+        <section id="footer_1">
+            <a href="placeholder" class="a_footer">Regulamin</a> <a href="placeholder" class="a_footer">Wsparcie</a>
+        </section>
+    </footer>
+<script>
+    // Stwórz aplikację internetowego konta bankowego; jako pierwsze - logowanie, możliwość zmiany hasła. po zalogowaniu widok konta bankowego. poczatkowy stan konta 1000 zl.
+    // Operacje dot. konta:
+    // - wpłata - kto wpłaca, ile wpłaca? saldo zwiększa się o ilość wpłaty. Operacja jest zapisywana w historii. Opcjonalnie można dodać datę.
+    // - wypłata - (nie mozesz wyplacic wiecej niz masz). po kliknieciu wyplac, operacja jest zapisywana w historii
+    // należy móc się wylogować
+    strona_glowna();
+    var czy_zalogowano = false;
+
+    var saldo = 1000;
+    panel_glowny_saldo.innerHTML=saldo;
+    function strona_logowania() {
+        section_strona_glowna.hidden=true;
+        section_logowanie.hidden=false;
+        section_panel_glowny.hidden=true;
+        table01.hidden=false;
+        table02.hidden=true;
+
+
+        document.getElementById("nawigacja_strona_glowna").style.color="";
+        document.getElementById("nawigacja_strona_glowna").style.borderBottom="";
+
+        tytul_strony.innerHTML="Logowanie";
+        guzik_logowanie.value="Zaloguj";
+    }
+    function strona_glowna() {
+        section_strona_glowna.hidden=false;
+        section_logowanie.hidden=true;
+
+        document.getElementById("nawigacja_strona_glowna").style.color="rgb(94, 94, 94)";
+        document.getElementById("nawigacja_strona_glowna").style.borderBottom="2px solid gray";
+
+        tytul_strony.innerHTML="Strona główna";
+    }
+
+    var login = "admin";
+    var haslo = "admin";
+    function zmien_haslo() {
+        var podany_login = prompt("Podaj login");
+        if(podany_login == login) {
+            var stare_haslo = haslo;
+            var podane_stare_haslo = prompt("Podaj aktualne hasło");
+            if (podane_stare_haslo == stare_haslo) {
+                var nowe_haslo = prompt("Podaj nowe hasło");
+                if (nowe_haslo != "") {
+                    haslo = nowe_haslo;
+                }
+                else{
+                    alert("Hasło nie może być puste");
+                }
+            }
+            else{
+                alert("Podano niepoprawne hasło.");
+            }
+        }
+        else{
+            alert("Nie ma konta o podanym loginie.");
+        }
+    }
+
+    function zaloguj_sie() {
+        if (input_login.value == login && input_haslo.value==haslo) {
+
+            info_niepoprawne_dane.innerHTML="";
+            section_logowanie.hidden=true;
+            section_panel_glowny.hidden=false;
+            table01.hidden=true;
+            table02.hidden=false;
+            panel_glowny();
+            czy_zalogowano=true;
+            section_historia_transakcji.hidden=true;
+            section_operacja_wplaty.hidden=true;
+            section_operacja_wyplaty.hidden=true;
+
+            input_login.value="";
+            input_haslo.value="";
+        }
+        else{
+            info_niepoprawne_dane.innerHTML="Błędny login lub hasło!";
+        }
+    }
+    function panel_glowny() {
+        document.getElementById("nawigacja_panel_glowny").style.color="rgb(94, 94, 94)";
+        document.getElementById("nawigacja_panel_glowny").style.borderBottom="2px solid gray";
+        document.getElementById("nawigacja_2").style.color="";
+        document.getElementById("nawigacja_2").style.borderBottom="";
+        document.getElementById("nawigacja_3").style.color="";
+        document.getElementById("nawigacja_3").style.borderBottom="";
+        document.getElementById("nawigacja_4").style.color="";
+        document.getElementById("nawigacja_4").style.borderBottom="";
+
+
+        section_historia_transakcji.hidden=true;
+        section_panel_glowny.hidden=false;
+        section_operacja_wplaty.hidden=true;
+        section_operacja_wyplaty.hidden=true;
+
+        tytul_strony.innerHTML="Panel główny";
+        guzik_logowanie.value="Wyloguj";
+
+    }
+        function sec_historia_transakcji() {
+        document.getElementById("nawigacja_panel_glowny").style.color="";
+        document.getElementById("nawigacja_panel_glowny").style.borderBottom="";
+        document.getElementById("nawigacja_2").style.color="rgb(94, 94, 94)";
+        document.getElementById("nawigacja_2").style.borderBottom="2px solid gray";
+        document.getElementById("nawigacja_3").style.color="";
+        document.getElementById("nawigacja_3").style.borderBottom="";
+        document.getElementById("nawigacja_4").style.color="";
+        document.getElementById("nawigacja_4").style.borderBottom="";
+
+
+        section_historia_transakcji.hidden=false;
+        section_panel_glowny.hidden=true;
+        section_operacja_wplaty.hidden=true;
+        section_operacja_wyplaty.hidden=true;
+
+        tytul_strony.innerHTML="Historia transakcji";
+        guzik_logowanie.value="Wyloguj";
+
+    }
+    function sec_operacja_wplaty() {
+        document.getElementById("nawigacja_panel_glowny").style.color="";
+        document.getElementById("nawigacja_panel_glowny").style.borderBottom="";
+        document.getElementById("nawigacja_2").style.color="";
+        document.getElementById("nawigacja_2").style.borderBottom="";
+        document.getElementById("nawigacja_3").style.color="rgb(94, 94, 94)";
+        document.getElementById("nawigacja_3").style.borderBottom="2px solid gray";
+        document.getElementById("nawigacja_4").style.color="";
+        document.getElementById("nawigacja_4").style.borderBottom="";
+
+
+        section_historia_transakcji.hidden=true;
+        section_panel_glowny.hidden=true;
+        section_operacja_wplaty.hidden=false;
+        section_operacja_wyplaty.hidden=true;
+
+        info_niepoprawne_dane_wplata.innerHTML=""
+            input_kto_wplaca.value="";
+            input_ile_wplaca.value="";
+
+        tytul_strony.innerHTML="Wpłata";
+        guzik_logowanie.value="Wyloguj";
+
+    }
+    function sec_operacja_wyplaty() {
+        document.getElementById("nawigacja_panel_glowny").style.color="";
+        document.getElementById("nawigacja_panel_glowny").style.borderBottom="";
+        document.getElementById("nawigacja_2").style.color="";
+        document.getElementById("nawigacja_2").style.borderBottom="";
+        document.getElementById("nawigacja_3").style.color="";
+        document.getElementById("nawigacja_3").style.borderBottom="";
+        document.getElementById("nawigacja_4").style.color="rgb(94, 94, 94)";
+        document.getElementById("nawigacja_4").style.borderBottom="2px solid gray";
+
+
+        section_historia_transakcji.hidden=true;
+        section_panel_glowny.hidden=true;
+        section_operacja_wplaty.hidden=true;
+        section_operacja_wyplaty.hidden=false;
+
+        info_niepoprawne_dane_wyplata.innerHTML=""
+            input_do_kogo_wyplata.value="";
+            input_kwota_wyplaty.value="";
+
+        tytul_strony.innerHTML="Wypłata";
+        guzik_logowanie.value="Wyloguj";
+
+    }
+    function wplata() {
+        var ile_wplaca = parseFloat(input_ile_wplaca.value*1);
+
+        console.clear();
+        console.log("Wpłata od: "+input_kto_wplaca.value);
+        console.log("Kwota: "+input_ile_wplaca.value);
+
+        if (input_kto_wplaca.value != "" && isNaN(ile_wplaca) == false && input_ile_wplaca.value != "" && ile_wplaca > 0) {
+            saldo+=ile_wplaca;
+            panel_glowny_saldo.innerHTML=saldo;
+
+            var pelna_data_zrealizowania = new Date();
+            var dzien_zrealizowania = pelna_data_zrealizowania.getDate();
+            var miesiac_zrealizowania = pelna_data_zrealizowania.getMonth() + 1;
+            var rok_zrealizowania = pelna_data_zrealizowania.getFullYear();
+            var godzina_zrealizowania = pelna_data_zrealizowania.getHours();
+            var minuty_zrealizowania = pelna_data_zrealizowania.getMinutes();
+            if (dzien_zrealizowania<10) {
+                dzien_zrealizowania="0"+dzien_zrealizowania;
+            }
+            if (miesiac_zrealizowania<10) {
+                miesiac_zrealizowania="0"+miesiac_zrealizowania;
+            }
+            if (godzina_zrealizowania<10) {
+                godzina_zrealizowania="0"+godzina_zrealizowania;
+            }
+            if (minuty_zrealizowania<10) {
+                minuty_zrealizowania="0"+minuty_zrealizowania;
+            }
+            var data_zrealizowania = dzien_zrealizowania+"."+miesiac_zrealizowania+"."+rok_zrealizowania+" "+godzina_zrealizowania+":"+minuty_zrealizowania;
+
+
+
+            var historia_transakcji_before = hist_trans_full.innerHTML;
+
+            hist_trans_panel_glowny.innerHTML="<p class='p_wplata'>Wpłata od "+input_kto_wplaca.value+" na kwotę <b>"+ile_wplaca+" PLN</b><br><label class='mini_label'>"+data_zrealizowania+"</label></p>"+historia_transakcji_before;
+            hist_trans_full.innerHTML="<p class='p_wplata'>Wpłata od "+input_kto_wplaca.value+" na kwotę <b>"+ile_wplaca+" PLN</b><br><label class='mini_label'>"+data_zrealizowania+"</label></p>"+historia_transakcji_before;
+
+            info_niepoprawne_dane_wplata.innerHTML=""
+            input_kto_wplaca.value="";
+            input_ile_wplaca.value="";
+
+            panel_glowny();
+
+            console.log("✅ Operacja udana.");
+        }
+        else{
+            info_niepoprawne_dane_wplata.innerHTML="Wprowadzono błędne dane."
+            console.log("❎ Operacja nieudana.");
+        }
+    }
+
+    function wyplata() {
+        var kwota_wyplaty = parseFloat(input_kwota_wyplaty.value*1);
+
+        console.clear();
+        console.log("Wypłata do: "+input_do_kogo_wyplata.value);
+        console.log("Kwota: "+input_kwota_wyplaty.value);
+
+        if (input_do_kogo_wyplata.value != "" && isNaN(kwota_wyplaty) == false && input_kwota_wyplaty.value != "" && saldo > kwota_wyplaty && kwota_wyplaty > 0) {
+            saldo-=kwota_wyplaty;
+            panel_glowny_saldo.innerHTML=saldo;
+
+
+
+            var pelna_data_zrealizowania = new Date();
+            var dzien_zrealizowania = pelna_data_zrealizowania.getDate();
+            var miesiac_zrealizowania = pelna_data_zrealizowania.getMonth() + 1;
+            var rok_zrealizowania = pelna_data_zrealizowania.getFullYear();
+            var godzina_zrealizowania = pelna_data_zrealizowania.getHours();
+            var minuty_zrealizowania = pelna_data_zrealizowania.getMinutes();
+
+            if (dzien_zrealizowania<10) {
+                dzien_zrealizowania="0"+dzien_zrealizowania;
+            }
+            if (miesiac_zrealizowania<10) {
+                miesiac_zrealizowania="0"+miesiac_zrealizowania;
+            }
+            if (godzina_zrealizowania<10) {
+                godzina_zrealizowania="0"+godzina_zrealizowania;
+            }
+            if (minuty_zrealizowania<10) {
+                minuty_zrealizowania="0"+minuty_zrealizowania;
+            }
+
+            var data_zrealizowania = dzien_zrealizowania+"."+miesiac_zrealizowania+"."+rok_zrealizowania+" "+godzina_zrealizowania+":"+minuty_zrealizowania;
+
+            
+
+            var historia_transakcji_before = hist_trans_full.innerHTML;
+
+            hist_trans_panel_glowny.innerHTML="<p class='p_wyplata'>Wypłata do "+input_do_kogo_wyplata.value+" na kwotę <b>"+kwota_wyplaty+" PLN</b><br><label class='mini_label'>"+data_zrealizowania+"</label></p>"+historia_transakcji_before;
+            hist_trans_full.innerHTML="<p class='p_wyplata'>Wypłata do "+input_do_kogo_wyplata.value+" na kwotę <b>"+kwota_wyplaty+" PLN</b><br><label class='mini_label'>"+data_zrealizowania+"</label></p>"+historia_transakcji_before;
+
+            info_niepoprawne_dane_wyplata.innerHTML=""
+            input_do_kogo_wyplata.value="";
+            input_kwota_wyplaty.value="";
+
+            panel_glowny();
+
+            
+            console.log("✅ Operacja udana.");
+        }
+        else{
+            info_niepoprawne_dane_wyplata.innerHTML="Wprowadzono błędne dane lub za mało środków na koncie."
+            console.log("❎ Operacja nieudana.");
+        }
+    }
+
+    function debug_kasa(x) {
+        saldo+=x;
+        panel_glowny_saldo.innerHTML=saldo;
+
+        var historia_transakcji_before = hist_trans_full.innerHTML;
+
+        hist_trans_panel_glowny.innerHTML="<p class='p_wplata'>TEST: <b>+"+x+" PLN</b></p>"+historia_transakcji_before;
+        hist_trans_full.innerHTML="<p class='p_wplata'>TEST: <b>+"+x+" PLN</b></p>"+historia_transakcji_before;
+
+    }
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key == "`") {debug_kasa(50)};
+        if (event.key == "Enter" && section_logowanie.hidden==false) {zaloguj_sie()};
+    })
+</script>
+<style>
+    @font-face {
+        font-family: 'Cute Meow';
+        src: url('CuteMeow-51Pra.otf');
+    }
+    @font-face {
+        font-family: 'Simple Cat';
+        src: url('Simplecat-d9xpV.otf');
+    }
+    *{
+        font-family: 'noto-sans', sans-serif;
+    }
+    .class_historia_transakcji{
+        height: 75%;
+        width: 100%;
+        color: gray;
+        background-color: #e1e7ec;
+        border:1px solid wheat;
+        box-shadow: 0px 0px 2px black;
+        overflow-y:scroll;
+    }
+    .mini_label{
+        font-size:70%;
+        color: gray;
+        line-height: 90%;
+    }
+    body{
+        margin: 0px;
+        height: 100vh;
+        background-image: url('cats.jpg');
+        background-position: fixed;
+        background-repeat: no-repeat;
+    }
+    header{
+        background-color: rgb(255, 0, 106);
+        height: 10%;
+        color: white;
+        box-shadow: 0px 0px 10px 5px black;
+    }
+    .p_wplata{
+        background-color: rgb(225, 255, 181);
+        color: rgb(6, 70, 0);
+        line-height: 90%;
+    }
+    .p_wyplata{
+        background-color: rgb(255, 181, 181);
+        color: rgb(70, 0, 0);
+        line-height: 90%;
+    }
+    #panel_glowny_saldo{
+        font-weight: 800;
+    }
+    #podsection_panel_glowny_main{
+        width: 50%;
+        height: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #podsection_panel_glowny_historia{
+        float:left;
+        height: 600px;
+        width: 35%;
+        background-color: aliceblue;
+        border: 3px solid wheat;
+        border-radius: 15px;
+        padding: 10px;
+        box-shadow: 2px 2px 10px black;
+        position: relative;
+        margin-left: 100px;
+        margin-top: 50px;
+        text-align: center;
+    }
+    #podsection_panel_glowny_saldo,#podsection_panel_glowny_operacje{
+        float:left;
+        height: 250px;
+        width: 35%;
+        background-color: aliceblue;
+        border: 3px solid wheat;
+        border-radius: 15px;
+        padding: 10px;
+        box-shadow: 2px 2px 10px black;
+        position: relative;
+        margin-left: 100px;
+        margin-top: 50px;
+        text-align: center;
+    }
+    
+    #header_1{
+        color: white;
+        font-size: 580%;
+        font-family: "Cute Meow";
+        float: left;
+        width: 50%;
+        position: relative;
+        text-shadow: 0px 0px 5px rgb(97, 97, 97);
+        height: 100%;
+        /* top:50%;
+        transform: translateY(-50%); */
+    }
+    .label_wyswietlanie_saldo{
+        font-size: 300%;
+    }
+    #header_2{
+        color: white;
+     
+        font-family: "Cute Meow";
+        float: right;
+        width: 50%;
+        text-align: right;
+        height: 100%;
+    }
+    #info_niepoprawne_dane,#info_niepoprawne_dane_wplata,#info_niepoprawne_dane_wyplata{
+        color: rgb(255, 63, 63);
+    }
+    #pasek_nawigacji{
+        height: 5%;
+        background-image: linear-gradient(180deg,#ffc0da, #f1b1cc);
+        box-shadow: 0px 5px 5px black;
+    }
+    main{
+        height: 80%;
+        background-color: rgba(255,255,255,0.7);
+    }
+    footer{
+        background-color: rgb(255, 0, 106);
+        height: 5%;
+    }
+    #footer_1{
+        padding-top:10px;
+    }
+    a.a_footer{
+        color: white;
+        margin-left: 10px;
+        position: relative;
+        padding-top: 10px;
+    }
+    .class_logowanie{
+        background-image:radial-gradient(rgb(255, 66, 183) 0%,rgb(255, 30, 124) 100%);
+        color: white;
+        border: 1px solid black;
+        height: 90%;
+        width: 25%;
+        font-family: 'Simple Cat';
+        font-size: 200%;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        margin-right: 5px;
+    }
+    .class_logowanie:hover{
+        background-image: none;
+        background-color: rgb(204, 0, 85);
+        cursor: pointer;
+    }
+    .button_zaloguj_sie{
+        background-color: #ff046c;
+        padding-top:3px;
+        padding-bottom: 3px;
+        padding-left:60px;
+        padding-right:60px;
+        border:none;
+        border-radius: 5px;
+        color:white;
+        font-size: 150%;
+        margin-top: 5px;
+    }
+    .button_zaloguj_sie:hover{
+        background-color: rgb(204, 0, 85);
+        cursor: pointer;
+    }
+    .class_logowanie:active{
+        background-image: none;
+        background-color: rgb(255, 36, 128);
+        box-shadow: 0px 0px 20px white;
+    }
+    #section_strona_glowna,#section_logowanie,#section_historia_transakcji,#section_operacja_wyplaty,#section_operacja_wplaty{
+        height: 100%;
+    }
+    #podsection_strona_glowna_1{
+        height: 80%;
+        width: 50%;
+        background-color: aliceblue;
+        border: 3px solid wheat;
+        border-radius: 15px;
+        padding: 10px;
+        box-shadow: 2px 2px 10px black;
+        margin-left: auto;
+        margin-right:auto;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+
+        background-image: url('cat_warning_sign.png');
+        background-size: 100% 100%;
+        text-shadow: 0px 0px 15px 10px black;
+    }
+    #podsection_historia_transakcji{
+        height: 80%;
+        width: 50%;
+        background-color: aliceblue;
+        border: 3px solid wheat;
+        border-radius: 15px;
+        padding: 10px;
+        box-shadow: 2px 2px 10px black;
+        margin-left: auto;
+        margin-right:auto;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        text-align: center;
+    }
+    #podsection_logowanie1,#podsection_operacja_wplaty,#podsection_operacja_wyplaty{
+        height: 50%;
+        width: 30%;
+        background-color: aliceblue;
+        border: 3px solid wheat;
+        border-radius: 15px;
+        padding: 10px;
+        box-shadow: 2px 2px 10px black;
+        margin-left: auto;
+        margin-right:auto;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        text-align: center;
+    }
+    table{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    td.nawigacyjne{
+        color: rgb(58, 58, 58);
+        height: 100%;
+        padding: 10px;
+        border-bottom: 2px solid lightgray;
+        /*background-image: linear-gradient(180deg,#ffc0da 80%,white 100%);*/
+    }
+    td.nawigacyjne:hover{
+        /*background-image: linear-gradient(180deg,rgb(204, 0, 85) 80%,white 100%);*/
+        color: white;
+        cursor: pointer;
+        border-bottom: 2px solid lightgray;
+    }
+    label{
+        line-height: 35px;
+    }
+    h1{
+        font-size: 200%;
+    }
+</style>
+</body>
+</html>
