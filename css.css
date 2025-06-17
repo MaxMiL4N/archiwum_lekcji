@@ -156,6 +156,24 @@ a.file:active{
     background-color: white;
     color:black;
 }
+a.file_bonus{
+    color:rgb(253, 180, 255);
+    text-decoration:underline;
+    text-decoration-color:rgb(253, 180, 255);
+}
+a.file_bonus:hover{
+    /*color:rgb(180, 255, 255);
+    text-shadow: 0px 0px 3px rgb(180, 255, 255);*/
+    color:rgb(254, 226, 255);
+    text-shadow: 0px 0px 2px rgb(254, 226, 255);
+    text-decoration: none;
+    transition: 0.2s;
+}
+a.file_bonus:active{
+    font-weight: 800;
+    background-color: white;
+    color:black;
+}
 div {
     padding: 10px;
     height: 100vh;
@@ -192,6 +210,10 @@ div.day_bonus {
     margin-left: auto;
     margin-right: auto;
 }
+div.day_bonus > ul {
+    list-style-image: url('download-icon-special.png');
+    list-style-position: inside;
+}
 p{
     font-weight: 800;
     text-align: center;
@@ -219,6 +241,23 @@ p{
 }
 .class_pobierz_calosc:active{
     background-color: rgba(39, 147, 255, 0.1);
+}
+.class_pobierz_calosc_bonus{
+    background-color: rgba(253, 180, 255, 0.4);
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    color:rgb(254, 215, 255);
+    text-decoration: none;
+    display: block;
+}
+.class_pobierz_calosc_bonus:hover{
+    background-color: rgba(253, 180, 255, 0.6);
+    box-shadow: 0px 0px 5px rgba(253, 180, 255, 0.4);
+    transition: 0.2s;
+}
+.class_pobierz_calosc_bonus:active{
+    background-color: rgba(253, 180, 255, 0.1);
 }
 div.day_bonus:hover {
     background-color: rgba(255, 62, 168, 0.315);
