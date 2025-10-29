@@ -1,0 +1,32 @@
+aside#panel_lewy{
+    width:40%;
+    height:600px;
+    background-color: #FF6633;
+    float: left;
+}
+aside#panel_prawy{
+    width:60%;
+    height:600px;
+    background-color: #FF9933;
+    float: left;
+}
+footer{
+    background-color: #993300;
+    color: white;
+    font-size:150%;
+    text-align: right;
+    clear: both;
+}
+table,td{
+    margin:20px;
+    padding:30px;
+    border:2px solid brown;
+    border-collapse: collapse;
+}
+h1{
+    text-align: center;
+}
+img{
+    width:450px;
+    height:350px;
+}

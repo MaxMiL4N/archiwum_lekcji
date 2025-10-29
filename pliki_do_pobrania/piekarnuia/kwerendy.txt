@@ -1,0 +1,7 @@
+kw1: SELECT Rodzaj,Nazwa,Gramatura,Cena FROM wyroby WHERE rodzaj = "INNE"
+
+kw2: SELECT DISTINCT rodzaj FROM wyroby ORDER BY rodzaj DESC
+
+kw3: SELECT ID,Nazwa FROM wyroby WHERE nazwa LIKE "%Chałka%"
+
+kw4: SELECT Rodzaj,ROUND(AVG(cena),2) AS "Średnia cena" FROM wyroby GROUP BY Rodzaj

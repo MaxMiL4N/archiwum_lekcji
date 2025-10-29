@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nasze hobby</title>
+    <link rel="stylesheet" href="hobby.css">
+</head>
+<body>
+    <header>
+        <h1>FORUM HOBBYSTYCZNE</h1>
+    </header>
+        <section id="panel_l">
+            <h3>FORMULARZ REJESTRACJI FORUM</h3>
+            <form method="post" action="rejestracja.php">
+                <p><b>Twoje dane</b></p>
+                <label>Nick:<br><input type="text" name="nick" required></label><br>
+                <label>Hobby:<br><input type="text" name="hobby" required></label><br>
+                <label>Zawód:<br><input type="text" name="zawod" required></label><br>
+                <label><input type="radio" name="plec" value="M" checked="true"> Mężczyzna</label> <label><input type="radio" name="plec" value="K"> Kobieta</label><br>
+                <hr>
+                <p><b>Dane logowania</b></p>
+                <label>Login:<br><input type="text" name="login" required></label><br>
+                <label>Hasło:<br><input type="password" name="haslo" required></label><br>
+                <label><input type="checkbox" checked="true" name="chbx">Zapoznałem się z <a href="polityka.txt">Polityką bezpieczeństwa</a></label><br>
+                <input type="reset" value="WYCZYŚĆ"> <input type="submit" value="REJESTRACJA">
+            </form>
+        </section>
+        <section id="panel_r">
+            <h3>TEMATY NA FORUM</h3>
+            <ul>
+                <li>Hodowla</li>
+                <ul>
+                    <li>Psy</li>
+                    <li>Koty</li>
+                </ul>
+                <li>Muzyka</li>
+                <li>Gry komputerowe</li>
+            </ul>
+        </section>
+</body>
+</html>

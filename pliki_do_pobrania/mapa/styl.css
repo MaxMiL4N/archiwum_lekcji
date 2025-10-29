@@ -1,0 +1,51 @@
+*{
+    font-family: Georgia;
+}
+header {
+    background-color: navy;
+    color:white;
+    text-align: center;
+    height:100px;
+    width: 50%;
+    float:left;
+}
+nav {
+    background-color: navy;
+    padding:20px;
+    clear:both;
+}
+.menu {
+    color:silver;
+    margin:50px;
+}
+.menu:hover {
+    color: white;
+    text-decoration: underline;
+}
+aside,article {
+    background-color: azure;
+    height:550px;
+    float: left;
+}
+aside {
+    width:70%;
+}
+article {
+    width:30%;
+}
+footer {
+    background-color: navy;
+    color: white;
+    clear: both;
+}
+table {
+    border: 1px solid navy;
+    margin:auto;
+    width:70%;
+}
+tr:hover{
+    background-color: skyblue;
+}
+article>img {
+    width: 90%;
+}

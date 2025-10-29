@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form method="post" action="tabela.html">
+        <label>Pole tekstowe <input type="text" id="javascript01" name="php01"></label><br>
+        <label>Pole hasło <input type="password" id="javascript02" name="php02"></label><br>
+        <label><input type="radio" value="wartość 1" name="wybor" checked> 1 </label><label><input type="radio" value="wartość 2" name="wybor"> 2</label><br>
+        <label><input type="checkbox"> Opis 1</label><br>
+        <label><input type="checkbox"> Opis 2</label><br>
+            <label for="javascript03">Lista rozwijana</label>
+            <select multiple id="javascript03" name="php03">
+                <option value="opt1">
+                    Opcja 1
+                </option>
+                <option value="opt2">
+                    Opcja 2
+                </option>
+                <option value="opt3">
+                    Opcja 3
+                </option>
+                <option value="opt4">
+                    Opcja 4
+                </option>
+            </select><br>
+        <input type="file"><br>
+        <label>Pole numeryczne <input type="number" id="javascript04" name="php04"></label><br>
+        <label>Pole daty <input type="date" id="javascript05" name="php05"></label><br>
+        <label>Pole godziny <input type="time" id="javascript06" name="php06"></label><br>
+        <label>Paleta kolorów <input type="color" id="js07" name="php07"> </label>
+        <hr>
+        <label>Pole tekstowe (4) <input maxlength="4" type="text" id="js08" name="php08"></label><br>
+        <label>Pole tekstowe textarea <textarea cols="15" rows="10" id="js09" name="php09"></textarea></label><br>
+
+        <input type="reset" value="WYCZYŚĆ">
+        <input type="button" value="JS">
+        <input type="submit" value="PHP">
+    </form>
+
+<style>
+    #js08{
+        max-width:4ch;
+    }
+</style>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie formularz</title>
+</head>
+<body>
+    <form method="post" action="">
+    <fieldset style="width:fit-content;">
+    <legend border="black">Dane osobowe</legend>
+        <table>
+            <tr>
+                <td><label for="text01">Imię:</label></td><td><input type="text" id="text01"></td>
+            </tr>
+            <tr>
+                <td><label for="text02">Nazwisko:</label></td><td><input type="text" id="text02"></td>
+            </tr>
+            <tr>
+                <td><label for="text03">Data urodzenia:</label></td><td><input type="date" id="text03"></td>
+            </tr>
+            <tr>
+                <td><label for="text04">Miejsce urodzenia:</label></td><td><input type="text" id="text04"></td>
+            </tr>
+        </table>
+    </fieldset>
+    <fieldset>
+        <legend>Pozostałe informacje</legend>
+        <table>
+            <tr>
+                <td>Wykształcenie:</td><td>
+                    <input type="radio" name="wyksztalcenie_wybor" value="podstawowe">Podstawowe
+                    <input type="radio" name="wyksztalcenie_wybor" value="średnie">Średnie
+                    <input type="radio" name="wyksztalcenie_wybor" value="wyższe">Wyższe
+                </td>
+            </tr>
+            <tr>
+                <td>Zawód <br>wykonywany:</td><td><input type="text"> </td>
+            </tr>
+            <tr>
+                <td>Dodatkowe<br>umiejętności</td><td><textarea cols="15" rows="15"></textarea></td>
+            </tr>
+        </table>
+    </fieldset>
+    </form>
+</body>
+</html>

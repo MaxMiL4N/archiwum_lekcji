@@ -1,0 +1,27 @@
+html {
+    height: 100%;
+}
+header {
+    background-color: #9A6000;
+    color: white;
+    font-size: 180%;
+    text-align: center;
+    padding: 20px;
+}
+#panel_l {
+    width: 60%;
+    float: left;
+}
+#panel_r {
+    background-color: #C47A00;
+    color: white;
+    width: 40%;
+    height: 100%;
+    float: left;
+}
+h3 {
+    text-align: center;
+}
+ul>li {
+    margin: 10px;
+}

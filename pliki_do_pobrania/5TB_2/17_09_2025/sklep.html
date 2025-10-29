@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sklep muzyczny</title>
+    <link rel="stylesheet" href="muzyka.css">
+</head>
+<body>
+    <header>
+        <h1>SKLEP MUZYCZNY</h1>
+    </header>
+    <aside id="panel_lewy">
+        <h2>NASZA OFERTA</h2>
+        <ol>
+            <li>
+                Instrumenty muzyczne
+            </li>
+            <li>
+                Sprzęt audio
+            </li>
+            <li>
+                Płyty CD
+            </li>
+        </ol>
+    </aside>
+    <aside id="panel_prawy">
+        <h2>FORMULARZ REJESTRACYJNY</h2>
+        <form method="post" action="formularz.php">
+            <p><b>Dane osobowe</b></p>
+            <label>Imię:<br><input type="text" name="input_imie"></label><br>
+            <label>Nazwisko:<br><input type="text" name="input_nazwisko"></label><br>
+            <label>Adres:<br><input type="text" name="input_adres"></label><br>
+            <label>Telefon:<br><input type="text" name="input_telefon"></label><br>
+            <hr>
+            <p><b>Dane logowania</b></p>
+            <label>Login:<br><input type="text" name="input_login"></label><br>
+            <label>Hasło:<br><input type="password" name="input_haslo"></label><br>
+            <label><input type="checkbox" name="checkbox_regulamin" checked> Akceptuję <a href="regulamin.txt" target="_blank">regulamin</a> sklepu</label><br>
+            <input type="reset" value="WYCZYŚĆ"><input type="submit" value="REJESTRUJ">
+        </form>
+    </aside>
+</body>
+</html>

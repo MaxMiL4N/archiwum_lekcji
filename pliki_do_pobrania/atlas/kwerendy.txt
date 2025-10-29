@@ -1,0 +1,9 @@
+kw1: SELECT zwierzeta.gatunek, zwierzeta.wystepowanie FROM zwierzeta INNER JOIN gromady 
+ON zwierzeta.Gromady_id=gromady.id WHERE gromady.nazwa="ryby";
+
+kw2: SELECT zwierzeta.id, zwierzeta.gatunek,gromady.nazwa FROM
+zwierzeta INNER JOIN gromady ON zwierzeta.Gromady_id=gromady.id;
+
+kw3: SELECT COUNT(*) FROM zwierzeta WHERE gromady_id=5;
+
+kw4: CREATE USER 'KatarzynaNowak'@'localhost' identified by 'K4tNow';
