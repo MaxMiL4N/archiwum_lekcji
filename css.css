@@ -512,15 +512,20 @@ ul {
     border-radius: 15px;
     background-color: rgba(212, 58, 79, 0.3);
 }
-div.day>a>img {
+div.day>a.screenshot>img {
     height:100px;
     display: block;
     margin: auto;
     margin-bottom: 15px;
     border-radius: 5px;
 }
-div.day>a>img:hover {
+div.day>a.screenshot>img:hover {
     box-shadow: 0px 0px 5px lightgray;
     cursor: pointer;
     transition: 0.2s;
+}
+div.day>a.screenshot {
+    display: block;
+    width: min-content;
+    margin: auto;
 }
