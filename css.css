@@ -397,6 +397,7 @@ a.preview{
     background-color:rgba(89, 92, 99, 0.4);
     border-radius: 10px;
     padding: 3px;
+    white-space: nowrap;
 }
 .only_preview{
     font-size:small;
