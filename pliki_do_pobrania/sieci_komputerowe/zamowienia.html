@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zamowienia hurtowe</title>
+    <link rel="stylesheet" href="styl4.css">
+    
+</head>
+<body>
+<header>
+    <h1>Sieci komputerowe</h1>
+</header> 
+<section id="b_l">
+    <h2>Aktualizacja i zamówienia materiałów</h2>
+    <p>Do wewnętrznego użytku firmy</p>
+    <img src="obraz.png" alt="sieć komputerowa">
+</section>
+<section id="b_p">
+    <table>
+        <tr>
+            <th>Produkt</th>
+            <th>Jednostka</th>
+            <th>Dostępna ilość</th>
+            <th>Aktualizacja</th>
+            <th>Zamówienie</th>
+        </tr>
+        <tr>
+            <td>Skrętka U/UTP drut</td>
+            <td>metr</td>
+            <td id="ilosc_1">20</td>
+            <td><input type="button" class="aktualizacja" value="Aktualizacja" onclick="aktu(0)"></td>
+            <td><input type="button" class="zamowienie" value="Zamów" onclick="zam(0)"></td>
+        </tr>
+        <tr>
+            <td>Skrętka U/UTP linka</td>
+            <td>metr</td>
+            <td id="ilosc_2">2</td>
+            <td><input type="button" class="aktualizacja" value="Aktualizacja" onclick="aktu(1)"></td>
+            <td><input type="button" class="zamowienie" value="Zamów" onclick="zam(1)"></td>
+        </tr>
+        <tr>
+            <td>Wtyki 8P8C</td>
+            <td>sztuki</td>
+            <td id="ilosc_3">10</td>
+            <td><input type="button" class="aktualizacja" value="Aktualizacja" onclick="aktu(2)"></td>
+            <td><input type="button" class="zamowienie" value="Zamów" onclick="zam(2)"></td>
+        </tr>
+        <tr>
+            <td>Moduły Keystone</td>
+            <td>sztuki</td>
+            <td id="ilosc_4">30</td>
+            <td><input type="button" class="aktualizacja" value="Aktualizacja" onclick="aktu(3)"></td>
+            <td><input type="button" class="zamowienie" value="Zamów" onclick="zam(3)"></td>
+        </tr>
+    </table>
+</section>
+<footer>
+    <a href="http://sieci.pl/ ">Nasza strona internetowa</a>
+    <p>Stronę przygotował: 0000000000</p>
+</footer>
+<script>
+        
+
+        
+        var tabela = document.getElementsByTagName('table');
+        var wiersz = document.getElementsByTagName('tr');
+        var komorka = document.getElementsByTagName('td');
+
+                var nr_zam = 1;
+        console.log(nr_zam);
+        
+        for (var z = 0;z<=4;z++) {
+            var y = (z*5)+2;
+            if (komorka[y].innerHTML == 0) {
+                komorka[y].style.backgroundColor="red";
+            }
+            else if (komorka[y].innerHTML >= 1 && komorka[y].innerHTML <= 5) {
+                komorka[y].style.backgroundColor="yellow";
+            } else if (komorka[y].innerHTML > 5) {
+                komorka[y].style.backgroundColor="";
+            }
+            
+            /*
+            if (document.getElementById("ilosc_"+z).innerHTML == 0) {
+                document.getElementById("ilosc_"+z).style.backgroundColor="red";
+            } else if (document.getElementById("ilosc_"+z).innerHTML >= 1 && document.getElementById("ilosc_"+z).innerHTML <= 5) {
+                document.getElementById("ilosc_"+z).style.backgroundColor="yellow";
+            }*/
+            
+        }
+
+        function aktu(x){
+            var y = (x*5)+2;
+            var prompt1 = prompt("Podaj nową ilość:");
+            komorka[y].innerHTML = prompt1;
+            if (komorka[y].innerHTML == 0) {
+                komorka[y].style.backgroundColor="red";
+            }
+            else if (komorka[y].innerHTML >= 1 && komorka[y].innerHTML <= 5) {
+                komorka[y].style.backgroundColor="yellow";
+            } else if (komorka[y].innerHTML > 5) {
+                komorka[y].style.backgroundColor="";
+            }
+            
+        };
+
+        
+
+
+        function zam(x) {
+            var nazwa_produkt = komorka[x*5].innerHTML;
+            alert("Zamówienie nr: "+nr_zam+" Produkt: "+nazwa_produkt);
+            nr_zam++;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planer zadań</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+    <aside>
+        <img src="obraz.jpg" alt="notatki">
+    </aside>
+    <header>
+        <h2>Moje zadania</h2>
+    </header>
+    <nav>
+        <input type="text" placeholder="Dodaj zadanie..."> <input type="button" value="Dodaj" onclick="dodaj_zadanie()">
+    </nav>
+    <main>
+        <ul id="lista_zadan">
+            <li id="zadanie1">Wyprowadzić psa <input type="button" value="Wykonano" onclick="wykonano(1)"></li>
+            <li id="zadanie2">Gimnastyka <input type="button" value="Wykonano" onclick="wykonano(2)"></li>
+            <li id="zadanie3">Zakupy <input type="button" value="Wykonano" onclick="wykonano(3)"></li>
+            <li id="zadanie4">Spacer z kumplem <input type="button" value="Wykonano" onclick="wykonano(4)"></li>
+            <li id="zadanie5">Odrabianie lekcji z młodszą siostrą <input type="button" value="Wykonano" onclick="wykonano(5)"></li>
+            <li id="zadanie6">Projekt na geografię <input type="button" value="Wykonano" onclick="wykonano(6)"></li>
+        </ul>
+    </main>
+    <footer>
+        <h3>Notatki: Eternal Sugar x Hollyberka</h3>
+    </footer>
+<script>
+    function wykonano(x) {
+        
+    }
+</script>
+</body>
+</html>

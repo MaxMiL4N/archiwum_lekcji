@@ -1,0 +1,51 @@
+* {
+    text-align: center;
+    font-family: Georgia;
+}
+header,footer{
+    background-color: tomato;
+    color: mistyrose;
+    padding: 10px;
+    clear: both;
+}
+nav {
+    width: 20%;
+    float:left;
+}
+#blok1,#blok2,#blok3 {
+    background-color: #FFAEA5;
+    height: 170px;
+    font-size: 200%;
+    clear: both;
+}
+#blok1{
+    background-color: mistyrose;
+}
+main {
+    background-color: mistyrose;
+    width: 80%;
+    height:510px;
+    overflow: auto;
+    float: left;
+}
+#sekcja2,#sekcja3 {
+    display: none;
+}
+#sekcja1,#sekcja2,#sekcja3{
+    clear: both;
+}
+table {
+    margin: auto;
+    width: 60%;
+    border: dashed 1px indigo;
+}
+select,input[type="submit"]{
+    margin:20px;
+}
+dt {
+    font-weight: bold;
+    font-style: italic;
+}
+dd:hover {
+    font-size: 180%;
+}

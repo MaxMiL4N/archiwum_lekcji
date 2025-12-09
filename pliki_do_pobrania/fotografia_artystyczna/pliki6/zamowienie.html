@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotografia</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Fotografia artystyczna</h1>
+    </header>
+    <section>
+        <img src="1.jpg" alt="obrazy do sprzedaży" title="1.jpg">
+        <img src="2.jpg" alt="obrazy do sprzedaży" title="2.jpg">
+        <img src="3.jpg" alt="obrazy do sprzedaży" title="3.jpg">
+        <img src="4.jpg" alt="obrazy do sprzedaży" title="4.jpg">
+        <img src="5.jpg" alt="obrazy do sprzedaży" title="5.jpg">
+        <img src="6.jpg" alt="obrazy do sprzedaży" title="6.jpg">
+        <img src="7.jpg" alt="obrazy do sprzedaży" title="7.jpg">
+        <img src="8.jpg" alt="obrazy do sprzedaży" title="8.jpg">
+        <img src="9.jpg" alt="obrazy do sprzedaży" title="9.jpg">
+        <img src="10.jpg" alt="obrazy do sprzedaży" title="10.jpg">
+    </section>
+    <main>
+        <aside id="blok_lewy">
+            <h3>Zamówienie</h3>
+            <label>Wybierz obraz: <input type="file" accept="image/jpeg" id="input_zdjecie"></label><br>
+            <label>Liczba Kopii: <input type="number" id="input_kopie"></label><br>
+            <input type="radio" name="rodzaj_papieru" value="blyszczacy" id="input_radio_blyszczacy" checked> Papier błyszczący<br>
+            <input type="radio" name="rodzaj_papieru" value="matowy" id="input_radio_matowy"> Papier matowy<br>
+            <button onclick="dodaj_do_koszyka()">Dodaj do koszyka</button>
+        </aside>
+        <nav>
+            <ul>
+                <li>
+                    <a href="regulamin.html">Regulamin</a>
+                </li>
+                <li>
+                    <a href="uslugi.html">Usługi</a>
+                </li>
+                <li>
+                    <a href="https://pixabay.com">Zdjęcia</a>
+                </li>
+            </ul>
+        </nav>
+        <aside id="blok_prawy">
+            <h3>
+                Koszyk</h3>
+                <section id="section_koszyk">
+                    <script>
+                        function dodaj_do_koszyka() {
+                        var obraz = document.getElementById("input_zdjecie").files[0].name;
+                        var kopie = document.getElementById("input_kopie").value;
+                        if (document.getElementById("input_radio_blyszczacy").checked == true) {
+                            var rodz_papieru = document.getElementById("input_radio_blyszczacy").value;
+                        }
+                        else {
+                            var rodz_papieru = document.getElementById("input_radio_matowy").value;
+                        }
+
+                        if (rodz_papieru == "blyszczacy") {
+                            var wynik = kopie * 1.5;
+                        }
+                        else {
+                            var wynik = kopie * 2;
+                        }
+
+                        document.getElementById("section_koszyk").innerHTML+="<section style='margin-top:10px;margin-bottom:10px;'><img src='"+obraz+"' style='float:left;'><p>Liczba kopii: "+kopie+"</p><p>Cena: "+wynik+"</p></section>";
+                        console.log(obraz);
+                        }
+
+
+                    </script>
+                </section>
+            
+        </aside>
+    </main>
+    <footer>
+        Autor strony: Burning Spice Cookie & Eternal Sugar Cookie
+    </footer>
+</body>
+</html>
